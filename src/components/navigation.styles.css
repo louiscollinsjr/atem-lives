@@ -1,0 +1,53 @@
+/* Custom CSS for max-height transition */
+.max-h-0 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.max-h-full {
+  max-height: 100vh; /* or a large enough value */
+  transition: max-height 0.3s ease-in;
+}
+
+.nav-link {
+  color: slategray;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: black;
+}
+
+.nav-link.active {
+  color: black;
+}
+
+
+.nav-link-dark {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link-dark:hover,
+.nav-link:active {
+  color: white;
+}
+
+.nav-link-dark.active {
+  color: white;
+}
+
+.nav-link-dark.active {
+  color: black;
+}
+
+
+.bg-black.text-white .nav-link {
+  color: white;
+}
+
+.bg-black.text-white .nav-link:hover {
+  color: #cccccc;
+}
