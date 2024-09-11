@@ -12,7 +12,7 @@ export interface RouteConfig {
   import Satchel from '../components/Satchel.components';
   import Design349 from '../components/Design349GetStarted.component';
   import OnBoardingWizard from '../components/OnBoardingWizard/OnBoardingWizard.component';
-  import ContactForm from '../components/ContactForm.component';
+  import HomeContactForm from '../components/HomeContactForm.component';
  import NotFoundPage from '../components/NotFound.component';
 
 
@@ -24,7 +24,7 @@ export interface RouteConfig {
     { path: '/satchel', spotlightText: 'Satchel Spotlight', isDarkBackground: false,  component: Satchel },
     { path: '/design349', spotlightText: '349.Design. Spotlight', isDarkBackground: true,  component: Design349 },
     { path: '/onboarding', spotlightText: '349.Design. Spotlight', isDarkBackground: false,  component: OnBoardingWizard },
-    { path: '/contact', spotlightText: 'Contact', isDarkBackground: false,  component: ContactForm },
+    { path: '/contact', spotlightText: 'Contact', isDarkBackground: false,  component: HomeContactForm },
     { path: '*', spotlightText: '404 Page Not Found', isDarkBackground: false,  component: NotFoundPage},
   ];
   
