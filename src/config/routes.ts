@@ -13,6 +13,8 @@ export interface RouteConfig {
   import Design349 from '../components/Design349GetStarted.component';
   import OnBoardingWizard from '../components/OnBoardingWizard/OnBoardingWizard.component';
   import ContactForm from '../components/ContactForm.component';
+ import NotFoundPage from '../components/NotFound.component';
+
 
 
   export const routes: RouteConfig[] = [
@@ -23,6 +25,7 @@ export interface RouteConfig {
     { path: '/design349', spotlightText: '349.Design. Spotlight', isDarkBackground: true,  component: Design349 },
     { path: '/onboarding', spotlightText: '349.Design. Spotlight', isDarkBackground: false,  component: OnBoardingWizard },
     { path: '/contact', spotlightText: 'Contact', isDarkBackground: false,  component: ContactForm },
+    { path: '*', spotlightText: '404 Page Not Found', isDarkBackground: false,  component: NotFoundPage},
   ];
   
   export const defaultRoute: RouteConfig = {
