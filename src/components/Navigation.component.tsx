@@ -7,15 +7,15 @@ import Footer from './Footer.component';
 import './navigation.styles.css';
 
 // Scroll to section function
-const scrollToSection = (id: string) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+// const scrollToSection = (id: string) => {
+//   const section = document.getElementById(id);
+//   if (section) {
+//     section.scrollIntoView({ behavior: 'smooth' });
+//   }
+// };
 
 const Navigation: React.FC = () => {
-  const { spotlightText, isDarkBackground, setTopPadding } = useSpotlight();
+  const { spotlightText, isDarkBackground } = useSpotlight();
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const toggleMobileNav = () => {

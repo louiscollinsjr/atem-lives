@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
-import PinkLinesVideo from '../assets/drwhoshapes.mp4';
+import SimplifyAutomationVideo from '../assets/optimized_maestro_simplify_automation.mp4';
 
 const MaestroDetails: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -31,7 +31,7 @@ const MaestroDetails: React.FC = () => {
           muted
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={PinkLinesVideo} type="video/mp4" />
+          <source src={SimplifyAutomationVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="relative z-10 flex flex-col items-center mb-12">

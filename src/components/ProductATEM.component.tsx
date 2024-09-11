@@ -1,5 +1,4 @@
 import React from 'react';
-import Atemlogo from '../assets/atem-logo-with-wings-black.svg';
 
 const ProductATEM: React.FC = () => {
   return (

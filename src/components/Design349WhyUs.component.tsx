@@ -10,7 +10,6 @@ import {
   FaChevronLeft,
   FaChevronRight,
   FaArrowRight,
-  FaAngleRight,
 } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
 

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
-import PinkLinesVideo from '../assets/pink-neon-lines-background.mp4';
+import PinkLinesVideo from '../assets/optimized_pink-neon-lines-background.mp4';
 
 const DesignSubscriptionService: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);

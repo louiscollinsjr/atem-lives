@@ -12,7 +12,6 @@ export interface RouteConfig {
   import Satchel from '../components/Satchel.components';
   import Design349 from '../components/Design349GetStarted.component';
   import OnBoardingWizard from '../components/OnBoardingWizard/OnBoardingWizard.component';
-  import HomeContactForm from '../components/HomeContactForm.component';
   import ContactForm from '../components/ContactForm.component';
 
 

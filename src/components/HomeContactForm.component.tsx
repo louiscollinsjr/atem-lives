@@ -1,12 +1,12 @@
 import React from "react";  
-import { useSpotlight } from '../contexts/SpotlightContext.context';
+
 
 
 const AtemPerfectFitForm: React.FC = () => {
-  const { setTopPadding } = useSpotlight();
+
 
   return (
-    <section id="contact-section" className={`max-w-7xl mx-auto md:px-4 py-6 pb-24 text-left px-12 ${setTopPadding ? 'pt-60' : ''}`} tabIndex={-1}>
+    <section id="contact-section" className={`max-w-7xl mx-auto md:px-4 py-6 pb-24 text-left px-12`} tabIndex={-1}>
       <div className="max-w-screen-2xl">
         <p className="~text-base/lg tracking-wide text-black font-bold uppercase">
           Earning trust one client at a time

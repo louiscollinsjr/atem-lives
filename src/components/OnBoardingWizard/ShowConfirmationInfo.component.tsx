@@ -1,8 +1,8 @@
 import React from 'react';
-import { useWizard } from 'react-use-wizard';
+
 
 const ShowConfirmationInfo: React.FC = () => {
-  const { nextStep } = useWizard();
+ // const { nextStep } = useWizard();
 
 //   const handleSubmit = (e: React.FormEvent) => {
 //     e.preventDefault();

@@ -1,6 +1,6 @@
 import React, { useMemo, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
-import { routes, defaultRoute, RouteConfig } from '../config/routes';
+import { routes, defaultRoute } from '../config/routes';
 
 interface SpotlightContextType {
   spotlightText: string;

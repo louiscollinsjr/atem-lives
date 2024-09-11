@@ -15,7 +15,7 @@ const GetDesignInfo: React.FC = () => {
     resolver: yupResolver(schema)
   });
   
-  const { formData, updateFormData } = useFormData();
+  const { updateFormData } = useFormData();
   const { nextStep, previousStep } = useWizard();
 
   const onSubmit = (data: any) => {

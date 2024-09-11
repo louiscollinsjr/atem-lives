@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
-import MaestroVideoMP4 from '../assets/atem-maestro.mp4';
+import MaestroVideoMP4 from '../assets/optimized_maestro_powder.mp4';
 
 const ProductMaestro: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
