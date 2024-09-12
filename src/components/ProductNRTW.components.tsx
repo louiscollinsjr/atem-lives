@@ -63,7 +63,7 @@ const ProductNRTW: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-12">
       {data.posts.map((post: Post) => (
-      <div className="bg-slate-50">
+      <div key={post.slug} className="bg-slate-50">
                 <div className="p-8">
                 <h2 className="text-base font-bold tracking-wide text-black uppercase">
                     {post.title}

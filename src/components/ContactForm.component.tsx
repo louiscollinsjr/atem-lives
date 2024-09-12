@@ -1,19 +1,130 @@
-import React, { Fragment } from "react";  
-
+import React, { useState } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../config/firebase/config"; // Adjust this import path as needed
 
 const ContactForm: React.FC = () => {
-  
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    comment: "",
+    getUpdates: false,
+  });
+
+  const [formStatus, setFormStatus] = useState<{
+    message: string;
+    isError: boolean;
+  } | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus(null);
+    try {
+      const docRef = await addDoc(collection(db, "contacts"), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
+      console.log("Document written with ID: ", docRef.id);
+      
+      // Clear the form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        comment: "",
+        getUpdates: false,
+      });
+      
+      // Set success message
+      setFormStatus({ message: "Form submitted successfully!", isError: false });
+    } catch (error) {
+      console.error("Error submitting form: ", error);
+      setFormStatus({ message: `An error occurred: ${error}`, isError: true });
+    }
+  };
+
   return (
-   <Fragment> 
-            <form className="mt-12 grid grid-flow-row gap-4">
-              <input className="h-10 pl-4" name="first-name" placeholder="First Name" type="text" />
-              <input className="h-10 pl-4" name="last-name" placeholder="Last Name" type="text" />
-              <input className="h-10 pl-4" name="business-emai-address" placeholder="Business email adress" type="text" />
-              <input className="h-10 pl-4" name="phone-number" placeholder="Phone Number (Optional)" type="text" />
-              <div className="mt-6 mb-6" ><input type="checkbox" name="more-info"/> <label className="text-sm">Get updates about upcoming events, webinars, product announcements, and helpful resources.</label></div>
-              <button className="bg-black hover:bg-blue-400 text-white rounded-full ~px-4/8 ~py-2/4 ~text-sm/xl" type="submit">Contact atem </button>
-            </form>
-      </Fragment>
+    <div>
+      {formStatus && (
+        <div className={`mb-4 p-4 text-center ${formStatus.isError ? 'text-red-700' : ' text-green-700'}`}>
+          {formStatus.message}
+        </div>
+      )}
+      <form onSubmit={handleSubmit} className="mt-12 grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-2 gap-4">
+          <input
+            className="h-10 pl-4"
+            name="firstName"
+            placeholder="First Name"
+            type="text"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+          />
+          <input
+            className="h-10 pl-4"
+            name="lastName"
+            placeholder="Last Name"
+            type="text"
+            value={formData.lastName}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <input
+          className="h-10 pl-4"
+          name="email"
+          placeholder="Business email address"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          className="h-10 pl-4"
+          name="phoneNumber"
+          placeholder="Phone Number (Optional)"
+          type="tel"
+          value={formData.phoneNumber}
+          onChange={handleChange}
+        />
+        <textarea
+          className="h-32 pl-4 pt-2"
+          name="comment"
+          placeholder="Your comment"
+          value={formData.comment}
+          onChange={handleChange}
+        />
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            name="getUpdates"
+            checked={formData.getUpdates}
+            onChange={handleChange}
+            className="mr-2"
+          />
+          <label className="text-xs py-4">
+            Get updates about upcoming events, webinars, product announcements, and helpful resources.
+          </label>
+        </div>
+        <button
+          className="bg-black hover:bg-slate-800 text-white rounded-full px-4 py-2 text-sm"
+          type="submit"
+        >
+          Contact atem
+        </button>
+      </form>
+    </div>
   );
 };
 

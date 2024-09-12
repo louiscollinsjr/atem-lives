@@ -71,7 +71,7 @@ const ProductNewThings: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-0">
             {data.posts.map((post: Post) => (
-              <div className="py-4">
+              <div key={post.slug} className="py-4">
                 <div
                   className="w-full h-[630px] rounded-3xl bg-cover bg-center relative"
                   style={{ backgroundImage: `url(${post.coverImage.url})` }}
