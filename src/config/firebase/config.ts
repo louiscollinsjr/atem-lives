@@ -1,6 +1,8 @@
 // src/firebase.ts
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+// import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { initializeFirestore } from 'firebase/firestore';
 
 
 const firebaseConfig = {
@@ -20,10 +22,18 @@ console.log(import.meta.env);
 console.log('all env', import.meta.env);
 console.log('one key', import.meta.env.VITE_FIREBASE_API_KEY);
 
-// const db = getFirestore(app,'my_collection')
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app, 'contacts');
 
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+//const db = getFirestore(app, 'contacts');
+// Initialize Firestore with settings
+const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true
+});
 
 
 console.log("Firestore initialized:", db);
+console.log("Auth initialized:", auth);
+
+export { db, auth };
