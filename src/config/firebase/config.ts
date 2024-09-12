@@ -14,7 +14,6 @@ const firebaseConfig = {
 };
 
 
-
 console.log('Firebase config:', import.meta.env);
 
 const app = initializeApp(firebaseConfig);
