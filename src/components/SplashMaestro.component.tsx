@@ -36,7 +36,7 @@ const MaestroProductButtonList: React.FC = () => {
             <p className="justify-center pt-20">
             <a
               href="https://calendly.com/louiscollinsjr/atem-intro"
-              className="bg-blue-500 hover:bg-blue-400 text-white text-lg px-4 py-1.5 rounded-full font-roboq"
+              className="bg-black hover:bg-slate-800 text-white text-lg px-4 py-1.5 rounded-full font-roboq"
             >
               Schedule a call
             </a>

@@ -7,8 +7,9 @@ import MaestroDetails from './MaestroDetails.component';
 const Maestro: React.FC = () => {
   return (
     <div>
-        <SplashMaestro />
         <MaestroDetails />
+        <SplashMaestro />
+      
         <MasonaryGridCTA />
         <MaestroPricing />
         <MaestroContactForm />

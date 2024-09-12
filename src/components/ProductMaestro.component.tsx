@@ -57,7 +57,7 @@ const ProductMaestro: React.FC = () => {
               Awesomations delivered, impressively fast.
             </h2>
             {/* You can add an image or additional content here if needed */}
-            <NavLink to="/design-349">
+            <NavLink to="/maestro">
               <button className="bg-blue-500 hover:bg-blue-700 text-white font- py-2 px-4 rounded flex items-center">
                 Learn more<FaArrowRight className="ml-2" />
               </button>

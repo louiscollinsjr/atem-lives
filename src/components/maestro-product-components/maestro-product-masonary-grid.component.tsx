@@ -33,8 +33,8 @@ const MasonaryGridCTA: React.FC = () => {
               <br /> <br /> That's why we built Maestro.
             </h3>
             <div className="pt-20">
-            <NavLink to="/design-349">
-            <button className="bg-black hover:bg-blue-700 text-white font- py-2 px-4 rounded flex items-center">
+            <NavLink to="https://calendly.com/louiscollinsjr/atem-intro">
+            <button className="bg-black hover:bg-slate-800 text-white font- py-2 px-4 rounded flex items-center">
               Schedule a Call <FaArrowRight className="ml-2" />
             </button>
           </NavLink>

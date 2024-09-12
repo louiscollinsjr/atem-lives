@@ -50,7 +50,7 @@ const DesignSubscriptionService: React.FC = () => {
         <div>
           <h2 className="~text-6xl/8xl font-semibold mb-8 bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent md:pr-16 pb-4">Our creative process, designed to elevate your ideas.</h2>
           {/* You can add an image or additional content here if needed */}
-          <NavLink to="/design-349">
+          <NavLink to="/design349">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font- py-2 px-4 rounded flex items-center">
               Get started <FaArrowRight className="ml-2" />
             </button>

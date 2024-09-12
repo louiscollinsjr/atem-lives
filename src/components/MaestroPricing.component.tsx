@@ -96,7 +96,7 @@ const MaestroPricing: React.FC = () => {
                   </NavLink>
 
                   <NavLink
-                    to="https://calendly.com/louiscollinsjr/atem-intro"
+                    to="/contact"
                     title="Schedule a call with atem"
                     className="inline-flex items-center  px-4 py-3 w-full text-white font-popins border border-gray-600 rounded-xl bg-black"
                   >
