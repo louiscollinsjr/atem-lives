@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "../config/firebase/config"; // Adjust this import path as needed
+import { db } from "../config/firebase/config";
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -55,11 +55,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <div>
-      {formStatus && (
-        <div className={`mb-4 p-4 text-center ${formStatus.isError ? 'text-red-700' : ' text-green-700'}`}>
-          {formStatus.message}
-        </div>
-      )}
+      
       <form onSubmit={handleSubmit} className="mt-12 grid grid-cols-1 gap-4">
         <div className="grid grid-cols-2 gap-4">
           <input
@@ -123,7 +119,11 @@ const ContactForm: React.FC = () => {
         >
           Contact atem
         </button>
-      </form>
+      </form>{formStatus && (
+        <div className={`mb-4 pt-8 text-center ${formStatus.isError ? 'text-red-700' : ' text-slate-600'}`}>
+          🎉  {formStatus.message}
+        </div>
+      )}
     </div>
   );
 };
