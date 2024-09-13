@@ -11,7 +11,7 @@ const MaestroProductButtonList: React.FC = () => {
           </h1>
           <p className="~text-base/xl tracking-wide justify-center font-space text-center md:w-1/2 p-8">At atem, we believe great design should be accessible to everyone. </p>
           <p className="~text-base/xl tracking-wide justify-center font-space text-center md:w-3/4 ">
-          Our <b>Local 349 Design</b> initiative offers affordable web design for our community while continuing to provide cutting-edge solutions for startups and businesses across the globe. Let’s create something impactful.
+          Our <b>349 Design</b> initiative offers affordable web design for our community while continuing to provide cutting-edge solutions for startups and businesses across the globe. Let’s create something impactful.
 
           </p> 
           <p className="justify-center pt-20">
