@@ -1,8 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Design349Info: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className='px-6'>
 
@@ -10,18 +13,18 @@ const Design349Info: React.FC = () => {
 
       <div className="bg-red-500 rounded-3xl text-center flex flex-col justify-end items-center p-6 h-[700px] mb-24">
         <div className="flex flex-col items-center mb-12">
-          <p className="text-2xl w-1/2 font-bold text-black-500 uppercase py-3">L❤️cal love.</p>
-          <h1 className="~text-4xl/6xl md:text-6xl font-bold mb-4 text-white md:w-1/2">Stunning Websites, Unbeatable Price. Just €349!</h1>
+          <p className="text-2xl w-1/2 font-bold text-black-500 uppercase py-3">{t('L❤️cal love.')}</p>
+          <h1 className="~text-4xl/6xl md:text-6xl font-bold mb-4 text-white md:w-1/2">{t('Stunning Websites, Unbeatable Price. Just €349!')}</h1>
         </div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-2 pt-16">
         <div>
-          <h2 className="~text-6xl/8xl font-semibold mb-8 bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent md:pr-16 pb-4">Our creative process, designed around you.</h2>
+          <h2 className="~text-6xl/8xl font-semibold mb-8 bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent md:pr-16 pb-4">{t('Our creative process, designed around you.')}</h2>
           {/* You can add an image or additional content here if needed */}
           <NavLink to="/onboarding">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font- py-2 px-4 rounded flex items-center">
-              Get started <FaArrowRight className="ml-2" />
+              {t('Get started')} <FaArrowRight className="ml-2" />
             </button>
           </NavLink>
         </div>
@@ -37,8 +40,8 @@ const Design349Info: React.FC = () => {
               { title: 'Stay Fresh with a Monthly Subscription', description: 'Want to keep your site updated? We offer a monthly subscription for ongoing maintenance and updates, so your site always stays fresh and relevant.' },
             ].map((step, index) => (
               <li key={index} >
-                <h3 className="text-xl font-semibold inline text-roboto">{step.title}</h3>
-                <p className="mt-2 text-roboto text-gray-800 tracking-wide text-base">{step.description}</p>
+                <h3 className="text-xl font-semibold inline text-roboto">{t(step.title)}</h3>
+                <p className="mt-2 text-roboto text-gray-800 tracking-wide text-base">{t(step.description)}</p>
               </li>
             ))}
           </ol>

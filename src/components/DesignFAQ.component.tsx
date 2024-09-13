@@ -8,7 +8,7 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "How much does a website cost?",
-    answer: "The cost of a website varies depending on its complexity, features, and design requirements. Our projects typically range from $5,000 to $50,000+. We'll provide a detailed quote after discussing your specific needs."
+    answer: "Great question! While our design and development cost is straightforward, there are a few additional costs for domain registration, hosting, and potentially third-party services. We’ll help guide you through all of these so you know exactly what to expect! The ongoing cost of a website typically includes: design and development, domain name registration, hosting, third-party services, and ongoing maintenance."
   },
   {
     question: "What is the typical timeline for a website project?",

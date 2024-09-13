@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { truncateText } from '../utils/utils';
-
+import { useTranslation } from 'react-i18next';
 // Define the Post type based on the structure of the posts
 interface Post {
   title: string;
@@ -36,35 +36,32 @@ const GET_ATEMPROJECTS_ITEMS = gql`
 `;
 
 const ProductNewThings: React.FC = () => {
+  const { t } = useTranslation();
   const { loading, error, data } = useQuery(GET_ATEMPROJECTS_ITEMS);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (loading) return <p>{t("Loading...")}</p>;
+  if (error) return <p>{t("Error:")} {error.message}</p>;
 
   return (
     <section className="bg-[#f5f5f7]">
       <div className="max-w-7xl mx-auto md:px-4 py-28 text-left px-12">
         {/* <div className="container mx-auto max-w-screen-7xl py-6 bg-blue-500"> */}
         <p className="~text-base/lg font-bold tracking-wide text-black uppercase py-6">
-          Coders at Heart
+          {t("Coders at Heart")}
         </p>
 
         <div className="grid grid-cols-1 gap-6 content-center ~mx-0/0 ">
           <div className="lg:pb-12 lg:pr-24 mb-1">
             <div className="max-w-screen-xl pb-0">
               <h2 className="~text-4xl/6xl col-span-2 text-left font-semibold text-black tracking-tight pb-8 max-w-5xl">
-                We are seriously in the business of starting new things.
+                {t("We are seriously in the business of starting new things.")}
               </h2>
               <p className="text-left ~text-lg/2xl  tracking-wide text-gray-700">
                 At Atem,
-                <span className="text-black"> innovation is at our core.</span>
-                Alongside our commitment to starting new ventures, we're
-                thrilled to introduce atem.Labs, our incubator for
-                groundbreaking initiatives like
-                <span className="text-black"> Satchel</span>, our AR Advertising
-                platform. <br/><br/>Furthermore, we're excited to expand our expertise in
-                AI, design, and e-commerce, driving forward our pursuit of
-                excellence in every domain.
+                <span className="text-black"> {t("innovation is at our core.")}</span>
+                {t("Alongside our commitment to starting new ventures, we're thrilled to introduce atem.Labs, our incubator for groundbreaking initiatives like")}
+                <span className="text-black"> {t("Satchel")}</span>{t(", our AR Advertising platform.")}
+                {t("Furthermore, we're excited to expand our expertise in AI, design, and e-commerce, driving forward our pursuit of excellence in every domain.")}
               </p>
             </div>
           </div>
@@ -85,7 +82,7 @@ const ProductNewThings: React.FC = () => {
                       {truncateText(post.content.text, 110)}
                     </p>
                     <p className="text-blue-400 text-xs pt-3">
-                      Case Study Coming Soon...
+                      {t("Case Study Coming Soon...")}
                     </p>
                   </div>
                 </div>

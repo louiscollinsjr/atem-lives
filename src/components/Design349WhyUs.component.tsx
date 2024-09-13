@@ -12,6 +12,7 @@ import {
   FaArrowRight,
 } from 'react-icons/fa';
 import { useMediaQuery } from 'react-responsive';
+import { useTranslation } from 'react-i18next';
 
 interface ReasonCard {
   icon: React.ReactNode;
@@ -72,6 +73,7 @@ const Design349WhyUs: React.FC = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const touchStartX = useRef<number | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   const cardsPerView = isMobile ? 1 : 4;
   const slidePercentage = isMobile ? 100 : 25;
@@ -118,13 +120,13 @@ const Design349WhyUs: React.FC = () => {
       <div className="max-w-7xl mx-auto container-x">
         <div className="container mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 px-2 space-y-6 lg:space-y-0 py-20">
           <h2 className="text-5xl max-w-lg font-medium font-inter md:max-w-xl px-12 md:px-0">
-            Why we are your best choice for web design.
+            {t('Why we are your best choice for web design.')}
           </h2>
           <Link
             to="/get-started"
             className="text-blue-600 py-2 rounded-xl transition-colors flex items-center"
           >
-            <span className="tracking-wide pl-12">Let's create together</span>
+            <span className="tracking-wide pl-12">{t("Let's create together")}</span>
             <FaArrowRight className="ml-2" />
           </Link>
         </div>
@@ -155,10 +157,10 @@ const Design349WhyUs: React.FC = () => {
                   <div className="flex flex-col h-full">
                     {card.icon}
                     <h3 className="text-3xl font-roboto font-semibold py-4 pr-16">
-                      {card.header}
+                      {t(card.header)}
                     </h3>
                     <p className="text-gray-80 font-popins pr-16 text-base">
-                      {card.content}
+                      {t(card.content)}
                     </p>
                   </div>
                 </div>

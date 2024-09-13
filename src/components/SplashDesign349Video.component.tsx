@@ -1,8 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import triangleTunnels from '../assets/triangle_tunnel.mp4';
+import { useTranslation } from 'react-i18next';
 
 const SplashDesign349: React.FC = () => {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -35,11 +37,10 @@ const SplashDesign349: React.FC = () => {
             349.Design.
           </h1>
           <p className="~text-xs/base tracking-wide justify-center font-space text-center text-white w-96">
-            At the core of our business lies a passion for crafting designs that
-            inspire and ignite emotions in our clients and their customers.
+            {t("At the core of our business lies a passion for crafting designs that inspire and ignite emotions in our clients and their customers.")}
           </p>
           <p className="pt-12 ~text-xs/base tracking-wide justify-center font-space text-center text-white w-96">
-            Romainia, if you can imagine it, we can design it.
+            {t("Romania, if you can imagine it, we can design it.")}
           </p>
          
 
@@ -49,10 +50,10 @@ const SplashDesign349: React.FC = () => {
               to="/onboarding"
               className="bg-blue-500 text-white text-sm tracking-wider px-5 py-3 rounded-full font-poppins"
             >
-              Let's create together
+              {t("Let's create together")}
             </NavLink>
           </p></div>
-            <div><p className='text-white text-xs pt-4'> or learn more below</p></div>
+            <div><p className='text-white text-xs pt-4'> {t("or learn more below")}</p></div>
           </div>
         </div>
       </div>

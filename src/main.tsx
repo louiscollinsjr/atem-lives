@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop.component'
 import { ApolloProvider } from '@apollo/client';
 import client from './ApolloClientSetup';
+import './i18next.ts';
 
 
 createRoot(document.getElementById('root')!).render(

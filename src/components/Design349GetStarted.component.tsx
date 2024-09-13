@@ -6,6 +6,7 @@ import SplashDesign349 from './SplashDesign349.component';
 import Design349Info from './Design349Info.component';
 import Design349WhyUs from './Design349WhyUs.component';
 import ProductNewThings from './ProductNewThings.component';
+import { useTranslation } from 'react-i18next';
 
 interface FAQItem {
   title: string;
@@ -14,30 +15,68 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    title: 'How much does a website cost?',
-    content:
-      "The cost of a website varies depending on its complexity, features, and design requirements. Our projects typically range from $5,000 to $50,000+. We'll provide a detailed quote after discussing your specific needs.",
+    title: "How much does a website cost?",
+    content: "Great question! While our design and development cost is straightforward, there are a few additional costs for domain registration, hosting, and potentially third-party services. We’ll help guide you through all of these so you know exactly what to expect! The ongoing cost of a website typically includes: design and development, domain name registration, hosting, third-party services, and ongoing maintenance."
   },
   {
-    title: 'What is the typical timeline for a website project?',
-    content:
-      "On average, a website project takes 6-12 weeks from start to finish. This includes planning, design, development, and testing phases. The exact timeline depends on the project's scope and complexity.",
+    title: "What is Local Design 349?",
+    content: "349 Design is a special web design service we’re offering to build our community by providing high-quality websites at a discounted price of 349 euros. It’s a limited-time opportunity aimed at helping local businesses get online with professional design."
   },
   {
-    title: 'Do you offer ongoing maintenance and support?',
-    content:
-      'Yes, we offer various maintenance and support packages to keep your website up-to-date, secure, and running smoothly. We can discuss these options once your project is complete.',
+    title: "Why is the price so low?",
+    content: "We believe in giving back to our community and want to make professional web design accessible to local businesses. By offering this special price, we’re able to help entrepreneurs and organizations grow while showcasing our expertise."
+  },
+  {
+    title: "What do I get for 349 euros?",
+    content: "You’ll receive a fully customized, responsive website with up to 5 pages, including basic SEO, mobile optimization, and 15 days of unlimited revisions after launch. It's the same quality service we offer at higher price points, just tailored for this initiative."
+  },
+  {
+    title: "How do I get started?",
+    content: "Simply fill out our online form to make a request. Once we review your information, you’ll receive a confirmation email with the scope of work and prepayment options. We begin as soon as we receive payment."
+  },
+  {
+    title: "Are there limited spots?",
+    content: "Yes, we can only take on a limited number of projects each month to ensure we provide quality service. Once spots fill up, we offer a guaranteed reservation for the next available month with a partial payment."
+  },
+  {
+    title: "What’s the timeline for completing my website?",
+    content: "Our typical turnaround time is 2-3 weeks, depending on the project’s complexity. You’ll receive regular updates, and we work closely with you to ensure your site is perfect."
+  },
+  {
+    title: "Do I need to pay everything upfront?",
+    content: "No, we offer partial payment options. 50% Upfront Deposit: To start the project and cover initial design and planning work. Final Payment: Due upon project completion, before the website goes live. You’ll alsoneed to make a down payment to reserve your spot, and the rest is due upon project completion."
+  },
+  {
+    title: "Can I make changes to the website after it’s done?",
+    content: "Yes! You’ll have 15 days of unlimited revisions after the website is launched. If you need ongoing changes, we offer affordable subscription plans for monthly updates."
+  },
+  {
+    title: "What’s included in the 15 days of unlimited revisions?",
+    content: "This includes adjustments to text, images, and layout to ensure your website is exactly how you want it. Major redesigns or additional pages are not included but can be added for an extra fee."
+  },
+  {
+    title: "Do you offer ongoing support?",
+    content: "Yes, we offer subscription-based maintenance packages that cover updates, backups, and minor changes to ensure your site stays current and secure."
   },
   // Add more FAQ items as needed
 ];
 
 const GetStarted: React.FC = () => {
+  const { t } = useTranslation();
+
+    // Translate FAQ items
+    const translatedFaqData = faqData.map(item => ({
+      title: t(item.title),
+      content: t(item.content)
+    }));
+
+    
   return (
     <div>
-      <SplashDesign349 />
-      <Design349Info />
-      <Design349WhyUs />
-      <ProductNewThings />
+      <SplashDesign349 /> {/*translated*/}
+      <Design349Info /> {/*translated*/}
+      <Design349WhyUs /> {/* translated*/}
+      <ProductNewThings /> {/* translated*/}
 
       
       <div className="container mx-auto py-24 px-12">
@@ -45,10 +84,10 @@ const GetStarted: React.FC = () => {
           <div className="">
             <div>
               <h2 className="text-5xl text-black mb-1 font-roboto font-semibold text-center pb-12">
-                Questions? Answers.
+                {t("Questions? Answers.")}
               </h2>
               <div className="space-y-4 text-roboto tracking-wide text-black">
-                {faqData.map((item, index) => (
+                {translatedFaqData.map((item, index) => (
                   <Accordion key={index} item={item} />
                 ))}
               </div>
@@ -62,21 +101,21 @@ const GetStarted: React.FC = () => {
                 className="w-48 h-48 mx-auto mb-8 rounded-full object-cover"
               />
               <h3 className="text-3xl text-gray-900 mb-8 text-center font-space font-bold">
-              See if <span className="uppercase">L❤️cal.Design.349</span> is right for you.<br />(It totally is.)
+              {t("See if L❤️cal 349 Design is right for you. It totally is.")}
               </h3>
               <NavLink to="/onboarding">
               <button className="tracking-widest bg-black text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                Start here
+                {t("Start here")}
               </button>
               </NavLink>
 
               <p className="text-gray-600 mt-4 text-sm text-center">
-                Prefer to email?{' '}
+                {t("Prefer to email?")}  
                 <a
                   href="mailto:hello@designbyatem.com"
                   className="text-blue-600 hover:text-blue-700 transition duration-300"
                 >
-                  design.349@atem.gdn
+                   {t("design.349@atem.gdn")}
                 </a>
               </p>
             </div>

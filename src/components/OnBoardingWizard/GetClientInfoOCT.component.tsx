@@ -4,8 +4,6 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useFormData } from '../../hooks/useFormData.hook';
 import { useWizard } from 'react-use-wizard';
-import { NavLink } from 'react-router-dom';
-
 
 
 const schema = yup.object().shape({
@@ -68,19 +66,12 @@ const GetClientInfo: React.FC = () => {
                 {errors.email && <span>{errors.email.message}</span>}
               </div>
               <div className="md:col-span-2 pt-6">
-                <button disabled
+                <button
                   className="border px-4 py-2 rounded-md w-full text-base text-white bg-black font-popins tracking-wider"
                   type="submit"
                 >
                   Next
                 </button>
-                <p className="text-center font-bold text-red-500 font-popins text-sm pt-8">We begin taking submissions October 2024</p>
-                <p className="text-center text-blue-700 text-sm pt-8">
-                  <NavLink to="/design349">
-                    Back to product details
-                  </NavLink>
-                </p>
-                
               </div>
             </div>
           </form>
