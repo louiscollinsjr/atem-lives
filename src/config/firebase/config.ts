@@ -15,12 +15,12 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-console.log(import.meta.env.VITE_FIREBASE_API_KEY);
-console.log(import.meta.env);
+// console.log(import.meta.env.VITE_FIREBASE_API_KEY);
+// console.log(import.meta.env);
 
 
-console.log('all env', import.meta.env);
-console.log('one key', import.meta.env.VITE_FIREBASE_API_KEY);
+// console.log('all env', import.meta.env);
+// console.log('one key', import.meta.env.VITE_FIREBASE_API_KEY);
 
 
 
@@ -33,7 +33,7 @@ const db = initializeFirestore(app, {
 });
 
 
-console.log("Firestore initialized:", db);
-console.log("Auth initialized:", auth);
+// console.log("Firestore initialized:", db);
+// console.log("Auth initialized:", auth);
 
 export { db, auth };

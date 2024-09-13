@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
-import MaestroVideoMP4 from '../assets/optimized_maestro_powder.mp4';
+
 
 const ProductMaestro: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -29,7 +29,7 @@ const ProductMaestro: React.FC = () => {
             muted
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src={MaestroVideoMP4} type="video/mp4" />
+            <source src='https://atem-lives.b-cdn.net/shape-explosion-5680034.mp4' type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="relative z-10 flex flex-col items-center mb-8">
