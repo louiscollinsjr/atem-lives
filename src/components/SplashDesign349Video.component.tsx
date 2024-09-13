@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import triangleTunnels from '../assets/triangle_tunnel.mp4';
+
 import { useTranslation } from 'react-i18next';
 
 const SplashDesign349: React.FC = () => {
