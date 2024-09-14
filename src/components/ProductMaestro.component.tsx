@@ -44,7 +44,6 @@ const ProductMaestro: React.FC = () => {
             loop={true}
             muted={true}
             playsInline={true}
-            allowFullScreen={false}
             className="absolute inset-0 w-full h-full object-cover"
             poster="path/to/poster-image.jpg"
             
