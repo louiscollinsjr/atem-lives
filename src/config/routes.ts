@@ -38,17 +38,3 @@ export interface RouteConfig {
     component: Home,
     index: true,
   };
-
-
-//   <SpotlightProvider>
-//   <Routes>
-//     <Route element={<Navigation />}>
-//       <Route index element={<Home />} />
-//       <Route path="design" element={<Design />} />
-//       <Route path="design349" element={<GetStarted />} />
-//       <Route path="onboarding" element={<OnBoardingWizard />} />
-//       <Route path="satchel" element={<Satchel />} />
-//       <Route path="maestro" element={<Maestro />} />
-//       </Route>
-//     </Routes>
-//   </SpotlightProvider>
