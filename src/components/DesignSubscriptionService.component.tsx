@@ -1,7 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
-
+// Add this import at the top of your file
+import localVideoSrc from '../assets/red-and-pink-neon-lines.mp4';
+// Add this import
+import localPosterSrc from '../assets/red-and-pink-neon-lines.jpg';
 
 const DesignSubscriptionService: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -30,9 +33,9 @@ const DesignSubscriptionService: React.FC = () => {
           loop
           muted
           className="absolute inset-0 w-full h-full object-cover"
-          poster="https://atem-lives.b-cdn.net/red-and-pink-neon-lines.jpg"
+          poster={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/red-pink-neon-lines.jpg' : localPosterSrc}
         >
-          <source src='https://atem-lives.b-cdn.net/red-and-pink-neon-lines.mp4' type="video/mp4" />
+          <source src={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/red-pink-neon-lines.mp4' : localVideoSrc} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="relative z-10 flex flex-col items-center mb-12">

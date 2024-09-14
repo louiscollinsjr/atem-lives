@@ -32,52 +32,59 @@ const MasonaryGridCTA: React.FC = () => {
               the end-user experience.
               <br /> <br /> That's why we built Maestro.
             </h3>
-            <div className="pt-20">
-            <NavLink to="https://calendly.com/louiscollinsjr/atem-intro">
-            <button className="bg-black hover:bg-slate-800 text-white font- py-2 px-4 rounded flex items-center">
-              Schedule a Call <FaArrowRight className="ml-2" />
-            </button>
-          </NavLink>
+            <div className="pt-10 lg:pt-20">
+              <NavLink to="https://calendly.com/louiscollinsjr/atem-intro">
+                <button className="bg-black hover:bg-slate-800 text-white font-semibold py-2 px-4 rounded flex items-center">
+                  Schedule a Call <FaArrowRight className="ml-2" />
+                </button>
+              </NavLink>
+            </div>
           </div>
-            {/* <ul className="list-disc p-6 leading-10">
-            <li>Secure an appointment to talk to one of our developers</li>
-            <li>Explore use cases based on your industry</li>
-            <li>Learn how atem can improve your customer relationships</li>
-           </ul> */}
-          </div>
-          <div className="py-24 md:py-6 content-center items-center">
+          <div className="hidden md:block py-24 md:py-6 content-center items-center">
             <div className="grid grid-cols-7 gap-4">
               <div className="col-start-2 col-end-4 row-end-4 row-start-2">
                 <img
-                  src={Image01}
+                  src={
+                    import.meta.env.MODE === 'production'
+                      ? 'https://atem-lives.b-cdn.net/path/to/Image01.jpg'
+                      : Image01
+                  }
                   alt="Image 1"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
               <div className="col-start-4 col-end-6 row-end-4 row-start-1 ">
                 <img
-                  src={Image02}
+                  src={import.meta.env.MODE === 'production' 
+                    ? 'https://atem-lives.b-cdn.net/path/to/Image02.jpg' 
+                    : Image02}
                   alt="Image 2"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
               <div className="col-start-1 col-end-3 row-end-6 row-start-4">
                 <img
-                  src={Image03}
+                  src={import.meta.env.MODE === 'production' 
+                    ? 'https://atem-lives.b-cdn.net/path/to/Image03.jpg' 
+                    : Image03}
                   alt="Image 3"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
               <div className="col-start-5 col-end-7 row-end-6 row-start-4">
                 <img
-                  src={Image05}
+                  src={import.meta.env.MODE === 'production' 
+                    ? 'https://atem-lives.b-cdn.net/path/to/Image05.jpg' 
+                    : Image05}
                   alt="Image 4"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
               <div className="col-start-3 col-end-5 row-end-7 row-start-4">
                 <img
-                  src={Image04}
+                  src={import.meta.env.MODE === 'production' 
+                    ? 'https://atem-lives.b-cdn.net/path/to/Image04.jpg' 
+                    : Image04}
                   alt="Image 5"
                   className="w-full h-auto rounded-xl"
                 />
@@ -86,7 +93,6 @@ const MasonaryGridCTA: React.FC = () => {
           </div>
         </div>
       </div>
-      
     </section>
   );
 };

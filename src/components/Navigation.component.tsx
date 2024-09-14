@@ -32,7 +32,7 @@ const Navigation: React.FC = () => {
             <NavLink to="/" end>
               <img
                 className={`w-20 invert ${isDarkBackground ? '' : 'md:invert-0'}`}
-                src={navLogo}
+                src={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/atem-logo-with-wings-black.svg' : navLogo}
                 alt="Logo"
                 onClick={() => setIsMobileNavOpen(false)}
               />
