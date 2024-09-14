@@ -5,22 +5,22 @@ import { useTranslation } from 'react-i18next';
 const MaestroProductButtonList: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <section className="bg-gray-100 items-center justify-center">
-      <div className='container flex flex-col items-center justify-center h-[80vh] transition-all duration-800 mx-auto'>
-        <div className="flex flex-col items-center justify-center p-12">
-          <h1 className="~text-[6rem]/[10rem] font-medium font-spartan tracking-tighter text-gray-900 items-center justify-center text-center uppercase">
+    <section className="bg-gray-100 items-center justify-center p-4 sm:p-10">
+      <div className='container flex flex-col items-center justify-center min-h-[80vh] transition-all duration-[800ms] mx-auto'>
+        <div className="flex flex-col items-center justify-center p-4 sm:p-12">
+          <h1 className="~text-[4rem]/[7rem] sm:~text-[6rem]/[10rem] font-medium font-spartan tracking-tighter text-gray-900 text-center uppercase">
           {t("L❤️cal. 349. Design.")}
           </h1>
-          <p className="~text-base/xl tracking-wide justify-center font-space text-center md:w-1/2 p-8">
+          <p className="~text-sm/lg sm:~text-base/xl tracking-wide font-space text-center w-full sm:w-3/4 md:w-1/2 p-4 sm:p-8">
           {t("At atem, we believe great design should be accessible to everyone.")}
           </p>
-          <p className="~text-base/xl tracking-wide justify-center font-space text-center md:w-3/4 ">
+          <p className="~text-sm/lg sm:~text-base/xl tracking-wide font-space text-center w-full sm:w-3/4 p-4">
           {t("Our 349 Design initiative offers affordable web design for our community while continuing to provide cutting-edge solutions for startups and businesses across the globe. Let's create something impactful.")}
           </p> 
-          <p className="justify-center pt-20">
+          <p className="justify-center pt-12 sm:pt-20 pb-8">
           <NavLink
             to="/design349"
-            className="bg-black text-white text-lg px-4 py-1.5 rounded-full"
+            className="bg-black text-white text-base sm:text-lg px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-800 transition-colors duration-300"
           >
             {t("Learn more")}
           </NavLink>

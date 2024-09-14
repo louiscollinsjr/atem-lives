@@ -11,10 +11,10 @@ const Home: React.FC = () => {
     <div className='overscroll-contain'>
       <ProductATEM />
      <ProductMaestro />
-       {/* <ProductNewThings />
+       <ProductNewThings />
       <SplashDesign />
-      <ProductNRTW />
-      <HomeContactForm  /> */}
+     <ProductNRTW />
+     <HomeContactForm  />
     </div>
   );
 };

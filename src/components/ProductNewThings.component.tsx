@@ -44,19 +44,18 @@ const ProductNewThings: React.FC = () => {
 
   return (
     <section className="bg-[#f5f5f7]">
-      <div className="max-w-7xl mx-auto md:px-4 py-28 text-left px-12">
-        {/* <div className="container mx-auto max-w-screen-7xl py-6 bg-blue-500"> */}
-        <p className="~text-base/lg font-bold tracking-wide text-black uppercase py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-28">
+        <p className="text-base font-bold tracking-wide text-black uppercase mb-6">
           {t("Coders at Heart")}
         </p>
 
-        <div className="grid grid-cols-1 gap-6 content-center ~mx-0/0 ">
-          <div className="lg:pb-12 lg:pr-24 mb-1">
-            <div className="max-w-screen-xl pb-0">
-              <h2 className="~text-4xl/6xl col-span-2 text-left font-semibold text-black tracking-tight pb-8 max-w-5xl">
+        <div className="space-y-8 lg:space-y-12">
+          <div className="lg:pr-0 xl:pr-24">
+            <div className="max-w-screen-xl">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-black tracking-tight mb-4 sm:mb-6 lg:mb-8 max-w-5xl">
                 {t("We are seriously in the business of starting new things.")}
               </h2>
-              <p className="text-left ~text-lg/2xl  tracking-wide text-gray-700">
+              <p className="text-base sm:text-lg tracking-wide text-gray-700">
                 At Atem,
                 <span className="text-black"> {t("innovation is at our core.")}</span>
                 {t("Alongside our commitment to starting new ventures, we're thrilled to introduce atem.Labs, our incubator for groundbreaking initiatives like")}
@@ -66,22 +65,22 @@ const ProductNewThings: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-0">
+          <div className="space-y-8 sm:space-y-10 md:space-y-12">
             {data.posts.map((post: Post) => (
-              <div key={post.slug} className="py-4">
+              <div key={post.slug}>
                 <div
-                  className="w-full h-[630px] rounded-3xl bg-cover bg-center relative"
+                  className="w-full h-[450px] sm:h-96 md:h-96 lg:h-[630px] rounded-3xl bg-cover bg-center relative"
                   style={{ backgroundImage: `url(${post.coverImage.url})` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-700/40 to-transparent rounded-3xl"></div>
-                  <div className="absolute bottom-0 left-0 p-4">
-                    <h2 className="~text-base/2xl font-bold tracking-wide text-white uppercase py-1 max-w-3xl">
+                  <div className="absolute bottom-0 left-0 p-4 sm:p-6">
+                    <h2 className="text-base sm:text-lg font-bold tracking-wide text-white uppercase mb-2 max-w-3xl">
                       {post.title}
                     </h2>
-                    <p className="~text-sm/base text-white">
+                    <p className="text-sm sm:text-base text-white mb-2">
                       {truncateText(post.content.text, 110)}
                     </p>
-                    <p className="text-blue-400 text-xs pt-3">
+                    <p className="text-blue-400 text-xs">
                       {t("Case Study Coming Soon...")}
                     </p>
                   </div>
