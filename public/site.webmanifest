@@ -1,1 +1,31 @@
-{"name":"","short_name":"","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+{
+    "name": "Atem Web Design & Automation",
+    "short_name": "Atem",
+    "description": "Expert web design and automation services tailored for businesses.",
+    "icons": [
+      {
+        "src": "/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      },
+      {
+        "src": "/favicon.ico",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      }
+    ],
+    "start_url": "/",
+    "theme_color": "#ffffff",
+    "background_color": "#f0f0f0",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "lang": "en",
+    "related_applications": [],
+    "prefer_related_applications": false
+  }
