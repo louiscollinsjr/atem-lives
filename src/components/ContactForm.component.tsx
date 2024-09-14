@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../config/firebase/config";
+import { useTranslation } from "react-i18next";
 
 const ContactForm: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -61,7 +63,7 @@ const ContactForm: React.FC = () => {
           <input
             className="h-10 pl-4"
             name="firstName"
-            placeholder="First Name"
+            placeholder={t("First Name")}
             type="text"
             value={formData.firstName}
             onChange={handleChange}
@@ -70,7 +72,7 @@ const ContactForm: React.FC = () => {
           <input
             className="h-10 pl-4"
             name="lastName"
-            placeholder="Last Name"
+            placeholder={t("Last Name")}
             type="text"
             value={formData.lastName}
             onChange={handleChange}
@@ -80,7 +82,7 @@ const ContactForm: React.FC = () => {
         <input
           className="h-10 pl-4"
           name="email"
-          placeholder="Business email address"
+          placeholder={t("Business email address")}
           type="email"
           value={formData.email}
           onChange={handleChange}
@@ -89,7 +91,7 @@ const ContactForm: React.FC = () => {
         <input
           className="h-10 pl-4"
           name="phoneNumber"
-          placeholder="Phone Number (Optional)"
+          placeholder={t("Phone Number (Optional)")}
           type="tel"
           value={formData.phoneNumber}
           onChange={handleChange}
@@ -97,7 +99,7 @@ const ContactForm: React.FC = () => {
         <textarea
           className="h-32 pl-4 pt-2"
           name="comment"
-          placeholder="Your comment"
+          placeholder={t("Your comment")}
           value={formData.comment}
           onChange={handleChange}
         />
@@ -110,14 +112,14 @@ const ContactForm: React.FC = () => {
             className="mr-2"
           />
           <label className="text-xs py-4">
-            Get updates about upcoming events, webinars, product announcements, and helpful resources.
+            {t("Get updates about upcoming events, webinars, product announcements, and helpful resources.")}
           </label>
         </div>
         <button
           className="bg-black hover:bg-slate-800 text-white rounded-full px-4 py-2 text-sm"
           type="submit"
         >
-          Contact atem
+          {t("Contact atem")}
         </button>
       </form>{formStatus && (
         <div className={`mb-4 pt-8 text-center ${formStatus.isError ? 'text-red-700' : ' text-slate-600'}`}>

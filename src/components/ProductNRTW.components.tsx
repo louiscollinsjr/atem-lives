@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useQuery, gql } from '@apollo/client';
 import { truncateText } from '../utils/utils';
@@ -33,6 +34,7 @@ const GET_NRTW_ITEMS = gql`
 `;
 
 const ProductNRTW: React.FC = () => {
+  const { t } = useTranslation();
   const { loading, error, data } = useQuery(GET_NRTW_ITEMS);
 
   if (loading) return <p>Loading...</p>;
@@ -43,16 +45,16 @@ const ProductNRTW: React.FC = () => {
       <div className="max-w-screen-2xl px-10">
 
             <p className="~text-base/lg font-bold tracking-wide text-black uppercase">
-              Community: #NRTW
+              {t("Community: #NRTW")}
             </p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 content-center ~mx-0/0 my-6" >
             <div className="">
               <div className="max-w-screen-xl">
                 <h2 className="~text-5xl/7xl text-left font-extrabold text-black tracking-tight w-full from-purple-600 via-pink-600 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">
-                  HASHTAG.Nerds Rule The World
+                  {t("HASHTAG.Nerds Rule The World")}
                 </h2>
                 <p className="text-left text-2xl font-bold tracking-wide pt-8 text-gray-500">
-                  See what our community is up too.{' '}
+                  {t("See what our community is up too.")}
                   <span className="text-black">Google.</span> Next.js.
                   <span className="text-black"> Vercel.</span> Meta. Apple.
                 </p>

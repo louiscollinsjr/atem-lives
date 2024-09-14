@@ -1,9 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 
 const ProductMaestro: React.FC = () => {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -19,8 +21,8 @@ const ProductMaestro: React.FC = () => {
   };
 
   return (
-    <section className="px-6">
-      <div className="max-w-7xl mx-auto px-4 py-24 container-x">
+    <section id="product-maestro" className="w-full md:px-6">
+      <div className="max-w-7xl mx-auto md:px-4 py-24 container-x">
         <div className="bg-blue-500 rounded-3xl text-center flex flex-col justify-end items-center p-6 h-[700px] mb-24 relative overflow-hidden">
           <video
             ref={videoRef}
@@ -40,7 +42,7 @@ const ProductMaestro: React.FC = () => {
               Maestro.
             </h1>
             <p className="text-base py-0 text-white">
-             Simplify Automations
+             {t("Simplify Automations")}
             </p>
           </div>
           <button
@@ -54,18 +56,18 @@ const ProductMaestro: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-2 pt-4">
           <div>
             <h2 className="~text-4xl/6xl font-semibold mb-8 text-black pb-12">
-              Awesomations delivered, impressively fast.
+            {t("Awesomations delivered, impressively fast.")}
             </h2>
             {/* You can add an image or additional content here if needed */}
             <NavLink to="/maestro">
               <button className="bg-blue-500 hover:bg-blue-700 text-white font- py-2 px-4 rounded flex items-center">
-                Learn more<FaArrowRight className="ml-2" />
+              {t("Learn more")}<FaArrowRight className="ml-2" />
               </button>
             </NavLink>
           </div>
 
           <div className="pt-3 ~text-lg/2xl  tracking-wide text-gray-700">
-           <p>Introducing Maestro Automations — Elevate your workflow with our easy and reliable subscription-based DEX services tailored to meet your evolving automation needs.The ultimate automation experience is here</p>
+           <p>{t("Introducing Maestro Automations — Elevate your workflow with our easy and reliable subscription-based DEX services tailored to meet your evolving automation needs.The ultimate automation experience is here.")}</p>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import { useSpotlight } from '../contexts/SpotlightContext.context';
 import navLogo from '../assets/atem-logo-with-wings-black.svg';
 import Footer from './Footer.component';
+import { useTranslation } from 'react-i18next';
 
 import './navigation.styles.css';
 
@@ -15,6 +16,7 @@ import './navigation.styles.css';
 // };
 
 const Navigation: React.FC = () => {
+  const { t } = useTranslation();
   const { spotlightText, isDarkBackground } = useSpotlight();
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
@@ -24,7 +26,7 @@ const Navigation: React.FC = () => {
 
   return (
     <Fragment>
-      <nav className={`md:h-auto bg-black ${isDarkBackground ? 'md:bg-black realative md:bg-opacity-100' : 'md:bg-white fixed  top-0 left-0  z-50 backdrop-filter backdrop-blur-lg md:bg-opacity-30'}  w-full`}>
+      <nav className={`md:h-auto bg-black ${isDarkBackground ? 'md:bg-black realative md:bg-opacity-100' : 'md:bg-white fixed  top-0 left-0  z-50 backdrop-filter backdrop-blur-lg md:bg-opacity-30'} w-full`}>
         <div className="max-w-screen-2xl mx-auto px-4 md:px-4  py-3 flex justify-between items-center">
           <div className="flex items-center">
             <NavLink to="/" end>
@@ -41,7 +43,7 @@ const Navigation: React.FC = () => {
               Maestro
             </NavLink>
             <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/design">
-              Design and Development
+              {t("Design and Development")}
             </NavLink>
             <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/satchel">
               Satchel AR
@@ -73,7 +75,7 @@ const Navigation: React.FC = () => {
 
         <div className="hidden md:flex justify-between max-w-screen-2xl mx-auto md:px-4 py-3 ">
           <div className={`text-black text-xl font-semibold tracking-[0.011em] leading-5 ${isDarkBackground ? 'text-white' : 'text-black'}`}>
-            {spotlightText}
+            {t(spotlightText)}
           </div>
           <div className="space-x-4">
             {/* <a
@@ -87,14 +89,14 @@ const Navigation: React.FC = () => {
             //   onClick={() => scrollToSection('contact-section')}
               className={`text-xs ${isDarkBackground ? 'nav-link-dark text-white' : 'nav-link'}`}
             >
-              Contact us
+              {t("Contact us")}
             </NavLink>
 
             <a
               href="https://calendly.com/louiscollinsjr/atem-intro"
               className="bg-blue-500 hover:bg-blue-400 text-white text-xs px-3 py-1.5 rounded-full"
             >
-              Schedule a call
+              {t("Schedule a call")}
             </a>
           </div>
         </div>
@@ -176,7 +178,10 @@ const Navigation: React.FC = () => {
           </div>
         )}
       </nav>
+        
         <Outlet />
+        
+        
         <Footer />
 
     

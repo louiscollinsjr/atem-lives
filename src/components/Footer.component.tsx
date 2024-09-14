@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { NavLink } from 'react-router-dom';
 import { Fragment } from 'react';
@@ -10,6 +11,7 @@ import xTwitter from '../assets/xTwitter-icon.svg';
 import linkedIn from '../assets/linkedIn-icon.svg';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <Fragment>
       <section className="bg-zinc-50 flex flex-col md:content-center md:items-center min-h-[20rem] py-12 px-10">
@@ -17,7 +19,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full text-xs">
             <div className="text-black">
               <img className="w-40" src={navLogo} alt="" />
-              <p className="text-xs font-normal mt-6">Follow us</p>
+              <p className="text-xs font-normal mt-6">{t("Follow us")}</p>
               <div className="flex flex-row">
                 <img className="w-6" src={metaThreads} alt="" />
                 <img className="w-6 m-2" src={metaInstagram} alt="" />
@@ -31,13 +33,13 @@ const Footer: React.FC = () => {
               {/* colum 2 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="">
-                  <div className="font-bold ">Maestro DEX Automations</div>
+                  <div className="font-bold ">{t("Maestro DEX Automations")}</div>
                   <div>
                     <NavLink
                       className=" text-slate-700 hover:text-black"
                       to="/maestro"
                     >
-                      Get Started
+                      {t("Get Started")}
                     </NavLink>
                   </div>
                   <div>
@@ -45,7 +47,7 @@ const Footer: React.FC = () => {
                       className=" text-slate-700 hover:text-black"
                       to="/maestro"
                     >
-                      Subscription Information & Pricing
+                      {t("Subscription Information & Pricing")}
                     </NavLink>
                   </div>
                   <div>
@@ -53,49 +55,49 @@ const Footer: React.FC = () => {
                       className=" text-slate-700 hover:text-black"
                       to="/maestro"
                     >
-                      Referrals
+                      {t("Referrals")}
                     </NavLink>
                   </div>
                 </div>
 
                 <div className="">
-                  <div className="font-bold">Augmented reality</div>
+                  <div className="font-bold">{t("Augmented reality")}</div>
                   <div>
                     <NavLink className="text-xs nav-link" to="">
-                      Developers
+                      {t("Developers")}
                     </NavLink>
                   </div>
                   <div>
                     <NavLink className="text-xs nav-link" to="">
-                      Made for Satchel partner program
+                      {t("Made for Satchel partner program")}
                     </NavLink>
                   </div>
                   <div>
                     <NavLink className="text-xs nav-link" to="">
-                      Blog
+                      {t("Blog")}
                     </NavLink>
                   </div>
                 </div>
 
                 <div className=" ">
-                  <div className="font-bold ">Devolop and Design</div>
+                  <div className="font-bold ">{t("Devolop and Design")}</div>
                   <div>
                     <NavLink className="text-xs nav-link" to="">
-                      Get Started
+                      {t("Get Started")}
                     </NavLink>
                   </div>
                   <div>
                     <NavLink className="text-xs nav-link" to="">
-                      Pricing
+                      {t("Pricing")}
                     </NavLink>
                   </div>
                 </div>
 
                 <div className="">
-                  <div className="font-bold">About us</div>
+                  <div className="font-bold">{t("About us")}</div>
                   <div>
                     <NavLink className="text-xs nav-link" to="">
-                      About atem
+                      {t("About atem")}
                     </NavLink>
                   </div>
                 </div>
