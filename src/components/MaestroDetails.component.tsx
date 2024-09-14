@@ -24,24 +24,28 @@ const MaestroDetails: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 py-24 container-x"> 
 
       <div className="bg-blue-500 rounded-3xl text-center flex flex-col justify-end items-center p-6 h-[700px] mb-24 relative overflow-hidden">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          className="absolute inset-0 w-full h-full object-cover"
-          poster="https://atem-lives.b-cdn.net/maestro.jpg"
-        >
-          <source src='https://atem-lives.b-cdn.net/atem-maestro-BvbxDevy.mp4' type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="relative z-10 flex flex-col items-center mb-12">
+        <div className="absolute inset-0 w-full h-full bg-black opacity-50 z-10"></div>
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="https://atem-lives.b-cdn.net/maestro.jpg"
+          >
+            <source src='https://atem-lives.b-cdn.net/atem-maestro-BvbxDevy.mp4' type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="relative z-20 flex flex-col items-center mb-12">
           <p className="text-2xl w-1/2 font-bold text-black-500 uppercase py-3 text-white"></p>
           <h1 className="~text-4xl/6xl md:text-6xl font-bold mb-4 text-white md:w-">Simplifiy Automation.</h1>
         </div>
         <button
           onClick={togglePlay}
-          className="absolute bottom-4 right-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 transition-all duration-300"
+          className="absolute bottom-4 right-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 transition-all duration-300 z-20"
         >
           {isPlaying ? <FaPause /> : <FaPlay />}
         </button>
