@@ -22,7 +22,7 @@ const MaestroDetails: React.FC = () => {
   return (
     <section id="maestro-details" className="w-full px-4 sm:px-6 lg:px-8 pt-24">
       <div className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-16">
-        <div className="bg-blue-500 rounded-3xl text-center flex flex-col justify-end items-center p-4 sm:p-6 h-[400px] sm:h-[500px] lg:h-[700px] mb-8 sm:mb-12 lg:mb-16 relative overflow-hidden">
+        <div className="bg-blue-500 rounded-3xl text-center flex flex-col justify-end items-center p-4 md:p-6 h-[500px] md:h-[700px] mb-12 md:mb-24 relative overflow-hidden">
           <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-black via-transparent to-transparent opacity-20 z-10"></div>
           <div className="absolute inset-0 w-full h-full overflow-hidden">
             <video

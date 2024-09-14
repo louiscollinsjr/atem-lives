@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import localPosterSrc from '../assets/shape-explosion-5680034.jpg';
+import localVideoSrc from '../assets/shape-explosion-5680034.mp4';
 
 const ProductMaestro: React.FC = () => {
   const { t } = useTranslation();
@@ -47,12 +49,12 @@ const ProductMaestro: React.FC = () => {
             className="absolute inset-0 w-full h-full object-cover"
             poster={import.meta.env.MODE === 'production' 
             ? 'https://atem-lives.b-cdn.net/shape-explosion-5680034.jpg' 
-            : '../assets/shape-explosion-5680034.jpg'}
+            : localPosterSrc}
             
           >
             <source src={import.meta.env.MODE === 'production' 
             ? 'https://atem-lives.b-cdn.net/shape-explosion-5680034.mp4' 
-            : '../assets/shape-explosion-5680034.mp4'} type="video/mp4" />
+            : localVideoSrc} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="relative z-10 flex flex-col items-center mb-4 md:mb-8">
