@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => ({
   // Set base URL depending on mode
   base: mode === 'production' ? 'https://atem-lives.b-cdn.net/' : '/',
   build: {
+    outDir: 'dist',
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name].[hash].[ext]',
