@@ -30,6 +30,7 @@ const DesignSubscriptionService: React.FC = () => {
           loop
           muted
           className="absolute inset-0 w-full h-full object-cover"
+          poster="https://atem-lives.b-cdn.net/red-and-pink-neon-lines.jpg"
         >
           <source src='https://atem-lives.b-cdn.net/red-and-pink-neon-lines.mp4' type="video/mp4" />
           Your browser does not support the video tag.

@@ -27,6 +27,7 @@ const SplashDesign349: React.FC = () => {
         loop
         muted
         className="absolute inset-0 w-full h-full object-cover hidden md:block"
+          poster="https://atem-lives.b-cdn.net/triangle%20tunnel.jpg"
       >
         <source src='https://atem-lives.b-cdn.net/triangle%20tunnel.mp4' type="video/mp4" />
       </video>
