@@ -41,11 +41,13 @@ const ProductMaestro: React.FC = () => {
         <div className="bg-blue-500 rounded-3xl text-center flex flex-col justify-end items-center p-4 md:p-6 h-[500px] md:h-[700px] mb-12 md:mb-24 relative overflow-hidden">
           <video
             ref={videoRef}
-            loop
-            muted
-            playsInline
+            loop={true}
+            muted={true}
+            playsInline={true}
+            allowFullScreen={false}
             className="absolute inset-0 w-full h-full object-cover"
             poster="path/to/poster-image.jpg"
+            
           >
             <source src='https://atem-lives.b-cdn.net/shape-explosion-5680034.mp4' type="video/mp4" />
             Your browser does not support the video tag.
