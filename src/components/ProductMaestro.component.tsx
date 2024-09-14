@@ -45,7 +45,7 @@ const ProductMaestro: React.FC = () => {
             muted={true}
             playsInline={true}
             className="absolute inset-0 w-full h-full object-cover"
-            poster="path/to/poster-image.jpg"
+            poster="https://atem-lives.b-cdn.net/shape-explosion-5680034.jpg"
             
           >
             <source src='https://atem-lives.b-cdn.net/shape-explosion-5680034.mp4' type="video/mp4" />
