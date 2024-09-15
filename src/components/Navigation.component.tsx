@@ -155,7 +155,7 @@ const Navigation: React.FC = () => {
               </Link>
               <Link
                 className="block text-white hover:text-gray-300 text-3xl py-2"
-                to="#"
+                to="/satchel"
                 onClick={() => setIsMobileNavOpen(false)}
               >
                 Satchel AR
