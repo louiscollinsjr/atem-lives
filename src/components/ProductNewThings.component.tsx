@@ -69,7 +69,7 @@ const ProductNewThings: React.FC = () => {
             {data.posts.map((post: Post) => (
               <div key={post.slug}>
                 <div
-                  className="w-full h-[450px] sm:h-96 md:h-96 lg:h-[630px] rounded-3xl bg-cover bg-center relative"
+                  className="h-[450px] sm:h-96 md:h-96 lg:h-[630px] rounded-3xl bg-cover bg-center relative"
                   style={{ backgroundImage: `url(${post.coverImage.url})` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-700/40 to-transparent rounded-3xl"></div>

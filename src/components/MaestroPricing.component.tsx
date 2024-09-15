@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import React from 'react';
+import { useTranslation } from 'react-i18next'; 
 
 const MaestroPricing: React.FC = () => {
+  const { t } = useTranslation();
   const [isPro, setIsPro] = useState(false);
 
   const togglePlan = () => {
@@ -58,11 +60,10 @@ const MaestroPricing: React.FC = () => {
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-black tracking-wide">
-              Pricing built for businesses of all sizes
+              {t("Pricing built for businesses of all sizes")}
             </h2>
             <p className="max-w-md mx-auto mt-4 text-sm sm:text-base leading-relaxed text-gray-600 py-4">
-              Simple, transparent pricing that grows with you. Pause or cancel
-              at anytime.
+              {t("Simple, transparent pricing that grows with you. Pause or cancel at anytime.")}
             </p>
           </div>
 
@@ -71,8 +72,8 @@ const MaestroPricing: React.FC = () => {
             <div className="bg-black rounded-xl shadow-lg border border-gray-200">
               <div className="p-6 sm:p-12">
                 <h3 className="text-4xl sm:text-5xl font-semibold text-white font-spartan pt-2 w-full">
-                  Join
-                  <br /> design@atem
+                  {t("Join design@atem")}
+                  
                 </h3>
 
                 <div>
@@ -83,11 +84,10 @@ const MaestroPricing: React.FC = () => {
                   >
                     <div className="py-2">
                       <p className="text-lg sm:text-xl font-semibold pb-2 sm:pb-4">
-                        Book a 15-min intro call
+                        {t("Book a 15-min intro call")}
                       </p>
                       <p className="text-xs sm:text-sm">
-                        Learn more about how design@atem works and how it can
-                        help you.
+                        {t("Learn more about how design@atem works and how it can help you.")}
                       </p>
                     </div>
                   </NavLink>
@@ -99,9 +99,11 @@ const MaestroPricing: React.FC = () => {
                   >
                     <div className="py-2">
                       <p className="text-xl font-semibold pb-4">
-                        Refer a friend
+                        {t("Refer a friend")}
                       </p>
-                      <p className="text-sm">We appreciate your support!</p>
+                      <p className="text-sm">
+                        {t("We appreciate your support!")}
+                      </p>
                     </div>
                   </NavLink>
 
@@ -141,13 +143,14 @@ const MaestroPricing: React.FC = () => {
                               isPro ? 'text-white' : 'text-gray-700'
                             }`}
                           >
-                            Standard
+                            {t("Standard")}
                           </span>
                           <span
                             className={`flex-1 text-center ${
                               isPro ? 'text-gray-700' : 'text-white'
                             }`}
-                          >                            🚀 Pro
+                          >
+                            🚀 {t("Pro")}
                           </span>
                         </div>
                         <input
@@ -168,11 +171,11 @@ const MaestroPricing: React.FC = () => {
                         </p>
 
                         <span className="ml-2 text-lg text-gray-600">
-                          {plan.onetime ? 'One time fee' : '/m'}
+                          {plan.onetime ? 'One time fee' : t("/m")}
                         </span>
                       </div>
                       <p className="text-sm text-gray-600 py-2">
-                        {plan.description}
+                        {t(plan.description)}
                       </p>
                     </div>
                   )}
@@ -180,7 +183,7 @@ const MaestroPricing: React.FC = () => {
                   {plan.items && (
                     <>
                       <div className="h-[1px] bg-gray-300 my-4 sm:my-6 w-full"></div>
-                      <p className="text-sm my-2">What's included</p>
+                      <p className="text-sm my-2">{t("What's included")}</p>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 sm:gap-y-4 mt-4">
                         {plan.items.map((item, itemIndex) => (
                           <li key={itemIndex} className="inline-flex space-x-1">
@@ -197,7 +200,7 @@ const MaestroPricing: React.FC = () => {
                               />
                             </svg>
                             <span className="text-sm text-gray-900">
-                              {item}
+                              {t(item)}
                             </span>
                           </li>
                         ))}
@@ -212,18 +215,18 @@ const MaestroPricing: React.FC = () => {
                         title="Schedule a call with atem"
                         className="inline-flex items-center justify-center px-4 py-3 my-4 sm:my-12 w-full sm:w-auto text-white font-popins border border-transparent rounded-xl bg-black"
                       >
-                        {plan.CTA || 'Get Started'}
+                        {t(plan.CTA || "Get Started")}
                       </NavLink>
                     </div>
                     <div className="pl-0 sm:pl-4 mt-2 sm:mt-0">
                       <p className="text-black text-sm">
-                        or{' '}
+                        {t("or")}{' '}
                         <NavLink
                           to="https://calendly.com/louiscollinsjr/atem-intro"
                           title="Schedule a call with atem"
                           className="underline"
                         >
-                          book a call
+                          {t("book a call")}
                         </NavLink>
                       </p>
                     </div>

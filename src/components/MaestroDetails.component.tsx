@@ -3,8 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
 import localVideoSrc from '../assets/atem-maestro-BvbxDevy.mp4';
 import localPosterSrc from '../assets/maestro.jpg';
+import { useTranslation } from 'react-i18next';
+
 
 const MaestroDetails: React.FC = () => {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -44,8 +47,7 @@ const MaestroDetails: React.FC = () => {
           <div className="relative z-20 flex flex-col items-center mb-4">
             <p className="text-sm sm:text-base py-0 text-white uppercase"></p>
             <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold mb-2 sm:mb-4 text-white">
-              Simplify <br />
-              Automation.
+                  {t("Simplify Automation.")} 
             </h1>
           </div>
           <button
@@ -59,7 +61,7 @@ const MaestroDetails: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           <div className="space-y-4 sm:space-y-6">
             <h2 className="text-5xl py-12 sm:text-5xl lg:text-7xl font-semibold bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent sm:pb-12">
-              Automations that power your system health, effortlessly.
+              {t("Automations that power your system health, effortlessly.")}
             </h2>
             <NavLink to="https://calendly.com/louiscollinsjr/atem-intro">
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded flex items-center text-sm sm:text-base">
@@ -99,15 +101,15 @@ const MaestroDetails: React.FC = () => {
                 {
                   title: 'Staging & Reporting (optional)',
                   description:
-                    "if you provided access, we can stage the code, deploy, and offer detailed reports on the project's performance and progress.",
+                    "If you provided access, we can stage the code, deploy, and offer detailed reports on the project's performance and progress.",
                 },
               ].map((step, index) => (
                 <li key={index} className="mb-4 sm:mb-6">
                   <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                    {step.title}
+                    {t(step.title)}
                   </h3>
                   <p className="mt-1 sm:mt-2 text-gray-800">
-                    {step.description}
+                    {t(step.description)}
                   </p>
                 </li>
               ))}

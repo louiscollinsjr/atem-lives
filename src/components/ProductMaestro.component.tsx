@@ -81,7 +81,7 @@ const ProductMaestro: React.FC = () => {
           </div>
 
           <div className="pt-3 text-base md:text-lg tracking-wide text-gray-700">
-            <p>{t("Introducing Maestro Automations — Elevate your workflow with our easy and reliable subscription-based DEX services tailored to meet your evolving automation needs. The ultimate automation experience is here.")}</p>
+            <p>{t("Introducing Maestro Automations — Elevate your workflow with our easy and reliable subscription-based DEX services tailored to meet your evolving automation needs.The ultimate automation experience is here.")}</p>
           </div>
         </div>
       </div>

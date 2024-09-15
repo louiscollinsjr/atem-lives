@@ -1,7 +1,9 @@
 import React from "react";
 import BuildButtonList from "./BuildButtonList.component";
+import { useTranslation } from "react-i18next";
 
 const MaestroProductButtonList: React.FC = () => {
+    const { t } = useTranslation();
     const buttonLabels = [
         'Nexthink',
         '1e Platform',
@@ -27,7 +29,7 @@ const MaestroProductButtonList: React.FC = () => {
                 Maestro
               </h1>
               <p className="~text-lg/2xl tracking-wide justify-center">
-                Simplify Automation.
+                {t("Simplify Automation.")}
               </p>
             <div className="max-w-4xl flex pb-3 mt-12 items-center justify-center">
               <BuildButtonList buttons={buttonLabels} />
@@ -38,7 +40,7 @@ const MaestroProductButtonList: React.FC = () => {
               href="https://calendly.com/louiscollinsjr/atem-intro"
               className="bg-black hover:bg-slate-800 text-white text-lg px-4 py-1.5 rounded-full font-roboq"
             >
-              Schedule a call
+              {t("Schedule a call")}
             </a>
               </p>
           </div>

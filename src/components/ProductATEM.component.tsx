@@ -11,8 +11,12 @@ const ProductATEM: React.FC = () => {
         <h1 className='relative font-mono text-5xl md:text-5xl lg:text-9xl pb-6 md:pb-12 text-center break-words'>
           {t("We Build, Automate,and Elevate")}<span className="animate-blink">_</span>
         </h1>
+        <p className='text-center text-base font-playfair font-extralight max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-6 md:py-8 lg:py-10'>
+          {t("At Atem, we're developers specializing in creating standout digital solutions.")}
+          <span className='hidden md:inline'> {t("From web to mobile and AI, our team delivers solutions that enhance customer engagement and bring new ideas to life. We partner with businesses to improve and modernize their digital presence, driving value at every touchpoint.")}</span>
+        </p>
       </div>
-    </div>
+      </div>
   </section>
   );
 };
