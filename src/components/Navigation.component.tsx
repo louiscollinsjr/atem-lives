@@ -48,9 +48,9 @@ const Navigation: React.FC = () => {
             <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/satchel">
               Satchel AR
             </NavLink>
-            <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/atelabs">
+            {/* <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/atelabs">
               atem.Labs
-            </NavLink>
+            </NavLink> */}
           </div>
           <button
             className="md:hidden text-white text-2xl"
