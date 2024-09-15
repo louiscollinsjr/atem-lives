@@ -32,16 +32,10 @@ const MaestroDetails: React.FC = () => {
               muted
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
-              poster={import.meta.env.MODE === 'production' 
-                ? 'https://atem-lives.b-cdn.net/maestro.jpg' 
-                : localPosterSrc}
+              poster={localPosterSrc}
               >
               <source
-                src={
-                  import.meta.env.MODE === 'production'
-                    ? 'https://atem-lives.b-cdn.net/atem-maestro-BvbxDevy.mp4'
-                    : localVideoSrc
-                }
+                src={localVideoSrc}
                 type="video/mp4"
               />
               Your browser does not support the video tag.

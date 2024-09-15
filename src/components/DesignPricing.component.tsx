@@ -10,20 +10,6 @@ const DesignPricing: React.FC = () => {
   };
 
   const pricingPlans = [
-    // {
-    //   id: 'hometown',
-    //   name: 'Hometown Special',
-    //   description: 'Limited monthly availability offer for small to medium businesses in Romania.',
-    //   price: '€349',
-    //   onetime: true,
-    //   type:'Romania Special',
-    //   items: [
-    //     'One brand',
-    //     'Options for on-going updates',
-    //     'One time fee for small to medium businesses',
-
-    //   ],
-    // },
     {
       id: 'standard_pro',
       name: isPro ? 'Professional' : 'Standard',

@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import localPoster from '../assets/triangle%20tunnel.jpg';
+import localVideo from '../assets/triangle%20tunnel.mp4';
 
 import { useTranslation } from 'react-i18next';
 
@@ -27,9 +29,9 @@ const SplashDesign349: React.FC = () => {
         loop
         muted
         className="absolute inset-0 w-full h-full object-cover hidden md:block"
-          poster="https://atem-lives.b-cdn.net/triangle%20tunnel.jpg"
+          poster={localPoster}
       >
-        <source src='https://atem-lives.b-cdn.net/triangle%20tunnel.mp4' type="video/mp4" />
+        <source src={localVideo} type="video/mp4" />
       </video>
       
       <div className="container flex flex-col items-center justify-center h-[70vh] transition-all duration-800 mx-auto relative z-10">

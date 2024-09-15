@@ -33,9 +33,9 @@ const DesignSubscriptionService: React.FC = () => {
           loop
           muted
           className="absolute inset-0 w-full h-full object-cover"
-          poster={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/red-pink-neon-lines.jpg' : localPosterSrc}
+          poster={localPosterSrc}
         >
-          <source src={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/red-pink-neon-lines.mp4' : localVideoSrc} type="video/mp4" />
+          <source src={localVideoSrc} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="relative z-10 flex flex-col items-center mb-12">

@@ -5,7 +5,7 @@ const SplashSatchel: React.FC = () => {
     <section className="bg-gray-100 items-center justify-center">
       <div className='container flex flex-col items-center justify-center h-screen transition-all duration-800 mx-auto'>
         <div className="flex flex-col items-center justify-center p-12">
-          <h1 className="~text-[6rem]/[10rem] font-medium font-spartan tracking-tighter text-gray-900 items-center justify-center text-center uppercase tracking-widest">
+          <h1 className="~text-[6rem]/[10rem] font-medium font-spartan text-gray-900 items-center justify-center text-center uppercase tracking-widest">
      S❤️tchel.
           </h1>
           <p className="~text-xs/sm tracking-wide justify-center font-space text-center">

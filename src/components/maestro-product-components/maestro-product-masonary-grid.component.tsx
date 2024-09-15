@@ -44,47 +44,35 @@ const MasonaryGridCTA: React.FC = () => {
             <div className="grid grid-cols-7 gap-4">
               <div className="col-start-2 col-end-4 row-end-4 row-start-2">
                 <img
-                  src={
-                    import.meta.env.MODE === 'production'
-                      ? 'https://atem-lives.b-cdn.net/path/to/Image01.jpg'
-                      : Image01
-                  }
+                  src={Image01}
                   alt="Image 1"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
               <div className="col-start-4 col-end-6 row-end-4 row-start-1 ">
                 <img
-                  src={import.meta.env.MODE === 'production' 
-                    ? 'https://atem-lives.b-cdn.net/path/to/Image02.jpg' 
-                    : Image02}
+                  src={Image02}
                   alt="Image 2"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
               <div className="col-start-1 col-end-3 row-end-6 row-start-4">
                 <img
-                  src={import.meta.env.MODE === 'production' 
-                    ? 'https://atem-lives.b-cdn.net/path/to/Image03.jpg' 
-                    : Image03}
+                  src={Image03}
                   alt="Image 3"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
               <div className="col-start-5 col-end-7 row-end-6 row-start-4">
                 <img
-                  src={import.meta.env.MODE === 'production' 
-                    ? 'https://atem-lives.b-cdn.net/path/to/Image05.jpg' 
-                    : Image05}
+                  src={Image04}
                   alt="Image 4"
                   className="w-full h-auto rounded-xl"
                 />
               </div>
               <div className="col-start-3 col-end-5 row-end-7 row-start-4">
                 <img
-                  src={import.meta.env.MODE === 'production' 
-                    ? 'https://atem-lives.b-cdn.net/path/to/Image04.jpg' 
-                    : Image04}
+                  src={Image05}
                   alt="Image 5"
                   className="w-full h-auto rounded-xl"
                 />

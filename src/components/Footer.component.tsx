@@ -18,13 +18,13 @@ const Footer: React.FC = () => {
         <div className="max-w-screen-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full text-xs">
             <div className="text-black">
-              <img className="w-40" src={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/atem-logo-with-wings-black.svg' : navLogo} alt="atem company logo" />
+              <img className="w-40" src={navLogo} alt="atem company logo" />
               <p className="text-xs font-normal mt-6">{t("Follow us")}</p>
               <div className="flex flex-row">
-                <img className="w-6" src={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/metaThreads-icon.svg' : metaThreads} alt="metaThreads social media icon" />
-                <img className="w-6 m-2" src={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/metaInstagram-icon.svg' : metaInstagram} alt="metaInstagram social media icon" />
-                <img className="w-6 m-2" src={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/xTwitter-icon.svg' : xTwitter} alt="xTwitter social media icon" />
-                <img className="w-6 m-2" src={import.meta.env.PROD ? 'https://atem-lives.b-cdn.net/linkedIn-icon.svg' : linkedIn} alt="linkedIn social media icon" />
+                <img className="w-6" src={metaThreads} alt="metaThreads social media icon" />
+                <img className="w-6 m-2" src={metaInstagram} alt="metaInstagram social media icon" />
+                <img className="w-6 m-2" src={xTwitter} alt="xTwitter social media icon" />
+                <img className="w-6 m-2" src={linkedIn} alt="linkedIn social media icon" />
               </div>
             </div>
 

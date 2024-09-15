@@ -47,14 +47,9 @@ const ProductMaestro: React.FC = () => {
             muted={true}
             playsInline={true}
             className="absolute inset-0 w-full h-full object-cover"
-            poster={import.meta.env.MODE === 'production' 
-            ? 'https://atem-lives.b-cdn.net/shape-explosion-5680034.jpg' 
-            : localPosterSrc}
-            
+            poster={localPosterSrc}
           >
-            <source src={import.meta.env.MODE === 'production' 
-            ? 'https://atem-lives.b-cdn.net/shape-explosion-5680034.mp4' 
-            : localVideoSrc} type="video/mp4" />
+            <source src={localVideoSrc} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="relative z-10 flex flex-col items-center mb-4 md:mb-8">
