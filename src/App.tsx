@@ -3,6 +3,7 @@ import {  Route, Routes } from 'react-router-dom';
 import { SpotlightProvider } from './contexts/SpotlightContext.context';
 import Navigation from './components/Navigation.component';
 import { routes, defaultRoute } from './config/routes';
+import CookieConsent from './components/CookieConsent.Component';
 
 
 
@@ -23,6 +24,7 @@ const App: React.FC = () => {
             <Route path={defaultRoute.path} element={<defaultRoute.component />} />
           </Route>
         </Routes>
+        <CookieConsent />
       </SpotlightProvider>
   );
 };

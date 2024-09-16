@@ -9,13 +9,24 @@ import client from './ApolloClientSetup';
 import './i18next.ts';
 
 
+
+
+
+// Import the PostHog initialization function
+import { initPostHog } from './posthog.ts';
+
+// Initialize PostHog
+initPostHog();
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <ScrollToTop />
+      
       <ApolloProvider client={client}>
         <App />
       </ApolloProvider>
+     
     </BrowserRouter>
   </StrictMode>,
 )
