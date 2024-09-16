@@ -12,12 +12,12 @@ const SplashSatchel: React.FC = () => {
           At the core of our business lies a passion for crafting designs that inspire and ignite emotions in our clients and their customers. 
           </p> 
           <p className="justify-center pt-20">
-          <a
+          {/* <a
             href="https://calendly.com/louiscollinsjr/atem-intro"
             className="bg-black text-white text-xs px-3 py-1.5 rounded-full"
           >
             Learn more
-          </a>
+          </a> */}
         </p>
         </div>
        
