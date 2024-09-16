@@ -8,7 +8,7 @@ const ProductATEM: React.FC = () => {
     <div className="container mx-auto flex flex-col justify-center items-center min-h-screen px-4">
       <div className='w-full max-w-screen-2xl'>
         <h1 className="text-black text-3xl md:text-5xl font-bold pb-6 md:pb-12 text-center">atem.</h1>
-        <h1 className='relative font-mono text-5xl md:text-5xl lg:text-9xl pb-6 md:pb-12 text-center pr-4'>
+        <h1 className='relative font-mono text-[2.8rem] md:text-5xl lg:text-9xl pb-6 md:pb-12 text-center'>
           {t("We Build, Automate,and Elevate")}<span className="animate-blink">_</span>
         </h1>
         <p className='text-center text-base font-playfair font-extralight max-w-screen-lg mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-6 md:py-8 lg:py-10'>
