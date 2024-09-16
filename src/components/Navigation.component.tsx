@@ -160,13 +160,13 @@ const Navigation: React.FC = () => {
               >
                 Satchel AR
               </Link>
-              <Link
+              {/* <Link
                 className="block text-white hover:text-gray-300 text-3xl py-2"
                 to="#"
                 onClick={() => setIsMobileNavOpen(false)}
               >
                 atem.Labs
-              </Link>
+              </Link> */}
               <Link
                 className="block text-white hover:text-gray-300 text-3xl py-2"
                 to="/contact"
