@@ -7,7 +7,7 @@ const MaestroProductButtonList: React.FC = () => {
   return (
     <section className="bg-gray-100 items-center justify-center p-4 sm:p-10">
       <div className='container flex flex-col items-center justify-center min-h-[80vh] transition-all duration-[800ms] mx-auto'>
-        <div className="flex flex-col items-center justify-center p-4 sm:p-12">
+        <div className="flex flex-col items-center justify-center p-4 pt-20 sm:p-12">
           <h1 className="~text-[4rem]/[7rem] sm:~text-[6rem]/[10rem] font-medium font-spartan tracking-tighter text-gray-900 text-center uppercase">
           {t("L❤️cal. 349. Design.")}
           </h1>

@@ -1,21 +1,40 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaPlay, FaPause } from 'react-icons/fa';
 // Add this import at the top of your file
 import localVideoSrc from '../assets/red-and-pink-neon-lines.mp4';
 // Add this import
 import localPosterSrc from '../assets/red-and-pink-neon-lines.jpg';
+import { useTranslation } from 'react-i18next';
+
 
 const DesignSubscriptionService: React.FC = () => {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          await videoRef.current.play();
+          setIsPlaying(true);
+        } catch (error) {
+          console.error('Autoplay was prevented:', error);
+          setIsPlaying(false);
+        }
+      }
+    };
+
+    playVideo();
+  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
       } else {
-        videoRef.current.play();
+        videoRef.current.play().catch(() => console.log('Play was prevented'));
       }
       setIsPlaying(!isPlaying);
     }
@@ -26,7 +45,35 @@ const DesignSubscriptionService: React.FC = () => {
 
     <div className="max-w-7xl mx-auto px-4 py-24 container-x"> 
 
-      <div className="bg-blue-500 rounded-3xl text-center flex flex-col justify-end items-center p-6 h-[700px] mb-24 relative overflow-hidden">
+    <div className="bg-blue-500 rounded-3xl text-center flex flex-col justify-end items-center p-4 md:p-6 h-[500px] md:h-[700px] mb-12 md:mb-24 relative overflow-hidden">
+          <video
+            ref={videoRef}
+            loop={true}
+            muted={true}
+            playsInline={true}
+            className="absolute inset-0 w-full h-full object-cover"
+            poster={localPosterSrc}
+          >
+            <source src={localVideoSrc} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="relative z-10 flex flex-col items-center mb-4 md:mb-8">
+            <h1 className="text-4xl md:text-7xl font-bold mb-2 md:mb-4 text-white">
+              Maestro.
+            </h1>
+            <p className="text-sm md:text-base py-0 text-white">
+              {t("Simplify Automations")}
+            </p>
+          </div>
+          <button
+            onClick={togglePlay}
+            className="absolute bottom-4 right-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 transition-all duration-300"
+          >
+            {isPlaying ? <FaPause /> : <FaPlay />}
+          </button>
+        </div>
+
+      {/* <div className="bg-blue-500 rounded-3xl text-center flex flex-col justify-end items-center p-6 h-[700px] mb-24 relative overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
@@ -48,7 +95,7 @@ const DesignSubscriptionService: React.FC = () => {
         >
           {isPlaying ? <FaPause /> : <FaPlay />}
         </button>
-      </div>
+      </div> */}
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-2 pt-16">
         <div>
