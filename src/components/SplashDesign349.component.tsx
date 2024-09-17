@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { FaArrowCircleDown } from 'react-icons/fa';
+
 
 
 const SplashDesign349: React.FC = () => {
@@ -29,6 +31,7 @@ const SplashDesign349: React.FC = () => {
               {t('Let\'s create together')}
             </NavLink>
             <p className='text-white text-xs'>{t('or learn more below')}</p>
+            <p className='text-white text-3xl py-12'><FaArrowCircleDown /></p>
           </div>
         </div>
       </div>
