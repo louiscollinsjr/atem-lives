@@ -31,7 +31,7 @@ const Navigation: React.FC = () => {
           <div className="flex items-center">
             <NavLink to="/" end>
               <img
-                className={`w-20 invert ${isDarkBackground ? '' : 'md:invert-0'}`}
+                className={`w-28 sm:w-20 invert ${isDarkBackground ? '' : 'md:invert-0'}`}
                 src={navLogo}
                 alt="Logo"
                 onClick={() => setIsMobileNavOpen(false)}
