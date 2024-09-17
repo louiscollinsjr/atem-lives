@@ -68,7 +68,7 @@ const GetClientInfo: React.FC = () => {
                 {errors.email && <span>{errors.email.message}</span>}
               </div>
               <div className="sm:col-span-2 pt-4">
-                <button disabled
+                <button 
                   className="border px-4 py-2 rounded-md w-full text-base text-white bg-black font-popins tracking-wider"
                   type="submit"
                 >
