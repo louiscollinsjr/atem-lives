@@ -8,6 +8,7 @@ import { useWizard } from 'react-use-wizard';
 
 
 
+
 const schema = yup.object().shape({
   firstName: yup.string().optional(), //required('First name is required'),
   lastName: yup.string().optional(), //required('Last name is required'),
