@@ -35,11 +35,9 @@ const GetClientInfo: React.FC = () => {
     <div className='mx-auto max-w-screen-lg'>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="text-leftp-4 p-8 md:p-12 pb-0">
-          <h1 className="text-left text-3xl font-inter tracking-wide py-4">Let's get started</h1>
+          <h1 className="text-left text-3xl font-inter tracking-wide py-4">Let’s get started on our design journey!</h1>
           <p className="text-left text-sm text-gray-500 font-popins">
-            Let's get started with building your new website! Please go through
-            the onboarding steps to help us understand your goals and
-            preferences.
+          Complete the onboarding steps to share your goals and preferences, and together, we’ll create something amazing.
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-4 py-8">
@@ -74,24 +72,23 @@ const GetClientInfo: React.FC = () => {
                 >
                   Next
                 </button>
-                <p className="text-center font-bold text-red-500 font-popins text-sm pt-8">We begin taking submissions October 2024</p>
-                <p className="text-center text-blue-700 text-sm pt-8">
-                  <NavLink to="/design349">
-                    Back to product details
-                  </NavLink>
-                </p>
-                
               </div>
             </div>
           </form>
         </div>
         <div className="p-8 pb-16 md:p-12">
           <h1 className="text-left text-3xl font-inter tracking-wide py-4">
-            Experience the future of design.
+            Building together.
           </h1>
           <p className="text-left text-gray-500 font-popins text-sm">
-            We're excited to have you on board! Let's get started with your
-            website design journey.
+          We’re thrilled to have you join our mission to support our community with top-tier web design at an unbeatable price. 
+          </p>
+          <p className="text-left text-gray-500 font-popins text-sm pt-8">
+          This special offer is all about empowering local businesses and individuals to grow through thoughtful design and development.Your participation helps us build something greater together.
+          </p>
+
+          <p className="text-left text-gray-500 font-popins text-sm pt-8">
+          Your participation helps us build something greater together.
           </p>
         </div>
       </div>
