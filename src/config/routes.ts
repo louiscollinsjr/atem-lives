@@ -26,7 +26,7 @@ export interface RouteConfig {
     { path: '/design', spotlightText: 'Design and Development Spotlight', isDarkBackground: false, component: Design },
     { path: '/satchel', spotlightText: 'Satchel Spotlight', isDarkBackground: false,  component: Satchel },
     { path: '/design349', spotlightText: '349.Design. Spotlight', isDarkBackground: true,  component: Design349 },
-    { path: '/onboarding', spotlightText: '349.Design. Spotlight', isDarkBackground: false,  component: OnBoardingWizard },
+    { path: '/onboarding', spotlightText: '349 Design Onboarding', isDarkBackground: false,  component: OnBoardingWizard },
     { path: '/contact', spotlightText: 'Contact', isDarkBackground: false,  component: HomeContactForm },
     { path: '*', spotlightText: '404 Page Not Found', isDarkBackground: false,  component: NotFoundPage},
   ];

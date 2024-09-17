@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 const DesignServices: React.FC = () => {
   return (
     <section className="bg-[#1d1d1f] text-white pt-24">
-      <div className="max-w-7xl mx-auto md:px-4 py-8 text-left px-12">
-        <h1 className="~text-5xl/7xl font-semi mb-4 md:w-1/2 pb-4 font-medium bg-gradient-to-r from-lime-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
+      <div className="max-w-7xl mx-auto px-4 py-8 text-left">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-4 md:w-full lg:w-1/2 pb-4 bg-gradient-to-r from-lime-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
           Stunning, Functional Web Design Solutions.
         </h1>
-        <p className="mb-8 md:w-3/4 tracking-wide text-xl leading-8 font-roboto font-light">
+        <p className="mb-8 w-full md:w-3/4 tracking-wide text-lg md:text-xl leading-8 font-roboto font-light">
           Our web design process ensures your website or app reflects your
           brand’s strategy, visual identity, and unique voice. By crafting a
           cohesive online presence, we help you build trust with your audience
@@ -17,12 +17,12 @@ const DesignServices: React.FC = () => {
           experience that truly represents your brand and drives success.
         </p>
 
-        <div className="grid grid-cols-1 grid-rows-4 gap-12 pt-12">
+        <div className="grid grid-cols-1 gap-12 pt-12">
           <div>
-            <h2 className="text-4xl font-semibold mb-4 bg-gradient-to-r from-lime-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 bg-gradient-to-r from-lime-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
               Stunning Design Meets Front-End Precision
             </h2>
-            <p className="md:w-3/4 text-xl tracking-wide font-bold">
+            <p className="w-full md:w-3/4 text-lg md:text-xl tracking-wide font-bold">
               We start by understanding your users and their needs to ensure
               your website is not only beautiful but easy to navigate and
               inclusive for all.
@@ -51,10 +51,10 @@ const DesignServices: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="text-4xl font-semibold mb-4 bg-gradient-to-r from-lime-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 bg-gradient-to-r from-lime-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
               Crafting the Ultimate User Experience
             </h2>
-            <p className="md:w-3/4 text-xl tracking-wide font-bold">
+            <p className="w-full md:w-3/4 text-lg md:text-xl tracking-wide font-bold">
               Our design team brings your brand to life with visuals and
               interactivity that captivate, while our front-end developers
               ensure it all works seamlessly.
@@ -84,10 +84,10 @@ const DesignServices: React.FC = () => {
           </div>
 
           <div>
-            <h2 className="text-4xl font-semibold mb-4 bg-gradient-to-r from-lime-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 bg-gradient-to-r from-lime-500 via-amber-400 to-orange-300 bg-clip-text text-transparent">
               Powered by Leading Technology
             </h2>
-            <p className="md:w-3/4 text-xl tracking-wide font-bold">
+            <p className="w-full md:w-3/4 text-lg md:text-xl tracking-wide font-bold">
               We use cutting-edge technology to deliver fast, scalable websites
               that perform. Whether it’s a custom-coded site or a CMS solution,
               we ensure you’re set up for success.
@@ -118,7 +118,7 @@ const DesignServices: React.FC = () => {
             </ul>
           </div>
           <div>
-            <p className="text-xl font-light tracking-wide">
+            <p className="text-lg md:text-xl font-light tracking-wide">
               <b>Ready to Elevate Your Digital Presence?</b> Our approach combines
               thoughtful design with powerful technology to create a website
               that not only looks great but drives results.
