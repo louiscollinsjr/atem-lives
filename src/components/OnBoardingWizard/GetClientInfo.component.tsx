@@ -33,15 +33,16 @@ const GetClientInfo: React.FC = () => {
   };
 
   return (
-    <div className='mx-auto max-w-screen-lg'>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="text-leftp-4 p-8 md:p-12 pb-0">
-          <h1 className="text-left text-3xl font-inter tracking-wide py-4">Let’s get started on our design journey!</h1>
+    <section className='mx-auto max-w-screen-lg'>
+    <div className='mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20 mb-16'>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="text-left p-4 sm:p-6 md:p-8">
+          <h1 className="text-left text-2xl sm:text-3xl font-inter tracking-wide py-4">Let’s get started on our design journey!</h1>
           <p className="text-left text-sm text-gray-500 font-popins">
           Complete the onboarding steps to share your goals and preferences, and together, we’ll create something amazing.
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 gap-y-4 py-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 gap-y-4 py-6">
               <div>
                 <input
                   className="p-2 border border-gray-300 w-full text-sm rounded-md"
@@ -66,7 +67,7 @@ const GetClientInfo: React.FC = () => {
                 />
                 {errors.email && <span>{errors.email.message}</span>}
               </div>
-              <div className="md:col-span-2 pt-6">
+              <div className="sm:col-span-2 pt-4">
                 <button disabled
                   className="border px-4 py-2 rounded-md w-full text-base text-white bg-black font-popins tracking-wider"
                   type="submit"
@@ -77,8 +78,8 @@ const GetClientInfo: React.FC = () => {
             </div>
           </form>
         </div>
-        <div className="p-8 pb-16 md:p-12">
-          <h1 className="text-left text-3xl font-inter tracking-wide py-4">
+        <div className="p-4 sm:p-6 md:p-8">
+          <h1 className="text-left text-2xl sm:text-3xl font-inter tracking-wide py-4">
             Building together.
           </h1>
           <p className="text-left text-gray-500 font-popins text-sm">
@@ -94,6 +95,7 @@ const GetClientInfo: React.FC = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 
