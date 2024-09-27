@@ -49,10 +49,10 @@ const GetClientInfo: React.FC = () => {
     <section className="w-full mx-auto px-4 sm:px-8">
       <div className="sm:px-6 lg:px-8 mb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-x-14">
-          <div className="@container mx-auto">
+          <div className="@container">
             <div className="sm:pt-6">
               <h1 className="text-left text-xs sm:text-4xl md:text-sm font-roboto tracking-wide px-1 pb-2">Local.349.Design</h1>
-              <h1 className="text-left text-4xl sm:text-4xl md:text-7xl font-light font-roboto tracking-normal">
+              <h1 className="text-left text-4xl sm:text-4xl md:text-7xl font-light font-roboto tracking-normal w-[32rem]">
                 Building for{' '}
                 <span className="bg-gradient-to-r from-purple-800 via-blue-700 to-teal-500 bg-clip-text text-transparent">
                 {' '}our community.
