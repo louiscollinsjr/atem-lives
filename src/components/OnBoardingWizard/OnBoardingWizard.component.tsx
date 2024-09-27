@@ -10,7 +10,7 @@ import { FormDataProvider } from '../../contexts/FormDataContext';
 
 const OnBoardingWizard: React.FC = () => {
   return (
-    <section className='w-full min-h-screen flex items-center justify-center bg-gray-50 pt-32 sm:py-40'>
+    <section className='w-full min-h-screen flex items-center justify-center bg-gray-50 p-2 pt-32 sm:py-40'>
       <div className="container max-w-screen-2xl mx-auto w-full">
         <FormDataProvider>
         <Wizard>
