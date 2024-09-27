@@ -48,7 +48,7 @@ const GetClientInfo: React.FC = () => {
   return (
     <section className="w-full mx-auto px-4 sm:px-8">
       <div className="sm:px-6 lg:px-8 mb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-x-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-x-14">
           <div className="@container mx-auto">
             <div className="sm:hidden sm:w-96">
               <ProgressIndicator />
@@ -64,7 +64,7 @@ const GetClientInfo: React.FC = () => {
                   our community.
                 </span>
               </h1>
-              <p className="text-left text-gray-800 font-light sm:w-[32rem] text-base pt-2 sm:pt-4">
+              <p className="text-left text-gray-800 font-light w-full sm:w-[32rem] text-base pt-2 sm:pt-4">
                 We're thrilled to have you join our mission to support our
                 community with top-tier web design at an unbeatable price.{' '}
                 <span className="hidden sm:inline">
