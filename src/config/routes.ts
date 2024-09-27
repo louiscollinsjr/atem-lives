@@ -16,7 +16,7 @@ export interface RouteConfig {
   import Design349 from '../components/Design349GetStarted.component';
   import OnBoardingWizard from '../components/OnBoardingWizard/OnBoardingWizard.component';
   import HomeContactForm from '../components/HomeContactForm.component';
- import NotFoundPage from '../components/NotFound.component';
+  import NotFoundPage from '../components/NotFound.component';
 
 
 
