@@ -18,11 +18,10 @@ const schema = yup.object().shape({
 // designAdditionalNotes?: string;
 
 interface GetDesignInfo {
-  designStyleOptions: string[];
-  designVisualOptions: string[];
+  designStyleOptions?: (string | undefined)[];
+  designVisualOptions?: (string | undefined)[];
   designAdditionalNotes?: string;
 }
-
 
 const GetDesignInfo: React.FC = () => {
   //const { updateFormData } = useFormData();
@@ -45,10 +44,12 @@ const GetDesignInfo: React.FC = () => {
   });
 
   const onSubmit = (data: GetDesignInfo) => {
-    // Merge the new data with the existing form data
-    const updatedFormData = { ...formData, ...data };
-    updateFormData(updatedFormData);
-    console.log('Updated form data:', updatedFormData);
+    const filteredData = {
+      ...data,
+      designStyleOptions: data.designStyleOptions?.filter((option): option is string => option !== undefined) || [],
+      designVisualOptions: data.designVisualOptions?.filter((option): option is string => option !== undefined) || [],
+    };
+    updateFormData(filteredData);
     nextStep();
   };
 

@@ -11,44 +11,32 @@ import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase/config';
 
 
-
-const schema = yup.object().shape({
+const schema: yup.ObjectSchema<GetProjectScope> = yup.object().shape({
   designMultilingualSupport: yup.string().required('Please select an option'),
-  designLanguages: yup.array().when('designMultilingualSupport', {
-    is: (val: string) => val === 'yes',
-    then: () => yup.array().min(1, 'Please select at least one language'),
-    otherwise: () => yup.array()
-  }),  
-  designBrandAssets: yup.array().min(1, 'Please select at least one brand asset'),
+  designLanguages: yup.array().of(yup.string().required()).defined(),
+  designBrandAssets: yup.array().of(yup.string().required()).defined(),
   designBrandUpdateOpenness: yup.string().required('Please select an option'),
   designContentReadiness: yup.string().required('Please select an option'),
-  designContentAssistanceAreas: yup.array().min(1, 'Please select at least one content assistance area'),
+  designContentAssistanceAreas: yup.array().of(yup.string().required()).defined(),
   designContentStrategy: yup.string().required('Please select an option'),
 });
-
-//   designMultilingualSupport: string;
-//   designlanguages?: string[];
-//   designBrandAssets?: string[];
-//   designBrandUpdateOpenness: string;
-//   designContentReadiness: string;
-//   designContentAssistanceAreas?: string[];
-//   designContentStrategy: string;
 
 interface GetProjectScope {
   designMultilingualSupport: string;
   designLanguages: string[];
-  designBrandAssets?: string[];
+  designBrandAssets: string[];
   designBrandUpdateOpenness: string;
   designContentReadiness: string;
-  designContentAssistanceAreas?: string[];
+  designContentAssistanceAreas: string[];
   designContentStrategy: string;
 }
+
 const GetProjectScope: React.FC = () => {
   const { formData, updateFormData } = useFormData();
   const { nextStep, previousStep } = useWizard();
 
 
-  const { control, handleSubmit, watch, formState: { errors } } = useForm({
+  const { control, handleSubmit, watch, formState: { errors } } = useForm<GetProjectScope>({
     resolver: yupResolver(schema),
     defaultValues: {
       designMultilingualSupport: '',
