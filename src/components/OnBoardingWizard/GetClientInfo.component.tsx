@@ -53,7 +53,7 @@ const GetClientInfo: React.FC = () => {
             <div className="sm:hidden sm:w-96">
               <ProgressIndicator />
             </div>
-            <div className="sm:pt-6 bg-gray-100 p-4 sm:p-12 rounded-lg">
+            <div className="sm:pt-6 bg-gray-100 p-4 py-8 sm:p-12 rounded-lg sm:rounded-none sm:bg-gray-50">
               <h1 className="text-left text-xs sm:text-4xl md:text-sm font-roboto tracking-wide px-1 pb-2">
                 Local.349.Design
               </h1>
