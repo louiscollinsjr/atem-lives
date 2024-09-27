@@ -90,36 +90,36 @@ const GetClientInfo: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 gap-y-4 py-6">
                   <div>
                     <input
-                      className="p-3 border border-gray-300 w-full text-sm rounded-md"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientFirstName')}
                       placeholder="First name"
                     />
                     {errors.clientFirstName && (
-                      <span className="text-red-500 text-sm">
+                      <span className="text-red-500 text-base">
                         {errors.clientFirstName.message}
                       </span>
                     )}
                   </div>
                   <div>
                     <input
-                      className="p-3 border border-gray-300 w-full text-sm rounded-md"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientLastName')}
                       placeholder="Last name"
                     />
                     {errors.clientLastName && (
-                      <span className="text-red-500 text-sm">
+                      <span className="text-red-500 text-base">
                         {errors.clientLastName.message}
                       </span>
                     )}
                   </div>
                   <div className="md:col-span-2">
                     <input
-                      className="p-3 border border-gray-300 w-full text-sm rounded-md"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientEmail')}
                       placeholder="Email address"
                     />
                     {errors.clientEmail && (
-                      <span className="text-red-500 text-sm">
+                      <span className="text-red-500 text-base">
                         {errors.clientEmail.message}
                       </span>
                     )}
