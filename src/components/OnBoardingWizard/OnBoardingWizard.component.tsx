@@ -1,12 +1,12 @@
 import React from 'react';
 import { Wizard } from 'react-use-wizard';
-
 import GetClientInfo from './GetClientInfo.component';
 import GetDesignInfo from './GetDesignInfo.component';
 import GetGoalInfo from './GetGoalInfo.component';
 import GetProjectScope from './GetProjectScope.component';
 import ShowConfirmationInfo from './ShowConfirmationInfo.component';
 import { FormDataProvider } from '../../contexts/FormDataContext';
+
 
 const OnBoardingWizard: React.FC = () => {
   return (

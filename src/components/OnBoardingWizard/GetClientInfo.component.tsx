@@ -50,14 +50,15 @@ const GetClientInfo: React.FC = () => {
       <div className="sm:px-6 lg:px-8 mb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-x-14">
           <div className="@container mx-auto">
-            <div className="sm:pt-8">
-              <h1 className="text-left text-4xl sm:text-4xl md:text-6xl font-light font-roboto tracking-normal">
+            <div className="sm:pt-6">
+              <h1 className="text-left text-xs sm:text-4xl md:text-sm font-roboto tracking-wide px-1 pb-2">Local.349.Design</h1>
+              <h1 className="text-left text-4xl sm:text-4xl md:text-7xl font-light font-roboto tracking-normal">
                 Building for{' '}
                 <span className="bg-gradient-to-r from-purple-800 via-blue-700 to-teal-500 bg-clip-text text-transparent">
                 {' '}our community.
                 </span>
               </h1>
-              <p className="text-left text-gray-700 font-light sm:w-[32rem] text-base pt-4">
+              <p className="text-left text-gray-800 font-light sm:w-[32rem] text-base pt-2 sm:pt-4 px-1">
                 We're thrilled to have you join our mission to support our
                 community with top-tier web design at an unbeatable price.{' '}
                 <span className="hidden sm:inline">
@@ -75,7 +76,7 @@ const GetClientInfo: React.FC = () => {
               <div className="md:block sm:w-96">
                 <ProgressIndicator />
               </div>
-              <p className="text-left text-gray-700 font-light sm:w-[32rem] text-base">
+              <p className="text-left text-gray-800 font-light sm:w-[32rem] text-base">
                 <b>Let's get started on our design journey!</b> Complete the onboarding steps to share your vision, goals, and preferences. Together, we’ll craft something truly amazing.
               </p>
               <form onSubmit={handleSubmit(onSubmit)}>
