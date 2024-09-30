@@ -1,16 +1,18 @@
 import React from 'react';
 import { Wizard } from 'react-use-wizard';
-
 import GetClientInfo from './GetClientInfo.component';
 import GetDesignInfo from './GetDesignInfo.component';
 import GetGoalInfo from './GetGoalInfo.component';
 import GetProjectScope from './GetProjectScope.component';
 import ShowConfirmationInfo from './ShowConfirmationInfo.component';
+import { FormDataProvider } from '../../contexts/FormDataContext';
+
 
 const OnBoardingWizard: React.FC = () => {
   return (
-    <section className='w-full min-h-screen flex items-center justify-center bg-white pt-4 sm:px-10'>
-      <div className="container mx-auto max-w-screen-lg w-full sm:border sm:border-gray-300 rounded-xl sm:p-6 bg-white">
+    <section className='w-full min-h-screen flex items-center justify-center bg-gray-50 p-2 pt-24 sm:py-40'>
+      <div className="container max-w-screen-2xl mx-auto w-full">
+        <FormDataProvider>
         <Wizard>
           <GetClientInfo key="getClientInfo" />
           <GetGoalInfo key="getGoalInfo" />
@@ -18,6 +20,7 @@ const OnBoardingWizard: React.FC = () => {
           <GetProjectScope key="getProjectScope" />
           <ShowConfirmationInfo key="showConfirmationInfo" />
         </Wizard>
+        </FormDataProvider>
       </div>
     </section>
   );

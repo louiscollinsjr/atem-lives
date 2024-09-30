@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Assuming you're using React Router
 
-const NotFoundPage: React.FC = () => {
+const NotFound: React.FC = () => {
   const navigate = useNavigate();
 
   const goBackHome = () => {
@@ -21,23 +21,8 @@ const NotFoundPage: React.FC = () => {
         className="px-6 py-3 bg-black text-white text-lg font-medium rounded-md hover:bg-blue-700 transition duration-300 ease-in-out">
         Go Back Home
       </button>
-      
-      {/* <div className="mt-8">
-        <p className="text-gray-500">Or, you can explore:</p>
-        <ul className="flex space-x-6 mt-4">
-          <li>
-            <a href="/about" className="text-blue-600 hover:underline">About Us</a>
-          </li>
-          <li>
-            <a href="/services" className="text-blue-600 hover:underline">Our Services</a>
-          </li>
-          <li>
-            <a href="/contact" className="text-blue-600 hover:underline">Contact</a>
-          </li>
-        </ul>
-      </div> */}
     </div>
   );
 };
 
-export default NotFoundPage;
+export default NotFound;
