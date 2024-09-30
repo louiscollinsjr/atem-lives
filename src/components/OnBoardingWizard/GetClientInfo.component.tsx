@@ -64,7 +64,7 @@ const GetClientInfo: React.FC = () => {
                   our community.
                 </span>
               </h1>
-              <p className="text-left text-gray-800 font-light w-full sm:w-[32rem] text-base pt-2 sm:pt-4">
+              <p className="text-left text-gray-800 font-light w-full sm:w-[32rem] text-base pt-4 sm:pt-4">
                 We're thrilled to have you join our mission to support our
                 community with top-tier web design at an unbeatable price.{' '}
                 <span className="hidden sm:inline">

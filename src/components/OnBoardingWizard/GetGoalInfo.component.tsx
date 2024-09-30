@@ -71,37 +71,37 @@ const GetGoalInfo: React.FC = () => {
     {
       id: 'brand',
       label: 'Increase brand awareness',
-      description: '(Simple, uncluttered design with a focus on white space)',
+      description: '(Get your name out there and grow your audience)',
     },
     {
       id: 'leads',
       label: 'Generate leads/sales',
-      description: '(Simple, uncluttered design with a focus on white space)',
+      description: '(Convert visitors into customers or clients)',
     },
     {
       id: 'info',
       label: 'Provide information/resources',
-      description: '(Simple, uncluttered design with a focus on white space)',
+      description: '(Offer helpful content to educate or inform your audience)',
     },
     {
       id: 'showcase',
       label: 'Showcase portfolio/products',
-      description: '(Simple, uncluttered design with a focus on white space)',
+      description: '(Display your work or products in the best light)',
     },
     {
       id: 'service',
       label: 'Improve customer service',
-      description: '(Simple, uncluttered design with a focus on white space)',
+      description: '(Help customers find answers or support quickly)',
     },
     {
       id: 'engagement',
       label: 'Build community engagement',
-      description: '(Simple, uncluttered design with a focus on white space)',
+      description: '(Create a space for interaction and connection)',
     },
     {
       id: 'expertise',
       label: 'Establish expertise in the field',
-      description: '(Simple, uncluttered design with a focus on white space)',
+      description: '(Position yourself as a leader in your industry)',
     },
   ];
 
@@ -212,8 +212,8 @@ const GetGoalInfo: React.FC = () => {
                         className=" mt-1 w-6 h-6 cursor-pointer form-checkbox text-blue-600 rounded-md border-gray-300 focus:ring-blue-500 transition duration-150 ease-in-out"
                       />
                       <label htmlFor={goal.id}>
-                        {goal.label} <br />
-                        <span className="text-sm font-extralight">
+                        {goal.label} {' '}
+                        <span className="text-xs font-extralight inline">
                           {goal.description}
                         </span>
                       </label>
