@@ -209,7 +209,7 @@ const GetGoalInfo: React.FC = () => {
                         value={goal.id}
                         {...register('objectivesPrimaryGoals')}
                         onChange={handleGoalChange}
-                        className=" mt-1 w-6 h-6 cursor-pointer form-checkbox text-blue-600 rounded-md border-gray-300 focus:ring-blue-500 transition duration-150 ease-in-out"
+                        className="mt w-6 h-6 cursor-pointer form-checkbox text-blue-600 rounded-md border-gray-300 focus:ring-blue-500 transition duration-150 ease-in-out"
                       />
                       <label htmlFor={goal.id}>
                         {goal.label} {' '}

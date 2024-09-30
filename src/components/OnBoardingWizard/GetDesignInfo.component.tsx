@@ -89,103 +89,103 @@ const GetDesignInfo: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mx-auto max-w-screen-lg">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="p-4 sm:pr-10">
-        
-          <div className="md:hidden mb-4">
-            <ProgressIndicator/>
-          </div>
-          <h1 className="text-2xl font-inter tracking-wide mb-2  pt-12">
-          What are your design preferences?
-          </h1>
-          <p className="text-sm text-gray-500 font-popins mb-2">
-          Let your creativity shine! Share your design preferences—colors, styles, or inspirations that reflect your vision.</p>
-          
-          <p className="text-sm text-gray-500 font-popins mb-2 pt-4"> Whether you love a modern, minimalist look or something more bold and vibrant, your input will help us craft a design that feels uniquely yours.
-          </p>
-          
-        </div>
-        <div className="p-4">
-          <div className="hidden md:block mb-4">
-            <ProgressIndicator/>
-          </div>
-          <p className="text-sm text-gray-500 font-popins mb-4">
-            
-          </p>
-          
-          
-          <div className="mb-4 text-sm">
-            <p className="font-semibold mb-2">What design style best fits your vision?</p>
-            {designStyleOptions.map(goal => (
-              <div key={goal.id} className="flex items-center mb-2 text-gray-700">
-                <input
-                  type="checkbox"
-                  id={goal.id}
-                  value={goal.id}
-                    {...register('designStyleOptions')}
-                  onChange={handleDesignStyleChange}
-                  className="mr-2"
-                />
-                <label htmlFor={goal.id}>{goal.label} <br/><span className='text-xs font-extralight'>{goal.description}</span></label>
+    <section className="w-full mx-auto px-4 sm:px-8">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="sm:px-6 lg:px-8 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-x-14">
+            <div className="@container">
+            <div className="sm:hidden mb-4">
+                  <ProgressIndicator />
+                </div>
+              <div className="sm:pt-6">
+                <h1 className="text-left text-xs sm:text-4xl md:text-sm font-roboto tracking-wide px-1 pb-2">
+                  Local.349.Design
+                </h1>
+                <h1 className="text-left text-4xl sm:text-4xl md:text-6xl font-light font-roboto tracking-normal sm:w-[32rem]">
+                  What is your {' '}
+                  <span className="bg-gradient-to-r from-purple-800 via-blue-700 to-teal-500 bg-clip-text text-transparent">
+                    {' '}
+                    design style?
+                  </span>
+                </h1>
+                <p className="text-left text-gray-800 font-light sm:w-[32rem] text-base pt-2 sm:pt-4 px-1">
+                Let your creativity shine! Share your design preferences—colors, styles, or inspirations that reflect your vision. Whether you love a modern, minimalist look or something more bold and vibrant, your input will help us craft a design that feels uniquely yours.</p>
               </div>
-            ))}
-            {errors.designStyleOptions && <p className="text-red-500 text-sm mt-1">{errors.designStyleOptions.message}</p>}
-          </div>
-
-          <div className="mb-4 text-sm">
-            <p className="font-semibold mb-2">What kind of visual focus do you prefer for your website?</p>
-            {visualFocusOptions.map(goal => (
-              <div key={goal.id} className="flex items-center mb-2 text-gray-700">
-                <input
-                  type="checkbox"
-                  id={goal.id}
-                  value={goal.id}
-                  {...register('designVisualOptions')}
-                  onChange={handleVisualStyleChange}
-                  className="mr-2"
-                />
-                <label htmlFor={goal.id}>{goal.label}<br/><span className='text-xs font-extralight'>{goal.description}</span></label>
               </div>
-            ))}
-            {errors.designVisualOptions && <p className="text-red-500 text-sm mt-1">{errors.designVisualOptions.message}</p>}
+              <div className="">
+                <div className="hidden md:block mb-4">
+                  <ProgressIndicator />
+                </div>
+
+                <div className="mb-8 text-base">
+        <p className="font-semibold mb-2">What design style best fits your vision?</p>
+        {designStyleOptions.map(goal => (
+          <div key={goal.id} className="flex items-start space-x-3 mb-4">
+            <input
+              type="checkbox"
+              id={goal.id}
+              value={goal.id}
+                {...register('designStyleOptions')}
+              onChange={handleDesignStyleChange}
+              className=" mt w-6 h-6 cursor-pointer form-checkbox text-blue-600 rounded-md border-gray-300 focus:ring-blue-500 transition duration-150 ease-in-out"
+            />
+            <label htmlFor={goal.id}>{goal.label} {' '} <span className='text-xs font-extralight inline'>{goal.description}</span></label>
           </div>
+        ))}
+        {errors.designStyleOptions && <p className="text-red-500 text-sm mt-1">{errors.designStyleOptions.message}</p>}
+      </div>
 
-
-
-
-          <div className="mb-4">
-        <label htmlFor="designAdditionalNotes" className="block font-semibold mb-2 text-sm">
-        Which websites inspire your vision? Share examples!
-        </label>
-        <textarea
-          id="designAdditionalNotes"
-          {...register('designAdditionalNotes')}
-          className="w-full p-2 border rounded text-gray-700 text-sm"
-          rows={4}
-        />
+      <div className="mb-8 text-base">
+        <p className="font-semibold mb-2">What kind of visual focus do you prefer for your website?</p>
+        {visualFocusOptions.map(goal => (
+          <div key={goal.id} className="flex items-start space-x-3 mb-4">
+            <input
+              type="checkbox"
+              id={goal.id}
+              value={goal.id}
+              {...register('designVisualOptions')}
+              onChange={handleVisualStyleChange}
+               className=" mt w-6 h-6 cursor-pointer form-checkbox text-blue-600 rounded-md border-gray-300 focus:ring-blue-500 transition duration-150 ease-in-out"
+            />
+            <label htmlFor={goal.id}>{goal.label} {' '}<span className='text-xs font-extralight'>{goal.description}</span></label>
+          </div>
+        ))}
+        {errors.designVisualOptions && <p className="text-red-500 text-sm mt-1">{errors.designVisualOptions.message}</p>}
       </div>
 
 
-      
-        </div>
-        <div className="col-span-1 md:col-span-2 flex justify-between px-4">
-          <button
-            className="border px-4 py-2 rounded-md text-sm text-blue-600"
-            type="button"
-            onClick={previousStep}
-          >
-            Back
-          </button>
-          <button
-            className="border px-4 py-2 rounded-md text-sm text-blue-600"
-            type="submit"
-          >
-            Next
-          </button>
-        </div>
-      </div>
-    </form>
+
+      <div className="mb-4">
+    <label htmlFor="designAdditionalNotes" className="block font-semibold mb-2 text-sm">
+    Which websites inspire your vision? Share examples!
+    </label>
+    <textarea
+      id="designAdditionalNotes"
+      {...register('designAdditionalNotes')}
+       className="w-full p-3 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
+      rows={4}
+    />
+  </div>
+              </div>
+              <div className="col-span-1 md:col-span-2 flex justify-between px-4">
+                <button
+                  className="border px-4 py-2 rounded-md text-sm text-blue-600"
+                  type="button"
+                  onClick={previousStep}
+                >
+                  Back
+                </button>
+                <button
+                  className="border px-4 py-2 rounded-md text-sm text-blue-600"
+                  type="submit"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+      </form>
+    </section>
   );
 };
 
