@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 
 const ShowConfirmationInfo: React.FC = () => {
   const { t } = useTranslation();
+  useEffect(() => {
+    // Scroll to the top on step change
+    console.log('confirmation step changed');
+    window.scrollTo(0, 0);
+  },[]);
+
   return (
     <div className='mx-auto max-w-screen-lg w-full'>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-12">

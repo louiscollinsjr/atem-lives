@@ -3,14 +3,14 @@ import {  Route, Routes } from 'react-router-dom';
 import { SpotlightProvider } from './contexts/SpotlightContext.context';
 import Navigation from './components/Navigation.component';
 import { routes, defaultRoute } from './config/routes';
-
-
-
+import ScrollToTop from './components/ScrollToTop.component';
 
 
 const App: React.FC = () => {
+ 
   return (
       <SpotlightProvider>
+        <ScrollToTop />
         <Routes>
           <Route element={<Navigation />}>
             {routes.map((route) => 

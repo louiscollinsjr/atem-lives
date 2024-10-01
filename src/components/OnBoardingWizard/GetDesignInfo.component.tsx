@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useForm,   } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useWizard } from 'react-use-wizard';
 import ProgressIndicator from './ProgressIndicator.component';
 import { useFormData } from '../../contexts/FormDataContext';
+import StepWithNavigation from './StepWithNavigation.component';
 
 const schema = yup.object().shape({
   designStyleOptions: yup.array().of(yup.string()).min(1, 'Please select at least one goal'),
@@ -27,6 +28,12 @@ const GetDesignInfo: React.FC = () => {
   //const { updateFormData } = useFormData();
   const { formData, updateFormData } = useFormData();
   const { nextStep, previousStep } = useWizard();
+
+  useEffect(() => {
+    // Scroll to the top on step change
+    console.log('Step changed');
+    window.scrollTo(0, 0);
+  },[nextStep, previousStep]);
 
   const {
     register,
@@ -118,7 +125,7 @@ const GetDesignInfo: React.FC = () => {
                 </div>
 
                 <div className="mb-8 text-base">
-        <p className="font-semibold mb-2">What design style best fits your vision?</p>
+        <p className="font-semibold mb-6">What design style best fits your vision?</p>
         {designStyleOptions.map(goal => (
           <div key={goal.id} className="flex items-start space-x-3 mb-4">
             <input
@@ -136,7 +143,7 @@ const GetDesignInfo: React.FC = () => {
       </div>
 
       <div className="mb-8 text-base">
-        <p className="font-semibold mb-2">What kind of visual focus do you prefer for your website?</p>
+        <p className="font-semibold mb-6">What kind of visual focus do you prefer for your website?</p>
         {visualFocusOptions.map(goal => (
           <div key={goal.id} className="flex items-start space-x-3 mb-4">
             <input
@@ -156,7 +163,7 @@ const GetDesignInfo: React.FC = () => {
 
 
       <div className="mb-4">
-    <label htmlFor="designAdditionalNotes" className="block font-semibold mb-2 text-sm">
+    <label htmlFor="designAdditionalNotes" className="block font-semibold mb-6 text-base">
     Which websites inspire your vision? Share examples!
     </label>
     <textarea
@@ -167,7 +174,7 @@ const GetDesignInfo: React.FC = () => {
     />
   </div>
               </div>
-              <div className="col-span-1 md:col-span-2 flex justify-between px-4">
+              {/* <div className="col-span-1 md:col-span-2 flex justify-between px-4">
                 <button
                   className="border px-4 py-2 rounded-md text-sm text-blue-600"
                   type="button"
@@ -181,7 +188,8 @@ const GetDesignInfo: React.FC = () => {
                 >
                   Next
                 </button>
-              </div>
+              </div> */}
+              <StepWithNavigation />
             </div>
           </div>
       </form>

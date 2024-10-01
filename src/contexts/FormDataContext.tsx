@@ -1,9 +1,12 @@
 import React, { createContext, useState, useContext } from 'react';
 
+
 interface FormData {
   clientFirstName: string;
   clientLastName: string;
   clientEmail: string;
+  clientCompany?: string;
+  clientPhoneNumber?: string;
 
   objectivesWebsiteType: string;
   objectivesPrimaryGoals: string[];
