@@ -1,12 +1,10 @@
-import { act } from 'react';
 import { useWizard } from 'react-use-wizard';
 
 const StepWithNavigation= () => {
   const { activeStep, stepCount, previousStep, isFirstStep, isLastStep } = useWizard();
-  const actualStepCount = stepCount-1;
 
   return (
-    <div className="col-span-1 md:col-span-2 flex justify-between">
+    <div className="col-span-1 md:col-span-2 flex justify-between pt-12">
       {!isFirstStep && (
         <button
           className="border px-4 py-2 rounded-md text-sm text-white bg-black"

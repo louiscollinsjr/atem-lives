@@ -12,7 +12,7 @@ const ShowConfirmationInfo: React.FC = () => {
   },[]);
 
   return (
-    <div className='mx-auto max-w-screen-lg w-full'>
+    <div className='mx-auto max-w-screen-lg w-full px-6'>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-12">
       <div className="text-left">
       <div className="sm:pt-6">
