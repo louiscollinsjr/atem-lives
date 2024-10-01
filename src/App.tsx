@@ -4,14 +4,14 @@ import { SpotlightProvider } from './contexts/SpotlightContext.context';
 import Navigation from './components/Navigation.component';
 import { routes, defaultRoute } from './config/routes';
 import CookieConsent from './components/CookieConsent.Component';
-
-
-
+import ScrollToTop from './components/ScrollToTop.component';
 
 
 const App: React.FC = () => {
+ 
   return (
       <SpotlightProvider>
+        <ScrollToTop />
         <Routes>
           <Route element={<Navigation />}>
             {routes.map((route) => 

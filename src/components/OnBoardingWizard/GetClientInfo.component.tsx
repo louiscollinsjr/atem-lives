@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-//import { useFormData } from '../../hooks/useFormData.hook';
 import { useWizard } from 'react-use-wizard';
 import ProgressIndicator from './ProgressIndicator.component';
 import { useFormData } from '../../contexts/FormDataContext';
+import StepWithNavigation from './StepWithNavigation.component';
+
+
 
 const schema = yup.object().shape({
   clientFirstName: yup.string().required('First name is required'),
   clientLastName: yup.string().required('Last name is required'),
+  clientCompany: yup.string().optional(),
+  clientPhoneNumber: yup.string().optional(),
   clientEmail: yup
     .string()
     .email('Invalid email')
@@ -20,11 +24,21 @@ interface ClientInfo {
   clientFirstName: string;
   clientLastName: string;
   clientEmail: string;
+  clientCompany?: string;
+  clientPhoneNumber?: string;
 }
+
 
 const GetClientInfo: React.FC = () => {
   const { formData, updateFormData } = useFormData();
   const { nextStep } = useWizard();
+
+  useEffect(() => {
+    // Scroll to the top on step change
+    console.log('Scroll to top on step change');
+    window.scrollTo(0, 0);
+  },[nextStep]);
+
 
   const {
     register,
@@ -108,6 +122,30 @@ const GetClientInfo: React.FC = () => {
                   <div className="md:col-span-2">
                     <input
                       className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
+                      {...register('clientCompany')}
+                      placeholder="Company name (optional)"
+                    />
+                    {errors.clientCompany && (
+                      <span className="text-red-500 text-base">
+                        {errors.clientCompany.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="md:col-span-2">
+                    <input
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
+                      {...register('clientPhoneNumber')}
+                      placeholder="WhatsApp or Phone number (optional)"
+                    />
+                    {errors.clientPhoneNumber && (
+                      <span className="text-red-500 text-base">
+                        {errors.clientPhoneNumber.message}
+                      </span>
+                    )}
+                  </div>
+                  <div className="md:col-span-2">
+                    <input
+                      className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientEmail')}
                       placeholder="Email address"
                     />
@@ -117,14 +155,15 @@ const GetClientInfo: React.FC = () => {
                       </span>
                     )}
                   </div>
-                  <div className="sm:col-span-2 pt-4">
+                  {/* <div className="sm:col-span-2 pt-4">
                     <button
                       className="border px-4 py-3 rounded-md w-full text-base text-white bg-black font-popins tracking-wider"
                       type="submit"
                     >
                       Next
                     </button>
-                  </div>
+                  </div> */}
+                  <StepWithNavigation />
                 </div>
               </form>
             </div>

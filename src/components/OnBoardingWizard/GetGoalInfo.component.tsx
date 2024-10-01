@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useWizard } from 'react-use-wizard';
 import ProgressIndicator from './ProgressIndicator.component';
 import { useFormData } from '../../contexts/FormDataContext';
+import StepWithNavigation from './StepWithNavigation.component';
 
 
 // objectivesWebsiteType: string;
@@ -35,6 +36,11 @@ const GetGoalInfo: React.FC = () => {
   const { formData, updateFormData } = useFormData();
   const { nextStep, previousStep } = useWizard();
 
+  useEffect(() => {
+    // Scroll to the top on step change
+    console.log('Step changed');
+    window.scrollTo(0, 0);
+  },[nextStep, previousStep]);
 
   const {
     register,
@@ -171,7 +177,7 @@ const GetGoalInfo: React.FC = () => {
                 <div className="mb-8 text-base pt-10">
                   <label
                     htmlFor="objectivesWebsiteType"
-                    className="block font-semibold mb-2"
+                    className="block font-semibold mb-2 text-lg"
                   >
                     Website Type:
                   </label>
@@ -195,7 +201,7 @@ const GetGoalInfo: React.FC = () => {
                 </div>
 
                 <div className="mb-8 text-base">
-                  <p className="font-semibold mb-2">
+                  <p className="font-semibold mb-6 text-lg">
                     What are your primary goals for the website?
                   </p>
                   {goalOptions.map((goal) => (
@@ -229,7 +235,7 @@ const GetGoalInfo: React.FC = () => {
                 <div className="mb-8 text-base">
                   <label
                     htmlFor="objectivesTargetAudience"
-                    className="block font-semibold mb-2"
+                    className="block font-semibold mb-6  text-lg"
                   >
                     Target Audience:
                   </label>
@@ -255,7 +261,7 @@ const GetGoalInfo: React.FC = () => {
                 <div className="mb-4 text-base">
                   <label
                     htmlFor="objectivesAdditionalGoalNotes"
-                    className="block font-semibold mb-2"
+                    className="block font-semibold mb-6  text-lg"
                   >
                     Share more about your vision for the website!
                   </label>
@@ -267,7 +273,7 @@ const GetGoalInfo: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="col-span-1 md:col-span-2 flex justify-between px-4">
+              {/* <div className="col-span-1 md:col-span-2 flex justify-between px-4">
                 <button
                   className="border px-4 py-2 rounded-md text-sm text-blue-600"
                   type="button"
@@ -281,7 +287,8 @@ const GetGoalInfo: React.FC = () => {
                 >
                   Next
                 </button>
-              </div>
+              </div> */}
+              <StepWithNavigation />
             </div>
           </div>
       </form>

@@ -1,4 +1,5 @@
 // src/components/GetDesignInfo.component.tsx
+import React, {useEffect} from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -6,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useWizard } from 'react-use-wizard';
 import ProgressIndicator from './ProgressIndicator.component';
 import { useFormData } from '../../contexts/FormDataContext';
+import StepWithNavigation from './StepWithNavigation.component';
 
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../../config/firebase/config';
@@ -36,6 +38,12 @@ interface GetProjectScope {
 const GetProjectScope: React.FC = () => {
   const { formData, updateFormData } = useFormData();
   const { nextStep, previousStep } = useWizard();
+
+  useEffect(() => {
+    // Scroll to the top on step change
+    console.log('Step changed');
+    window.scrollTo(0, 0);
+  },[nextStep, previousStep]);
 
   const {
     control,
@@ -116,7 +124,7 @@ const GetProjectScope: React.FC = () => {
    <section className="mb-6">
      <h3 className="text-lg font-semibold mb-2">Multilingual Requirements</h3>
      <div className="mb-8 text-base">
-       <p className="font-medium mb-2">Does your website need to support multiple languages?</p>
+       <p className="font-medium mb-6">Does your website need to support multiple languages?</p>
        <Controller
          name="designMultilingualSupport"
          control={control}
@@ -133,7 +141,7 @@ const GetProjectScope: React.FC = () => {
      </div>
      {designMultilingualSupport === 'yes' && (
        <div className="mb-8">
-         <p className="font-medium mb-2">Which designlanguages do you need to support? (Select all that apply)</p>
+         <p className="font-medium mb-6">Which designlanguages do you need to support? (Select all that apply)</p>
          <Controller
            name="designLanguages"
            control={control}
@@ -169,7 +177,7 @@ const GetProjectScope: React.FC = () => {
  <section className="mb-6 text-base">
      <h3 className="text-lg font-semibold mb-2">Content Readiness</h3>
      <div className="mb-8">
-       <p className="font-medium mb-2">Do you have a strategy for maintaining and updating your website’s content?</p>
+       <p className="font-medium mb-6">Do you have a strategy for maintaining and updating your website’s content?</p>
        <Controller
          name="designContentReadiness"
          control={control}
@@ -187,7 +195,7 @@ const GetProjectScope: React.FC = () => {
      </div>
 
      <div className="mb-8">
-       <p className="font-medium mb-2">Which aspects of content creation would you like help with? (Select all that apply)</p>
+       <p className="font-medium mb-6">Which aspects of content creation would you like help with? (Select all that apply)</p>
        <Controller
          name="designContentAssistanceAreas"
          control={control}
@@ -217,7 +225,7 @@ const GetProjectScope: React.FC = () => {
        {errors.designContentAssistanceAreas && <p className="text-red-500">{errors.designContentAssistanceAreas.message}</p>}
      </div> 
      <div className="mb-4 text-base">
-       <p className="font-medium mb-2">Do you have a content strategy in place for ongoing content creation and updates?</p>
+       <p className="font-medium mb-6">Do you have a content strategy in place for ongoing content creation and updates?</p>
        <Controller
          name="designContentStrategy"
          control={control}
@@ -238,7 +246,7 @@ const GetProjectScope: React.FC = () => {
   <section className='text-base'>
      <h3 className="text-base font-semibold mb-2">Existing Brand Assets</h3>
      <div className="mb-8">
-       <p className="font-medium mb-2">Which brand assets do you already have prepared? (Select all that apply)</p>
+       <p className="font-medium mb-6">Which brand assets do you already have prepared? (Select all that apply)</p>
        <Controller
          name="designBrandAssets"
          control={control}
@@ -287,7 +295,7 @@ const GetProjectScope: React.FC = () => {
    </section>
 
             </div>
-            <div className="col-span-1 md:col-span-2 flex justify-between px-4">
+            {/* <div className="col-span-1 md:col-span-2 flex justify-between px-4">
        <button
          className="border px-4 py-2 rounded-md text-sm text-blue-600"
          type="button"
@@ -301,7 +309,8 @@ const GetProjectScope: React.FC = () => {
        >
          Submit
        </button>
-     </div>
+     </div> */}
+     <StepWithNavigation />
           </div>
         </div>
       </form>
