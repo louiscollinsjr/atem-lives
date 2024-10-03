@@ -2,11 +2,11 @@
 description: Official Satchel AR  white papers, last updated October 2024
 ---
 
-# Satchel.AR
+# Satchel AR
 
 <figure><img src=".gitbook/assets/imagineWithSatchel.jpg" alt="A new world with Satchel."><figcaption></figcaption></figure>
 
-## Satchel.AR Metaverse
+## Satchel Metaverse
 
 Satchel AR embodies the future of hyperlocal engagement, leveraging cutting-edge augmented reality (AR) technology and the innovative IOTA and Shimmer Directed Acyclic Graph (DAG) networks. Our platform creates an immersive ecosystem where the physical and digital worlds converge, transforming how communities interact, businesses engage, and value is exchanged at the most local level.
 
@@ -20,4 +20,5 @@ Join our global movement to strengthen local economies and create meaningful con
 
 
 
-Louis Collins, Founder
+
+
