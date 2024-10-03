@@ -1,0 +1,27 @@
+/* Remove the border around figure elements */
+figure img {
+    border: none;
+}
+
+/* Left-align the figure */
+figure {
+    text-align: left;
+}
+
+/* Optional: If the image still seems centered, remove margin auto */
+figure img {
+    margin: 0;
+}
+
+/* You can also control padding or spacing if needed */
+figure {
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+/* Optional: Style figcaption */
+figcaption {
+    font-style: italic;
+    color: #555;
+    text-align: left; /* Align figcaption to the left */
+}
