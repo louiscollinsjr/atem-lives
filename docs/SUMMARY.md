@@ -1,3 +1,3 @@
 # Table of contents
 
-* [React + TypeScript + Vite](README.md)
+* [Satchel.AR](README.md)

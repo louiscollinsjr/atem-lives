@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+---
+description: Official Satchel AR  white papers, last updated October 2024
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Satchel.AR
 
-Currently, two official plugins are available:
+<figure><img src=".gitbook/assets/imagineWithSatchel.jpg" alt="A new world with Satchel."><figcaption></figcaption></figure>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## We are hyperlocal engagement.
 
-## Expanding the ESLint configuration
+Satchel AR embodies the future of hyperlocal engagement, leveraging cutting-edge augmented reality (AR) technology and the innovative IOTA and Shimmer Directed Acyclic Graph (DAG) networks. Our platform creates an immersive ecosystem where the physical and digital worlds converge, transforming how communities interact, businesses engage, and value is exchanged at the most local level.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Mission
 
-- Configure the top-level `parserOptions` property like this:
+With us, every street corner around the world becomes a potential treasure trove, every local shop a gateway to exclusive experiences that can be shared globally, and every user interaction a step towards a more connected global community. We're reshaping the landscape of local commerce and social interaction in the Web3 era, powered by cutting-edge DAG technology, while fostering a sense of global unity through hyperlocal engagement.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Join our global movement to strengthen local economies and create meaningful connections across the world, one community at a time.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+
+<figure><img src=".gitbook/assets/Signature1.png" alt="" width="188"><figcaption><p>Louis Collins, Founder</p></figcaption></figure>
+
