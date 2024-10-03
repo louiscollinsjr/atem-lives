@@ -22,7 +22,7 @@ Join our global movement to strengthen local economies and create meaningful con
 
 
 
-<div align="right">
+<div align="right" style="border: none; float: left; margin: 0;">
 
 <figure><img src=".gitbook/assets/Signature1.png" alt="" width="188" style="border: none; float: left; margin: 0;"><figcaption><p>Louis Collins, Founder</p></figcaption></figure>
 
