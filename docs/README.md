@@ -6,11 +6,9 @@ description: Official Satchel AR  white papers, last updated October 2024
 
 <figure><img src=".gitbook/assets/imagineWithSatchel.jpg" alt="A new world with Satchel."><figcaption></figcaption></figure>
 
-## We are hyperlocal engagement.
+## Satchel AR: We are hyperlocal engagement.
 
 Satchel AR embodies the future of hyperlocal engagement, leveraging cutting-edge augmented reality (AR) technology and the innovative IOTA and Shimmer Directed Acyclic Graph (DAG) networks. Our platform creates an immersive ecosystem where the physical and digital worlds converge, transforming how communities interact, businesses engage, and value is exchanged at the most local level.
-
-
 
 ### Mission
 
@@ -20,11 +18,4 @@ Join our global movement to strengthen local economies and create meaningful con
 
 
 
-
-
-<div align="right" style="border: none; float: left; margin: 0;">
-
-<figure><img src=".gitbook/assets/Signature1.png" alt="" width="188" style="border: none; float: left; margin: 0;"><figcaption><p>Louis Collins, Founder</p></figcaption></figure>
-
-</div>
-
+Louis Collins, Founder
