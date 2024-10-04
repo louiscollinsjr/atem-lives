@@ -6,8 +6,5 @@
   * [Sponsor interactions](driving-engagement/sponsor-interactions.md)
 * [Satchel Economy & Sustainability](satchel-economy-and-sustainability.md)
 * [Technology](technology.md)
+* [Market size and growth potential](market-size-and-growth-potential.md)
 * [Roadmap and milestones](roadmap-and-milestones.md)
-
-## Key Metrics
-
-* [Market size and growth potential](key-metrics/market-size-and-growth-potential.md)
