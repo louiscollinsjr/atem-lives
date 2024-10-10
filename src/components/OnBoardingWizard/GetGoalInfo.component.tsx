@@ -7,6 +7,7 @@ import { useWizard } from 'react-use-wizard';
 import ProgressIndicator from './ProgressIndicator.component';
 import { useFormData } from '../../contexts/FormDataContext';
 import StepWithNavigation from './StepWithNavigation.component';
+import { useTranslation } from 'react-i18next';
 
 
 // objectivesWebsiteType: string;
@@ -33,6 +34,7 @@ interface GoalInfo {
   objectivesAdditionalGoalNotes?: string;
 }
 const GetGoalInfo: React.FC = () => {
+  const { t } = useTranslation();
   const { formData, updateFormData } = useFormData();
   const { nextStep, previousStep } = useWizard();
 
@@ -77,37 +79,37 @@ const GetGoalInfo: React.FC = () => {
     {
       id: 'brand',
       label: 'Increase brand awareness',
-      description: '(Get your name out there and grow your audience)',
+      description: 'Get your name out there and grow your audience',
     },
     {
       id: 'leads',
       label: 'Generate leads/sales',
-      description: '(Convert visitors into customers or clients)',
+      description: 'Convert visitors into customers or clients',
     },
     {
       id: 'info',
       label: 'Provide information/resources',
-      description: '(Offer helpful content to educate or inform your audience)',
+      description: 'Offer helpful content to educate or inform your audience',
     },
     {
       id: 'showcase',
       label: 'Showcase portfolio/products',
-      description: '(Display your work or products in the best light)',
+      description: 'Display your work or products in the best light',
     },
     {
       id: 'service',
       label: 'Improve customer service',
-      description: '(Help customers find answers or support quickly)',
+      description: 'Help customers find answers or support quickly',
     },
     {
       id: 'engagement',
       label: 'Build community engagement',
-      description: '(Create a space for interaction and connection)',
+      description: 'Create a space for interaction and connection',
     },
     {
       id: 'expertise',
       label: 'Establish expertise in the field',
-      description: '(Position yourself as a leader in your industry)',
+      description: 'Position yourself as a leader in your industry',
     },
   ];
 
@@ -155,17 +157,14 @@ const GetGoalInfo: React.FC = () => {
                   Local.349.Design
                 </h1>
                 <h1 className="text-left text-4xl sm:text-4xl md:text-6xl font-light font-roboto tracking-normal sm:w-[32rem]">
-                  What are your primary{' '}
+                  {t("What are your primary")}{' '}
                   <span className="bg-gradient-to-r from-purple-800 via-blue-700 to-teal-500 bg-clip-text text-transparent">
                     {' '}
-                    goals for the website?
+                    {t("goals for the website?")}
                   </span>
                 </h1>
                 <p className="text-left text-gray-800 font-light sm:w-[32rem] text-base pt-2 sm:pt-4 px-1">
-                  Share with us the vision for your website—what type of site
-                  you're aiming for, who your audience is, and the key goals
-                  you'd like to achieve.  <span className="hidden sm:inline">This helps us tailor our approach to
-                  meet your specific needs.</span>
+                  {t("Share with us the vision for your website—what type of site you're aiming for, who your audience is, and the key goals you'd like to achieve.")}  <span className="hidden sm:inline">{t("This helps us tailor our approach to meet your specific needs.")}</span>
                 </p>
               </div>
               </div>
@@ -179,30 +178,30 @@ const GetGoalInfo: React.FC = () => {
                     htmlFor="objectivesWebsiteType"
                     className="block font-semibold mb-2 text-lg"
                   >
-                    Website Type:
+                    {t("Website Type:")}
                   </label>
                   <select
                     id="objectivesWebsiteType"
                     {...register('objectivesWebsiteType')}
                     className="w-full p-3 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
-                    <option value="">Select website type</option>
+                    <option value="">{t("Select website type")}</option>
                     {websiteTypeOptions.map((option) => (
                       <option key={option.value} value={option.value}>
-                        {option.label}
+                        {t(`${option.label}`)}
                       </option>
                     ))}
                   </select>
                   {errors.objectivesWebsiteType && (
                     <p className="text-red-500 text-sm mt-1">
-                      {errors.objectivesWebsiteType.message}
+                      {t(`${errors.objectivesWebsiteType.message}`)}
                     </p>
                   )}
                 </div>
 
                 <div className="mb-8 text-base">
                   <p className="font-semibold mb-6 text-lg">
-                    What are your primary goals for the website?
+                    {t("What are your primary goals for the website?")}
                   </p>
                   {goalOptions.map((goal) => (
                     <div
@@ -218,16 +217,16 @@ const GetGoalInfo: React.FC = () => {
                         className="mt w-6 h-6 cursor-pointer form-checkbox text-blue-600 rounded-md border-gray-300 focus:ring-blue-500 transition duration-150 ease-in-out"
                       />
                       <label htmlFor={goal.id}>
-                        {goal.label} {' '}
+                        {t(`${goal.label}`)} {' '}
                         <span className="text-xs font-extralight inline">
-                          {goal.description}
+                          {t(`${goal.description}`)}
                         </span>
                       </label>
                     </div>
                   ))}
                   {errors.objectivesPrimaryGoals && (
                     <p className="text-red-500 text-sm mt-1">
-                      {errors.objectivesPrimaryGoals.message}
+                      {t(`${errors.objectivesPrimaryGoals.message}`)}
                     </p>
                   )}
                 </div>
@@ -237,23 +236,23 @@ const GetGoalInfo: React.FC = () => {
                     htmlFor="objectivesTargetAudience"
                     className="block font-semibold mb-6  text-lg"
                   >
-                    Target Audience:
+                    {t("Target Audience:")}
                   </label>
                   <select
                     id="objectivesTargetAudience"
                     {...register('objectivesTargetAudience')}
                     className="w-full p-3 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                   >
-                    <option value="">Select target audience</option>
+                    <option value="">{t("Select target audience")}</option>
                     {audienceOptions.map((option) => (
                       <option key={option.value} value={option.value}>
-                        {option.label}
+                        {t(`${option.label}`)}
                       </option>
                     ))}
                   </select>
                   {errors.objectivesTargetAudience && (
                     <p className="text-red-500 text-sm mt-1">
-                      {errors.objectivesTargetAudience.message}
+                      {t(`${errors.objectivesTargetAudience.message}`)}
                     </p>
                   )}
                 </div>
@@ -263,7 +262,7 @@ const GetGoalInfo: React.FC = () => {
                     htmlFor="objectivesAdditionalGoalNotes"
                     className="block font-semibold mb-6  text-lg"
                   >
-                    Share more about your vision for the website!
+                    {t("Share more about your vision for the website!")}
                   </label>
                   <textarea
                     id="objectivesAdditionalGoalNotes"

@@ -7,6 +7,7 @@ import { useWizard } from 'react-use-wizard';
 import ProgressIndicator from './ProgressIndicator.component';
 import { useFormData } from '../../contexts/FormDataContext';
 import StepWithNavigation from './StepWithNavigation.component';
+import { useTranslation } from 'react-i18next';
 
 const schema = yup.object().shape({
   designStyleOptions: yup.array().of(yup.string()).min(1, 'Please select at least one goal'),
@@ -25,6 +26,7 @@ interface GetDesignInfo {
 }
 
 const GetDesignInfo: React.FC = () => {
+  const { t } = useTranslation();
   //const { updateFormData } = useFormData();
   const { formData, updateFormData } = useFormData();
   const { nextStep, previousStep } = useWizard();
@@ -61,19 +63,19 @@ const GetDesignInfo: React.FC = () => {
   };
 
   const designStyleOptions = [
-    { id: 'brand', label: 'Clean and Minimalistic', description:'(Simple, uncluttered design with a focus on white space)' },
-    { id: 'leads', label: 'Bold and Colorful', description:'(Vibrant, attention-grabbing colors with strong visual impact)' },
-    { id: 'info', label: 'Modern and Sleek', description:' (Cutting-edge design with a polished, futuristic feel)' },
-    { id: 'showcase', label: 'Classic and Timeless', description:' (Traditional elements that never go out of style)' },
-    { id: 'service', label: 'Playful and Fun', description:'(Lively, engaging design with a sense of creativity and energy)' },
-    { id: 'engagement', label: 'Professional and Corporate', description:'(Sophisticated, business-oriented with a formal tone)' },
+    { id: 'brand', label: 'Clean and Minimalistic', description:'Simple, uncluttered design with a focus on white space' },
+    { id: 'leads', label: 'Bold and Colorful', description:'Vibrant, attention-grabbing colors with strong visual impact' },
+    { id: 'info', label: 'Modern and Sleek', description:' Cutting-edge design with a polished, futuristic feel' },
+    { id: 'showcase', label: 'Classic and Timeless', description:' Traditional elements that never go out of style' },
+    { id: 'service', label: 'Playful and Fun', description:'Lively, engaging design with a sense of creativity and energy' },
+    { id: 'engagement', label: 'Professional and Corporate', description:'Sophisticated, business-oriented with a formal tone' },
   ];
 
   const visualFocusOptions = [
-    { id: 'brand', label: 'Heavy on Imagery', description:'(Bold visuals, minimal text)' },
-    { id: 'leads', label: 'Focus on Text Content', description:'(Text-driven with minimal imagery)' },
-    { id: 'info', label: 'Balanced Visual and Text', description:'(Equal emphasis on both)' },
-    { id: 'showcase', label: 'Interactive Elements', description:'(Interactive features are the priority)' },
+    { id: 'brand', label: 'Heavy on Imagery', description:'Bold visuals, minimal text' },
+    { id: 'leads', label: 'Focus on Text Content', description:'Text-driven with minimal imagery' },
+    { id: 'info', label: 'Balanced Visual and Text', description:'Equal emphasis on both' },
+    { id: 'showcase', label: 'Interactive Elements', description:'Interactive features are the priority' },
   ];
 
 
@@ -109,14 +111,14 @@ const GetDesignInfo: React.FC = () => {
                   Local.349.Design
                 </h1>
                 <h1 className="text-left text-4xl sm:text-4xl md:text-6xl font-light font-roboto tracking-normal sm:w-[32rem]">
-                  What is your {' '}
+                  {t("What is your")} {' '}
                   <span className="bg-gradient-to-r from-purple-800 via-blue-700 to-teal-500 bg-clip-text text-transparent">
                     {' '}
-                    design style?
+                    {t("design style?")}
                   </span>
                 </h1>
                 <p className="text-left text-gray-800 font-light sm:w-[32rem] text-base pt-2 sm:pt-4 px-1">
-                Let your creativity shine! Share your design preferences—colors, styles, or inspirations that reflect your vision. Whether you love a modern, minimalist look or something more bold and vibrant, your input will help us craft a design that feels uniquely yours.</p>
+                {t("Let your creativity shine! Share your design preferences—colors, styles, or inspirations that reflect your vision. Whether you love a modern, minimalist look or something more bold and vibrant, your input will help us craft a design that feels uniquely yours.")}</p>
               </div>
               </div>
               <div className="">
@@ -125,7 +127,7 @@ const GetDesignInfo: React.FC = () => {
                 </div>
 
                 <div className="mb-8 text-base">
-        <p className="font-semibold mb-6">What design style best fits your vision?</p>
+        <p className="font-semibold mb-6">{t("What design style best fits your vision?")}</p>
         {designStyleOptions.map(goal => (
           <div key={goal.id} className="flex items-start space-x-3 mb-4">
             <input
@@ -136,14 +138,14 @@ const GetDesignInfo: React.FC = () => {
               onChange={handleDesignStyleChange}
               className=" mt w-6 h-6 cursor-pointer form-checkbox text-blue-600 rounded-md border-gray-300 focus:ring-blue-500 transition duration-150 ease-in-out"
             />
-            <label htmlFor={goal.id}>{goal.label} {' '} <span className='text-xs font-extralight inline'>{goal.description}</span></label>
+            <label htmlFor={goal.id}>{t(`${goal.label}`)} {' '} <span className='text-xs font-extralight inline'>({t(`${goal.description}`)})</span></label>
           </div>
         ))}
-        {errors.designStyleOptions && <p className="text-red-500 text-sm mt-1">{errors.designStyleOptions.message}</p>}
+        {errors.designStyleOptions && <p className="text-red-500 text-sm mt-1">{t(`${errors.designStyleOptions.message}`)}</p>}
       </div>
 
       <div className="mb-8 text-base">
-        <p className="font-semibold mb-6">What kind of visual focus do you prefer for your website?</p>
+        <p className="font-semibold mb-6">{t("What kind of visual focus do you prefer for your website?")}</p>
         {visualFocusOptions.map(goal => (
           <div key={goal.id} className="flex items-start space-x-3 mb-4">
             <input
@@ -154,17 +156,17 @@ const GetDesignInfo: React.FC = () => {
               onChange={handleVisualStyleChange}
                className=" mt w-6 h-6 cursor-pointer form-checkbox text-blue-600 rounded-md border-gray-300 focus:ring-blue-500 transition duration-150 ease-in-out"
             />
-            <label htmlFor={goal.id}>{goal.label} {' '}<span className='text-xs font-extralight'>{goal.description}</span></label>
+            <label htmlFor={goal.id}>{t(`${goal.label}`)} {' '}<span className='text-xs font-extralight'>({t(`${goal.description}`)})</span></label>
           </div>
         ))}
-        {errors.designVisualOptions && <p className="text-red-500 text-sm mt-1">{errors.designVisualOptions.message}</p>}
+        {errors.designVisualOptions && <p className="text-red-500 text-sm mt-1">{t(`${errors.designVisualOptions.message}`)}</p>}
       </div>
 
 
 
       <div className="mb-4">
     <label htmlFor="designAdditionalNotes" className="block font-semibold mb-6 text-base">
-    Which websites inspire your vision? Share examples!
+    {t("Which websites inspire your vision? Share examples!")}
     </label>
     <textarea
       id="designAdditionalNotes"

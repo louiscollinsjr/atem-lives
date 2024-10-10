@@ -6,6 +6,7 @@ import { useWizard } from 'react-use-wizard';
 import ProgressIndicator from './ProgressIndicator.component';
 import { useFormData } from '../../contexts/FormDataContext';
 import StepWithNavigation from './StepWithNavigation.component';
+import { useTranslation } from "react-i18next";
 
 
 
@@ -30,6 +31,7 @@ interface ClientInfo {
 
 
 const GetClientInfo: React.FC = () => {
+  const { t } = useTranslation();
   const { formData, updateFormData } = useFormData();
   const { nextStep } = useWizard();
 
@@ -69,17 +71,17 @@ const GetClientInfo: React.FC = () => {
             </div>
             <div className="sm:pt-6 bg-gray-100 p-4 py-8 sm:p-12 rounded-lg sm:rounded-none sm:bg-gray-50">
               <h1 className="text-left text-xs sm:text-4xl md:text-sm font-roboto tracking-wide px-1 pb-2">
-                Local.349.Design
+                {t("Local.349.Design")}
               </h1>
               <h1 className="text-left text-4xl sm:text-4xl md:text-7xl font-light font-roboto tracking-normal">
-                Building for{' '}
+                {t("Building for")}{' '}
                 <span className="bg-gradient-to-r from-purple-800 via-blue-700 to-teal-500 bg-clip-text text-transparent">
                   {' '}
-                  our community.
+                  {t("our community.")}
                 </span>
               </h1>
               <p className="text-left text-gray-800 font-light w-full sm:w-[32rem] text-base pt-4 sm:pt-4">
-              Welcome! Join us in empowering our community through top-tier development and design. Together, we'll create tools that connect people and drive positive change.{' '}
+              {t("Welcome! Join us in empowering our community through top-tier development and design. Together, we'll create tools that connect people and drive positive change.")} {' '}
               </p>
             </div>
           </div>
@@ -90,8 +92,7 @@ const GetClientInfo: React.FC = () => {
                 <ProgressIndicator />
               </div>
               <p className="text-left text-gray-800 font-light text-base sm:w-[32rem]">
-                <b>Let's begin our design journey!</b> Share your vision, goals,
-                and preferences to craft something amazing together.
+                <b>{t("Let's begin our design journey!")}</b> {t("Share your vision, goals, and preferences to craft something amazing together.")}
               </p>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 gap-y-4 py-6">
@@ -99,11 +100,11 @@ const GetClientInfo: React.FC = () => {
                     <input
                       className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientFirstName')}
-                      placeholder="First name"
+                      placeholder={t("First name")}
                     />
                     {errors.clientFirstName && (
                       <span className="text-red-500 text-base">
-                        {errors.clientFirstName.message}
+                       {t(`${errors.clientFirstName.message}`)}
                       </span>
                     )}
                   </div>
@@ -111,11 +112,11 @@ const GetClientInfo: React.FC = () => {
                     <input
                       className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientLastName')}
-                      placeholder="Last name"
+                      placeholder={t("Last name")}
                     />
                     {errors.clientLastName && (
                       <span className="text-red-500 text-base">
-                        {errors.clientLastName.message}
+                        {t(`${errors.clientLastName.message}`)}
                       </span>
                     )}
                   </div>
@@ -123,11 +124,11 @@ const GetClientInfo: React.FC = () => {
                     <input
                       className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientCompany')}
-                      placeholder="Company name (optional)"
+                      placeholder={t("Company name (optional)")}
                     />
                     {errors.clientCompany && (
                       <span className="text-red-500 text-base">
-                        {errors.clientCompany.message}
+                        {t(`${errors.clientCompany.message}`)}
                       </span>
                     )}
                   </div>
@@ -135,11 +136,11 @@ const GetClientInfo: React.FC = () => {
                     <input
                       className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientPhoneNumber')}
-                      placeholder="WhatsApp or Phone number (optional)"
+                      placeholder={t("WhatsApp or Phone number (optional)")}
                     />
                     {errors.clientPhoneNumber && (
                       <span className="text-red-500 text-base">
-                        {errors.clientPhoneNumber.message}
+                        {t(`${errors.clientPhoneNumber.message}`)}
                       </span>
                     )}
                   </div>
@@ -147,11 +148,11 @@ const GetClientInfo: React.FC = () => {
                     <input
                       className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                       {...register('clientEmail')}
-                      placeholder="Email address"
+                      placeholder={t("Email address")}
                     />
                     {errors.clientEmail && (
                       <span className="text-red-500 text-base">
-                        {errors.clientEmail.message}
+                        {t(`${errors.clientEmail.message}`)}
                       </span>
                     )}
                   </div>

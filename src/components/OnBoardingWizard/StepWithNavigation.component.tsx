@@ -1,7 +1,9 @@
 import { useWizard } from 'react-use-wizard';
+import { useTranslation } from "react-i18next";
 
 const StepWithNavigation= () => {
   const { activeStep, stepCount, previousStep, isFirstStep, isLastStep } = useWizard();
+  const { t } = useTranslation();
 
   return (
     <div className="col-span-1 md:col-span-2 flex justify-between pt-12">
@@ -11,7 +13,7 @@ const StepWithNavigation= () => {
           type="button"
           onClick={previousStep}
         >
-          Back
+          {t("Back")}
         </button>
       )}
 
@@ -20,7 +22,7 @@ const StepWithNavigation= () => {
           className="border px-4 py-2 rounded-md text-sm text-white  bg-black"
           type="submit"
         >
-          Next
+          {t("Next")}
         </button>
       )}
 
@@ -29,7 +31,7 @@ const StepWithNavigation= () => {
           className="border px-4 py-2 rounded-md text-sm text-white  bg-black"
           type="submit"
         >
-          Submit
+          {t("Submit")}
         </button>
       )}
     </div>
