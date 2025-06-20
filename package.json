@@ -13,6 +13,7 @@
     "@apollo/client": "^3.11.8",
     "@hookform/resolvers": "^3.9.0",
     "autoprefixer": "^10.4.20",
+    "browserslist": "^4.25.0",
     "firebase": "^10.13.1",
     "graphql": "^16.9.0",
     "i18next": "^23.15.1",

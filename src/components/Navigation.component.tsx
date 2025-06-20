@@ -45,12 +45,12 @@ const Navigation: React.FC = () => {
             <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/design">
               {t("Design and Development")}
             </NavLink>
+            <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/vibe-with-atem">
+              VIBE with Atem
+            </NavLink>
             <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/satchel">
               Satchel AR
             </NavLink>
-            {/* <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/atelabs">
-              atem.Labs
-            </NavLink> */}
           </div>
           <button
             className="md:hidden text-white text-2xl"
@@ -155,18 +155,25 @@ const Navigation: React.FC = () => {
               </Link>
               <Link
                 className="block text-white hover:text-gray-300 text-3xl py-2"
+                to="/design/vibe"
+                onClick={() => setIsMobileNavOpen(false)}
+              >
+                Development Vibe
+              </Link>
+              <Link
+                className="block text-white hover:text-gray-300 text-3xl py-2"
+                to="/vibe-with-atem"
+                onClick={() => setIsMobileNavOpen(false)}
+              >
+                VIBE with Atem
+              </Link>
+              <Link
+                className="block text-white hover:text-gray-300 text-3xl py-2"
                 to="/satchel"
                 onClick={() => setIsMobileNavOpen(false)}
               >
                 Satchel AR
               </Link>
-              {/* <Link
-                className="block text-white hover:text-gray-300 text-3xl py-2"
-                to="#"
-                onClick={() => setIsMobileNavOpen(false)}
-              >
-                atem.Labs
-              </Link> */}
               <Link
                 className="block text-white hover:text-gray-300 text-3xl py-2"
                 to="/contact"

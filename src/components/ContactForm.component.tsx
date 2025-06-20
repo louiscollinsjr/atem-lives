@@ -56,8 +56,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div>
-      
+    <div> 
       <form onSubmit={handleSubmit} className="mt-12 grid grid-cols-1 gap-4">
         <div className="grid grid-cols-2 gap-4">
           <input

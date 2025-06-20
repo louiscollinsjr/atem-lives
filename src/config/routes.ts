@@ -17,6 +17,8 @@ export interface RouteConfig {
   import OnBoardingWizard from '../components/OnBoardingWizard/OnBoardingWizard.component';
   import HomeContactForm from '../components/HomeContactForm.component';
   import NotFound from '../components/not-found';
+  import VibeWithAtem from '../components/VibeWithAtem.page';
+  import DevelopmentVibe from '../components/DevelopmentVibe.page';
 
 
 
@@ -24,6 +26,8 @@ export interface RouteConfig {
     { path: '/', spotlightText: 'Products and Services Spotlight', isDarkBackground: false,  component: Home, index: true },
     { path: '/maestro', spotlightText: 'Maestro Automations Spotlight', isDarkBackground: false, component: Maestro },
     { path: '/design', spotlightText: 'Design and Development Spotlight', isDarkBackground: false, component: Design },
+    { path: '/vibing-with-atem', spotlightText: 'Vibe Coding with Atem', isDarkBackground: false, component: VibeWithAtem },
+    // { path: '/design/vibe', spotlightText: 'Development Vibe', isDarkBackground: false, component: DevelopmentVibe },
     { path: '/satchel', spotlightText: 'Satchel Spotlight', isDarkBackground: false,  component: Satchel },
     { path: '/design349', spotlightText: '349.Design. Spotlight', isDarkBackground: true,  component: Design349 },
     { path: '/onboarding', spotlightText: 'Local❤️349.Design', isDarkBackground: false,  component: OnBoardingWizard },
