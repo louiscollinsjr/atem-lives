@@ -82,9 +82,7 @@ const VibeWithAtem: React.FC = () => {
               <RotatingText phrases={[
                 "Build",
                 "Design",
-                "Launch",
-                "Prototype",
-                "Create",
+                "Ship",
                 "Iterate"
               ]} />
             </div>
@@ -96,17 +94,17 @@ const VibeWithAtem: React.FC = () => {
 
           <div className="flex justify-center max-w-[300px] sm:max-w-[350px] w-full items-center mx-auto">
             <div className="flex flex-col sm:flex-row gap-2 items-center bg-zinc-200 p-2 sm:p-2 rounded-3xl w-full mx-auto">
-              <p className="text-xs md:text-sm font-light font-inter text-gray-700 sm:pl-4 sm:pr-2 sm:w-auto sm:flex-1 text-center sm:mb-0 sm:text-left tracking-wide">Unlock Special Vibe Dev Rates</p>
+              <p className="text-xs md:text-sm font-light font-inter text-gray-700 sm:pl-4 sm:pr-2 sm:w-auto sm:flex-1 text-center sm:mb-0 sm:text-left tracking-wide">Unlock Special Vibe Build Rates</p>
               <button 
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-4 py-4 w-full sm:flex-1 text-sm sm:text-sm rounded-2xl text-white bg-black hover:bg-gray-700 transition-colors tracking-wider focus:outline-none"
               >
-                Start building
+                Get started
               </button>
             </div>
           </div>
           <div>
-          <p className="text-xs md:text-sm font-light font-inter text-gray-700 sm:w-auto sm:flex-1 text-center sm:mb-0 sm:text-left tracking-wide mt-4">Want in on special dev rates? <a  href="#contact" className="text-black hover:underline">Join the waitlist →</a></p>
+          <p className="text-xs md:text-sm font-light font-inter text-gray-700 sm:w-auto sm:flex-1 text-center sm:mb-0 sm:text-left tracking-wide mt-4">Not ready to build? <a  href="#contact" className="text-black hover:underline">Stay updated →</a></p>
         </div>
         </div>
         
@@ -115,53 +113,71 @@ const VibeWithAtem: React.FC = () => {
       {/* VIBE is for Founders Section */}
       <section id="founders" className="py-24 md:py-32 px-4 fade-in-section">
         <VibeBlock
-          subtitle="Launch your MVP in a week — no spec required."
+          title="Vibe for Visionaries"
+          subtitle="A build partner for every idea"
           text={
             <div className="space-y-4">
-              <ul className="space-y-2 max-w-md mx-auto text-left">
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Send idea</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>We build</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>You own it</span>
-                </li>
-              </ul>
-              <p className="mt-8 text-center">Just tell us what you're trying to build.</p>
+              <p className="mt-8 text-center">
+              From napkin sketch to unicorn startup, we build applications that scale. Tech founders choose Atem because we speak fluent startup—fast builds, smart architecture, real results. Your idea deserves code that works.</p>
             </div>
           }
-          cta={{
-            text: "Get started",
-            link: "#contact"
-          }}
         />
       </section>
 
-      {/* VIBE is for Studios Section */}
-      <section id="studios" className="py-24 md:py-32 px-4 fade-in-section">
+      {/* VIBE is for Moving Fast Section */}
+      <section id="moving-fast" className="py-24 md:py-32 px-4 fade-in-section">
         <VibeBlock
-          subtitle="No dev bandwidth? We've got you."
-          text="We build client-ready MVPs under your label. Fast, clean, silent."
-          cta={{
-            text: "Partner with us",
-            link: "#contact"
-          }}
+          title="Vibe is for Moving Fast"
+          subtitle="You don’t have time to spec, scope, and stall. We get it — you just want to move."
+          text=""
+        //  cta={{
+        //     text: "Partner with us",
+        //     link: " #contact"
+        //   }}
+        />
+      </section>
+
+       {/* VIBE is for Moving Fast Section */}
+       <section id="real-products" className="py-24 md:py-32 px-4 fade-in-section">
+        <VibeBlock
+          title="Vibe is for Real Products"
+          subtitle="This isn’t just concept work. You’ll get working code, clean handoff, and a live MVP."
+          text=""
+        //  cta={{
+        //     text: "Partner with us",
+        //     link: " #contact"
+        //   }}
+        />
+      </section>
+      
+      {/* VIBE is for Whats Next Section */}
+      <section id="whats-next" className="py-24 md:py-32 px-4 fade-in-section">
+        <VibeBlock
+          title="Vibe is for Whats Next"
+          subtitle="You’re building something that matters — and it’s time to take the next step."
+          text=""
+        //  cta={{
+        //     text: "Partner with us",
+        //     link: " #contact"
+        //   }}
+        />
+      </section>
+
+      {/* VIBE is for You Section */}
+      <section id="you" className="py-24 md:py-32 px-4 fade-in-section">
+        <VibeBlock
+          title="Vibe is for You"
+          subtitle="If you’ve got the vision, we’ve got the rhythm. Let’s build."
+          text=""
+        //  cta={{
+        //     text: "Partner with us",
+        //     link: " #contact"
+        //   }}
         />
       </section>
 
       {/* VIBE is for Teams Section */}
-      <section id="teams" className="py-24 md:py-32 px-4 fade-in-section bg-gray-50">
+      <section id="teams" className="py-24 md:py-32 px-4 fade-in-section">
         <VibeBlock
           subtitle="Ship fast without slowing your sprint."
           text="You share the idea, we return a live prototype."
@@ -187,121 +203,6 @@ const VibeWithAtem: React.FC = () => {
           cta={{
             text: "See examples",
             link: "#"
-          }}
-        />
-      </section>
-
-      {/* Process Section */}
-      <section className="mb-20">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Process</h2>
-        <div className="space-y-8">
-          <div className="flex flex-col md:flex-row items-start gap-4">
-            <div className="bg-black text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-              <span className="font-bold">1</span>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Discovery Session</h3>
-              <p className="text-gray-600">
-                We begin with a comprehensive discussion to understand your vision, goals, and requirements.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row items-start gap-4">
-            <div className="bg-black text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-              <span className="font-bold">2</span>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Concept Development</h3>
-              <p className="text-gray-600">
-                We create wireframes and prototypes to visualize the solution, iterating based on your feedback.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row items-start gap-4">
-            <div className="bg-black text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-              <span className="font-bold">3</span>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Rapid Development</h3>
-              <p className="text-gray-600">
-                Our team builds your solution using modern technologies and best practices for optimal performance.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row items-start gap-4">
-            <div className="bg-black text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-              <span className="font-bold">4</span>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Launch & Support</h3>
-              <p className="text-gray-600">
-                We deploy your solution and provide ongoing support to ensure continued success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Deliverables Section */}
-      <section className="mb-20">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">What You Get</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="p-6 bg-gray-50 rounded-lg">
-            <h3 className="text-xl font-bold mb-3">Digital Products</h3>
-            <ul className="list-disc pl-5 space-y-2 text-gray-600">
-              <li>Responsive web applications</li>
-              <li>Mobile app prototypes</li>
-              <li>Interactive user interfaces</li>
-              <li>API integrations</li>
-            </ul>
-          </div>
-          <div className="p-6 bg-gray-50 rounded-lg">
-            <h3 className="text-xl font-bold mb-3">Documentation</h3>
-            <ul className="list-disc pl-5 space-y-2 text-gray-600">
-              <li>Technical specifications</li>
-              <li>User guides</li>
-              <li>System architecture</li>
-              <li>Maintenance guidelines</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* What You Get Section */}
-      <section id="what-you-get" className="py-24 md:py-32 px-4 fade-in-section">
-        <VibeBlock
-          subtitle="Everything you need to keep building"
-          text={
-            <ul className="space-y-2 max-w-md mx-auto text-left">
-              <li className="flex items-center">
-                <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Working MVP</span>
-              </li>
-              <li className="flex items-center">
-                <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Clean repo</span>
-              </li>
-              <li className="flex items-center">
-                <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Walkthrough video</span>
-              </li>
-              <li className="flex items-center">
-                <svg className="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Optional support</span>
-              </li>
-            </ul>
-          }
-          cta={{
-            text: "What can we build for you?",
-            link: "#contact"
           }}
         />
       </section>
@@ -337,33 +238,7 @@ const VibeWithAtem: React.FC = () => {
         />
       </section>
 
-      {/* CTA Footer Section */}
-      <section id="contact" className="py-24 md:py-32 px-4 fade-in-section bg-black text-white">
-        <VibeBlock
-          title="Ready to start?"
-          subtitle="Tell us your idea — and let's build it together."
-          text={
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-              <a 
-                href="https://tally.so/r/mRDXdp" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white hover:bg-gray-100 text-black font-medium py-3 px-8 rounded-full transition-colors text-center"
-              >
-                Send Your Idea
-              </a>
-              <a 
-                href="https://calendly.com/louiscollinsjr/atem-intro" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="border border-white hover:bg-gray-800 text-white font-medium py-3 px-8 rounded-full transition-colors text-center"
-              >
-                Schedule a 15-min call
-              </a>
-            </div>
-          }
-        />
-      </section>
+      
     </div>
   );
 };

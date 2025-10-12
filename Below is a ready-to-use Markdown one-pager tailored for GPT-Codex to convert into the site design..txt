@@ -1,0 +1,141 @@
+Below is a ready-to-use Markdown one-pager tailored for GPT-Codex to convert into the site design.
+It includes small inline design hints (as HTML comments) so the generator can reuse the existing site styles (colors, fonts, spacing, header/nav) and keep the minimal, whitespace-forward aesthetic you asked for.
+
+Copy this whole file into your editor / prompt for GPT-Codex.
+
+⸻
+
+Launch by Atem
+
+Ship your idea. Finally.
+
+
+
+
+⸻
+
+The Gap Between Idea and Product Stops Here
+
+You have the vision. We close the gap.
+
+Most founders get stuck between great idea and working product — technical overwhelm, unclear costs, or just not enough time.
+Launch by Atem helps you cross that final mile: fast, personal, transparent.
+
+
+
+
+⸻
+
+What You Get
+	•	Work directly with the founder — no junior handoffs, no agencies.
+	•	MVP-focused delivery — 2–4 core features that validate the idea.
+	•	Education as we build — understand the stack and be able to maintain/iterate.
+	•	Clear cost & timeline — fixed-scope MVP options; hourly/retainer for follow-ups.
+
+
+
+
+⸻
+
+Who This Is For
+	•	US startups needing senior dev at sustainable rates
+	•	Romanian small-businesses wanting international quality
+	•	Founders who want to ship — not wait
+
+⸻
+
+Pricing Snapshot & Availability
+
+Introductory MVP Package — fixed-scope MVP for core features.
+Region pricing:
+	•	US: senior-level work at ~40–50% below typical US agency rates.
+	•	Romania: international-quality work at local-market pricing.
+
+Current availability: 2 project slots for Q4 2025.
+
+
+
+
+⸻
+
+How We Work (Quick)
+	1.	Quick 15-minute “can we assist?” call
+	2.	Mini audit & scope draft (free)
+	3.	1-page proposal: fixed scope, price, timeline
+	4.	Deposit (25–50%) → kickoff → regular demos
+
+
+
+
+⸻
+
+Real (Anonymized) Outcomes
+
+“Launched a booking MVP in 9 weeks — founder could close seed conversations after demo.”
+— Founder’s title, anonymized
+
+“We got test users in week two and iterated based on real feedback.”
+— Product lead, anonymized
+
+
+
+
+⸻
+
+Get Started — (Yes, really) Chat with me anytime
+
+If you have an idea, bring it. Let’s see if we can assist.
+
+Options:
+	•	Quick chat: [Open Chat]
+	•	Schedule a 15-min call: [Calendar link]
+	•	Email: [your@email] / Phone: [+00 000 000]
+
+
+
+
+⸻
+
+Short FAQ
+
+Q: How long to build an MVP?
+A: Typical simple MVP: 2–4 months part-time; simple landing+core feature: 2–8 weeks.
+
+Q: Do you sign NDAs?
+A: Yes — we respect client privacy and can provide anonymized case studies.
+
+Q: What’s the first step?
+A: Book the quick call or hit the chat button — we’ll do a short audit and outline options.
+
+
+
+
+⸻
+
+Footer — Mission & Links
+
+Launch by Atem — Build, learn, launch. We help founders ship and understand the tech behind their product.
+[Privacy] • [Terms] • [LinkedIn] • [Twitter]
+
+
+
+
+⸻
+
+For GPT-Codex (developer notes)
+	•	Use existing site tokens: colors, fonts, spacing, header/nav, and existing logo assets.
+	•	Responsive rules: Single-column mobile; two-column hero on desktop. Keep the page very sparse with large margins.
+	•	Interaction:
+	•	Primary CTA should open a chat widget or deep-link to WhatsApp/Telegram if available.
+	•	Secondary CTA opens a calendar scheduling modal (use Calendly or your current scheduling tool).
+	•	Form submissions must trigger a friendly auto-reply with next steps.
+	•	Accessibility: semantic headings, accessible form labels, keyboard-focus styles.
+	•	Performance: lazy-load any images, avoid heavy scripts. Keep bundle minimal.
+
+⸻
+
+If you want, I can now:
+	•	produce a slim HTML + Tailwind version of this Markdown ready for your Svelte site, or
+	•	generate the 3 outreach messages (LinkedIn DM, cold email, Slack message) that use this page as the landing place.
+
+Which of those should I produce next?

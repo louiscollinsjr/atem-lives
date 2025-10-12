@@ -32,7 +32,7 @@ const RotatingText = ({ phrases }: { phrases: string[] }) => {
         {longestPhrase}
       </div>
       <div 
-        className={`absolute top-0 left-0 right-0 transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-0 transform translate-y-2 text-right' : 'opacity-100 transform translate-y-0 text-right'}`}
+        className={`absolute top-0 left-0 right-0 transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-0 transform translate-y-2 text-righte' : 'opacity-100 transform translate-y-0 text-right'}`}
       >
         {phrases[currentPhraseIndex]}
       </div>

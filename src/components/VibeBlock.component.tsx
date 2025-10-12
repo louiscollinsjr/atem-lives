@@ -29,13 +29,13 @@ const VibeBlock: React.FC<VibeBlockProps> = ({
     <section className={`py-16 md:py-24 lg:py-32 px-4 w-full max-w-screen-xl mx-auto ${className}`}>
       <div className="max-w-4xl mx-auto">
         {title && (
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-[64px] font-light mb-8 text-center">
             {title}
           </h2>
         )}
         
         {subtitle && (
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-light mb-8 text-center">
+          <h3 className="text-xl md:text-2xl lg:text-xl font-light mb-8 text-center text-black/60">
             {subtitle}
           </h3>
         )}

@@ -2,7 +2,7 @@ import React from 'react';
 import {  Route, Routes } from 'react-router-dom';
 import { SpotlightProvider } from './contexts/SpotlightContext.context';
 import Navigation from './components/Navigation.component';
-import { routes, defaultRoute } from './config/routes';
+import { routes, defaultRoute, launchRoutes } from './config/routes';
 import CookieConsent from './components/CookieConsent.Component';
 import ScrollToTop from './components/ScrollToTop.component';
 
@@ -14,7 +14,7 @@ const App: React.FC = () => {
         <ScrollToTop />
         <Routes>
           <Route element={<Navigation />}>
-            {routes.map((route) => 
+            {routes.map((route) =>
               route.index ? (
                 <Route index key="index" element={<route.component />} />
               ) : (
@@ -23,6 +23,14 @@ const App: React.FC = () => {
             )}
             <Route path={defaultRoute.path} element={<defaultRoute.component />} />
           </Route>
+          {launchRoutes.map((route) => {
+            const NavigationLayout = route.navigation ?? Navigation;
+            return (
+              <Route key={route.path} element={<NavigationLayout />}>
+                <Route path={route.path} element={<route.component />} />
+              </Route>
+            );
+          })}
         </Routes>
         <CookieConsent />
       </SpotlightProvider>
