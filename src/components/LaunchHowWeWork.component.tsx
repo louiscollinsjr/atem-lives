@@ -1,4 +1,7 @@
 import React from "react";
+import how01 from "../assets/how01.png";
+import how02 from "../assets/how02.png";
+import how03 from "../assets/how03.png";
 
 export interface HowWeWorkProps {
   className?: string;
@@ -9,7 +12,7 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
     {
       title: "Direct Collaboration",
       text: "Work one-on-one with a senior developer who understands both code and business. No layers. No lag. Just clarity and momentum.",
-      image: "src/assets/how01.png",
+      image: how01,
       alt: "Direct Collaboration",
       icon: "pen",
       blurb: "Direct Collaboration",
@@ -17,7 +20,7 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
     {
       title: "Focused on Launch",
       text: "We build only what matters — 2–4 core features that prove your idea. Your MVP ships in 8–12 weeks, ready for real users.",
-      image: "src/assets/how02.png",
+      image: how02,
       alt: "Focused on Launch",
       icon: "chart-bar",
       blurb: "Focused on Launch",
@@ -25,7 +28,7 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
     {
       title: "Built to Grow",
       text: "Clean, documented, and transparent code that scales with you. Know what’s built — and why it works.",
-      image: "src/assets/how03.png",
+      image: how03,
       alt: "Built to Grow",
       icon: "clock",
       blurb: "Built to Grow",

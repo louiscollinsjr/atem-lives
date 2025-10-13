@@ -1,5 +1,11 @@
 import React from 'react';
 import AnimatedFeatureGrid, { FeatureSquare } from './AnimatedFeatureGrid.component';
+import square1 from '../assets/square1.png';
+import square2 from '../assets/square2.png';
+import square3 from '../assets/square3.png';
+import square4 from '../assets/square4.png';
+import square5 from '../assets/square5.png';
+import square7 from '../assets/square7.png';
 
 export interface ProblemSolutionProps {
   className?: string;
@@ -14,7 +20,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
       subtitle: 'Every product starts as an idea. Let\'s start making yours real, today.',
       description:'',
       ctaLabel: 'Get started',
-      backgroundImage: '/src/assets/square1.png',
+      backgroundImage: square1,
       overlayColor: '#012d55',
     },{
       id: 'velocity',
@@ -23,7 +29,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
       subtitle: 'Every product starts as an idea. Let\'s start making yours real, today.',
       description:'',
       ctaLabel: 'Get started',
-      backgroundImage: '/src/assets/square2.png',
+      backgroundImage: square2,
       overlayColor: '#77471b',
     },{
       id: 'velocity',
@@ -32,7 +38,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
       subtitle: 'Every product starts as an idea. Let\'s start making yours real, today.',
       description:'',
       ctaLabel: 'Get started',
-      backgroundImage: '/src/assets/square3.png',
+      backgroundImage: square3,
       overlayColor: '#000000',
     },{
       id: 'velocity',
@@ -41,7 +47,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
       subtitle: 'Every product starts as an idea. Let\'s start making yours real, today.',
       description:'',
       ctaLabel: 'Get started',
-      backgroundImage: '/src/assets/square4.png',
+      backgroundImage: square4,
       overlayColor: '#000000',
     },{
       id: 'velocity',
@@ -50,7 +56,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
       subtitle: 'Every product starts as an idea. Let\'s start making yours real, today.',
       description:'',
       ctaLabel: 'Get started',
-      backgroundImage: '/src/assets/square5.png',
+      backgroundImage: square5,
       overlayColor: '#000000',
     },{
       id: 'velocity',
@@ -59,7 +65,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
       subtitle: 'Every product starts as an idea. Let\'s start making yours real, today.',
       description:'',
       ctaLabel: 'Get started',
-      backgroundImage: '/src/assets/square7.png',
+      backgroundImage: square7,
       overlayColor: '#5e220b',
     },
   ];
