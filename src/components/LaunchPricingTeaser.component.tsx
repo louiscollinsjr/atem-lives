@@ -45,7 +45,7 @@ const LaunchPricingTeaser: React.FC<PricingTeaserProps> = ({ className = "" }) =
   ];
 
   return (
-    <section className={`max-w-7xl mx-auto px-6 md:px-10 py-20 mb-28 ${className}`}>
+    <section className={`max-w-7xl mx-auto px-2 md:px-2 py-20 mb-28 ${className}`}>
       {/* Section Header */}
       <div className="text-center mb-28">
         <p className="text-2xl text-black font-bold font-roboto pb-6 tracking-[0.04em]">

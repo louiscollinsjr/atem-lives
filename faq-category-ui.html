@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Launch by Atem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .faq-header h2 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        
+        .faq-header p {
+            font-size: 20px;
+            color: #666;
+        }
+        
+        .category-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 60px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+        
+        .category-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            border-radius: 24px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        
+        .category-tab:hover {
+            border-color: #1a1a1a;
+            color: #1a1a1a;
+        }
+        
+        .category-tab.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+        }
+        
+        .category-tab.trending {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+        }
+        
+        .category-tab.trending:hover {
+            opacity: 0.9;
+        }
+        
+        .faq-list {
+            display: none;
+        }
+        
+        .faq-list.active {
+            display: block;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 0;
+        }
+        
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 28px 0;
+            background: none;
+            border: none;
+            font-size: 20px;
+            font-weight: 500;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+        
+        .faq-question:hover {
+            color: #667eea;
+        }
+        
+        .faq-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+            color: #999;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-bottom: 28px;
+        }
+        
+        .faq-answer p {
+            font-size: 17px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .cta-box {
+            margin-top: 80px;
+            padding: 48px;
+            background: #f5f5f5;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .cta-box p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-header h2 {
+                font-size: 36px;
+            }
+            
+            .category-tabs {
+                gap: 8px;
+            }
+            
+            .category-tab {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .faq-question {
+                font-size: 18px;
+                padding: 24px 0;
+            }
+            
+            .cta-box {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="faq-section">
+        <div class="faq-header">
+            <h2>Questions?</h2>
+            <p>Everything you need to know about working with Launch by Atem</p>
+        </div>
+        
+        <div class="category-tabs">
+            <button class="category-tab trending active" data-category="trending">⚡ Trending</button>
+            <button class="category-tab" data-category="scope">Scope & Process</button>
+            <button class="category-tab" data-category="timeline">Timeline & Delivery</button>
+            <button class="category-tab" data-category="technical">Technical</button>
+            <button class="category-tab" data-category="payment">Payment & Pricing</button>
+            <button class="category-tab" data-category="trust">Trust & Credibility</button>
+            <button class="category-tab" data-category="strategy">Strategy & Planning</button>
+        </div>
+        
+        <!-- Trending Questions -->
+        <div class="faq-list active" data-category="trending">
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do you ship MVPs in 8 weeks when others take 6 months?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Focus. We build 2-3 core features that solve your main problem, not 20 nice-to-haves. No committee meetings, no handoffs—just direct collaboration with a senior developer who makes fast decisions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Why are your prices lower than US agencies?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>I'm based in Romania with lower operating costs, but I work directly with US founders. You get senior-level quality without the agency markup—no account managers, no layers of bureaucracy, no inflated overhead.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    What if my project doesn't fit these tiers?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Book a free consultation. We'll scope your specific needs and provide a custom quote within 24 hours. Most projects fit, but we're flexible when they don't.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    How does payment work?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>50% upfront to start, 50% at delivery. For projects over $10,000, we can discuss milestone-based payments that match your cash flow.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I see examples of your work?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. We showcase anonymized case studies on this page. During your consultation, we can share relevant examples based on your industry and specific needs.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    What happens after launch?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Every package includes 1-2 weeks of post-launch support for bugs. After that, you can book hourly support ($150/hour) or sign up for a monthly retainer ($500/month) for ongoing development.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scope & Process -->
+        <div class="faq-list" data-category="scope">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What exactly is included in an MVP package?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Each tier includes a fixed number of core features, responsive design, authentication (if needed), database setup, clean documented code, and post-launch support. We scope everything upfront so there are no surprises.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do we decide what features to include?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>On our kickoff call, we'll prioritize features based on your core user need. We focus on 2-4 features that solve the main problem—nothing extra. You can always add more after launch.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can I change features mid-project?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Minor adjustments are fine. Major scope changes require a change order with transparent pricing. We protect both of us with clear agreements upfront.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Timeline & Delivery -->
+        <div class="faq-list" data-category="timeline">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What if you miss the deadline?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We haven't missed a deadline yet. But if we do, you get 10% off your final payment. We take timelines seriously.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    When can we start?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We currently have 2 project slots available for Q4 2025. Book a consultation to reserve your spot.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    How involved do I need to be during development?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We'll have a kickoff call, weekly check-ins (30 min), and need your feedback at key milestones. Expect 2-3 hours per week from you.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technical -->
+        <div class="faq-list" data-category="technical">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What technologies do you use?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We choose the best stack for your needs—typically modern, proven tools like React, Node.js, PostgreSQL, or similar. We'll recommend the right fit during scoping and explain why.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Will I own the code?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. You get full ownership of all code, designs, and documentation. No strings attached.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can another developer take over after launch?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely. We write clean, documented code with that in mind. You're never locked in.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you build mobile apps or just web?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Both. We build responsive web apps (work on any device) and native mobile apps depending on your needs.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Payment & Pricing -->
+        <div class="faq-list" data-category="payment">
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you offer payment plans?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, for projects over $10,000. We'll work out a structure that fits your cash flow.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is the introductory pricing real or a gimmick?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>It's real. We're building our portfolio and case studies for 2025-2026. After December 2025, prices return to standard rates (30% higher).</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    What's included in "no surprises"?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Fixed scope agreed upfront. If you request changes, we discuss cost before doing the work. No hidden fees, no scope creep, no surprise invoices.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Trust & Credibility -->
+        <div class="faq-list" data-category="trust">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What if I'm not happy with the result?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We work collaboratively with regular check-ins, so you're never surprised. If there's a technical issue we can't resolve, you get a full refund. This has never happened.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you sign NDAs?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we're happy to sign your NDA before discussing your idea.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do I know you won't disappear mid-project?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>You only pay 50% upfront, and we stay in regular contact throughout. Plus, you can check our LinkedIn, GitHub, and past client testimonials.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Strategy & Planning -->
+        <div class="faq-list" data-category="strategy">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What if I'm not sure my idea is ready to build?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Book a $500 Strategy Session. We'll analyze feasibility, prioritize features, recommend tech, and give you a roadmap. If you build with us within 30 days, the $500 is credited toward your project.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    I don't have wireframes or designs. Can you still help?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. We can start from scratch or work with whatever you have. Part of our process is helping you clarify what to build.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    What if I need help after the support period ends?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>You can book additional support hours ($150/hour) or sign up for a monthly retainer ($500/month for ongoing help).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-box">
+            <h3>Still have questions?</h3>
+            <p>Book a free 20-minute call and we'll answer everything.</p>
+            <a href="#contact" class="cta-button">Schedule Free Consultation</a>
+        </div>
+    </section>
+    
+    <script>
+        // Category tab switching
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const faqLists = document.querySelectorAll('.faq-list');
+        
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.getAttribute('data-category');
+                
+                // Update active tab
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show corresponding FAQ list
+                faqLists.forEach(list => {
+                    list.classList.remove('active');
+                    if (list.getAttribute('data-category') === category) {
+                        list.classList.add('active');
+                    }
+                });
+                
+                // Close all accordions when switching categories
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+            });
+        });
+        
+        // Accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other items in the same category
+                const currentList = faqItem.closest('.faq-list');
+                currentList.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

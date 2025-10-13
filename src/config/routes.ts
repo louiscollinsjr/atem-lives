@@ -11,6 +11,7 @@ import NotFound from '../components/not-found';
 import VibeWithAtem from '../components/VibeWithAtem.page';
 import LaunchNavigation from '../components/LaunchNavigation.component';
 import LaunchLandingPage from '../components/LaunchLanding.page';
+import LaunchPricingPage from '../components/LaunchPricing.page';
 import CaseStudyPage from '../components/CaseStudyPage.component';
 import { LAUNCH_ENABLED, LAUNCH_ROUTE_PATH } from './launch';
 
@@ -24,7 +25,8 @@ export interface RouteConfig {
 }
 
 export const routes: RouteConfig[] = [
-  { path: '/', spotlightText: 'Products and Services Spotlight', isDarkBackground: false, component: Home, index: true },
+  { path: '/launch', spotlightText: 'Products and Services Spotlight', isDarkBackground: false, component: LaunchLandingPage, navigation: LaunchNavigation, index: true },
+  { path: '/pricing', spotlightText: 'Launch Pricing Spotlight', isDarkBackground: false, component: LaunchPricingPage, navigation: LaunchNavigation },
   { path: '/maestro', spotlightText: 'Maestro Automations Spotlight', isDarkBackground: false, component: Maestro },
   { path: '/design', spotlightText: 'Design and Development Spotlight', isDarkBackground: false, component: Design },
   { path: '/vibing-with-atem', spotlightText: 'Vibe Coding with Atem', isDarkBackground: false, component: VibeWithAtem },
@@ -38,15 +40,7 @@ export const routes: RouteConfig[] = [
 ];
 
 export const launchRoutes: RouteConfig[] = LAUNCH_ENABLED
-  ? [
-      {
-        path: LAUNCH_ROUTE_PATH,
-        spotlightText: 'Launch',
-        isDarkBackground: false,
-        component: LaunchLandingPage,
-        navigation: LaunchNavigation,
-      },
-    ]
+  ? [] // Launch routes are now handled in main routes
   : [];
 
 export const defaultRoute: RouteConfig = {

@@ -7,6 +7,7 @@ import LaunchHero from "./LaunchHero.component";
 import LaunchHowWeWork from "./LaunchHowWeWork.component";
 import LaunchPricingTeaser from "./LaunchPricingTeaser.component";
 import Cta from "./cta.component";
+import Faq from "./Faq.component";
 
 const LaunchLandingPage: React.FC = () => {
   const caseStudies = getCaseStudies();
@@ -39,6 +40,8 @@ const LaunchLandingPage: React.FC = () => {
      
 
       <LaunchPricingTeaser />
+
+      <Faq />
 
       <Cta />
 

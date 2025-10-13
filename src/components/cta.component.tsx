@@ -25,15 +25,15 @@ const Cta: React.FC<CtaProps> = ({
   foreground = "text-black",
   cta = {
     title: "Ready to ship?",
-    description: "Schedule a founder-to-founder call to scope your MVP and lock in a launch slot.",
+    description: "Schedule a call to scope your MVP and lock in a launch slot.",
     primaryButton: {
       text: "Schedule a call",
       href: "https://calendly.com/louiscollinsjr/atem-intro",
       ariaLabel: "Schedule a call with Atem"
     },
     secondaryLink: {
-      text: "Prefer email? hello@designbyatem.com",
-      href: "mailto:hello@designbyatem.com"
+      text: "Prefer email? hello@atem.gdn",
+      href: "mailto:hello@atem.gdn"
     }
   }
 }) => {
@@ -50,7 +50,7 @@ const Cta: React.FC<CtaProps> = ({
           <a
             href={cta.primaryButton.href}
             aria-label={cta.primaryButton.ariaLabel}
-            className={`inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-roboto transition-colors duration-300 ${
+            className={`inline-flex items-center justify-center px-6 py-3 rounded-full text-xl font-roboto transition-colors duration-300 ${
               foreground === 'text-white' 
                 ? 'bg-white text-black hover:bg-gray-100' 
                 : 'bg-black text-white hover:bg-gray-800'
