@@ -30,8 +30,7 @@ const Faq: React.FC<FaqProps> = ({
   className = "",
   categories = defaultCategories,
   title = "Questions?",
-  description = "Everything you need to know about working with Launch by Atem",
-  cta = defaultCta
+  description = "Everything you need to know about working with Launch by Atem"
 }) => {
   const [activeCategory, setActiveCategory] = useState('trending');
   const [openItems, setOpenItems] = useState<Set<string>>(new Set(['trending-1']));
@@ -318,11 +317,5 @@ const defaultCategories: FaqCategory[] = [
   }
 ];
 
-const defaultCta = {
-  title: "Still have questions?",
-  description: "Book a free 20-minute call and we'll answer everything.",
-  buttonText: "Schedule Free Consultation",
-  buttonHref: "https://calendly.com/louiscollinsjr/atem-intro"
-};
 
 export default Faq;

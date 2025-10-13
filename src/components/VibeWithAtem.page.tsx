@@ -1,36 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import VibeBlock from './VibeBlock.component';
 import RotatingText from './RotatingText.component';
 import BouncingLogo from './BouncingLogo.component';
 
 const VibeWithAtem: React.FC = () => {
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const phrases = [
-    "Build with Vibe",
-    "Design with Vibe",
-    "Launch with Vibe",
-    "Prototype with Vibe",
-    "Create with Vibe",
-    "Iterate with Vibe"
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     // Smooth scroll for section transitions
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', function (this: HTMLElement, e: Event) {
         e.preventDefault();
         
         const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+        if (targetId === '#' || targetId === null) return;
         
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
@@ -54,7 +36,7 @@ const VibeWithAtem: React.FC = () => {
     
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', function (e) {});
+        anchor.removeEventListener('click', function (_e: Event) {});
       });
     };
   }, []);

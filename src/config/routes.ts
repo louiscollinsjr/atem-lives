@@ -13,7 +13,7 @@ import LaunchNavigation from '../components/LaunchNavigation.component';
 import LaunchLandingPage from '../components/LaunchLanding.page';
 import LaunchPricingPage from '../components/LaunchPricing.page';
 import CaseStudyPage from '../components/CaseStudyPage.component';
-import { LAUNCH_ENABLED, LAUNCH_ROUTE_PATH } from './launch';
+import { LAUNCH_ENABLED } from './launch';
 
 export interface RouteConfig {
   path: string;

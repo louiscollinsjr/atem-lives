@@ -1,7 +1,5 @@
 import React from "react";
-import CaseStudyRail from "./CaseStudyRail.component";
 import DesignDisplayShowcase from "./DesignDisplayShowcase.component";
-import { getCaseStudies } from "../utils/caseStudyLoader";
 import LaunchProblemSolution from "./LaunchProblemSolution.component";
 import LaunchHero from "./LaunchHero.component";
 import LaunchHowWeWork from "./LaunchHowWeWork.component";
@@ -10,7 +8,6 @@ import Cta from "./cta.component";
 import Faq from "./Faq.component";
 
 const LaunchLandingPage: React.FC = () => {
-  const caseStudies = getCaseStudies();
 
   return (
     <div className="relative bg-white text-black ">
