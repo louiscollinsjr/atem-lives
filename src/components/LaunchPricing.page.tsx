@@ -1,5 +1,6 @@
 import React from 'react';
 import Faq from './Faq.component';
+import Cta from './cta.component';
 
 export interface PricingItem {
   label: string;
@@ -120,10 +121,12 @@ const LaunchPricingPage: React.FC = () => {
       <div className="w-full max-w-7xl mx-auto px-6 md:px-10 pt-20 pb-20">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 font-roboto">
-            Build Your Perfect Launch Plan
+            Transparent Pricing. Real Timelines.
           </h1>
           <p className="text-2xl font-medium text-slate-600 max-w-3xl mx-auto mb-12 font-roboto">
-            Fixed scope. Clear timelines. No surprises. Building at half the cost of other agencies.
+            Every package includes fixed scope, clear milestones, and direct collaboration  
+with a senior developer. Half the cost of other agencies—$6,500 vs. $25,000 for  
+the same 8-week MVP.
           </p>
           {/* <div className="flex justify-center mb-8">
             <div className="bg-gray-200 p-1 rounded-full flex items-center gap-1">
@@ -147,7 +150,7 @@ const LaunchPricingPage: React.FC = () => {
           {/* Left Column: Plan Selection */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-xl font-semibold mb-6 font-roboto">1. Choose your launch package</h2>
+              <h2 className="text-xl font-semibold mb-6 font-roboto">1. Choose your developement plan</h2>
               <div className="space-y-4">
                 {pricingItems.filter(plan => plan.title !== 'Launch Premium').map((plan, index) => (
                   <div
@@ -253,7 +256,7 @@ const LaunchPricingPage: React.FC = () => {
           {/* Right Column: Plan Summary */}
           <div>
             <div className="sticky top-32">
-              <h2 className="text-xl font-semibold mb-6 font-roboto">Your Launch Plan</h2>
+              <h2 className="text-xl font-semibold mb-6 font-roboto">Your development plan</h2>
               <div className="bg-gray-50 rounded-2xl p-8">
                 <div className="mb-6">
                   <div className="flex justify-between items-center mb-4">
@@ -332,6 +335,7 @@ const LaunchPricingPage: React.FC = () => {
 
         {/* FAQ Section */}
         <Faq />
+        <Cta />
         
       </div>
     </div>

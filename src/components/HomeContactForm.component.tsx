@@ -58,11 +58,11 @@ const HomeContactForm: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           <div className="py-4 md:py-8 flex flex-col justify-center">
           <p className="text-base font-bold tracking-wide text-black mb-6">
-          VIBE with atem.
+          Build with atem
         </p>
-            <h1 className="font-bold text-3xl md:text-5xl mb-6 w-[90%]">Ready to build? Let’s start with a quick intro — we’ll follow up personally.</h1>
-            <p className="text-xs md:text-base text-gray-700 mb-6 w-[90%]">
-  atem. offers a range of services — from rapid VIBE builds to enterprise-grade automation with Maestro. Whether you’re looking to launch something new, improve existing systems, or explore how AI can power your business, we’d love to collaborate. Just tell us a bit about yourself below.
+            <h1 className="font-bold text-3xl md:text-7xl mb-6 w-[90%]">Ready to build? Let’s start with a quick intro — we’ll follow up personally.</h1>
+            <p className="text-xs md:text-2xl font-medium text-gray-600 mb-6 w-[90%]">
+  atem. offers a range of services — from rapid MVP builds to enterprise-grade automation with Maestro. Whether you’re looking to launch something new, improve existing systems, or explore how AI can power your business, we’d love to collaborate. Just tell us a bit about yourself.
 </p>
           </div>
           <div className="p-2 md:p-1 rounded-lg bg-gradient-to-br from-pink-500 via-yellow-400 to-blue-500">
@@ -80,7 +80,7 @@ const HomeContactForm: React.FC = () => {
                 <input id="phone" name="phone" type="tel" placeholder="(555) 123-4567" className="w-full border rounded px-3 py-2 focus:outline-none focus:ring" value={formData.phone} onChange={handleChange} />
               </div>
               <div>
-                <label className="block font-semibold mb-6">What would you like to explore with VIBE? <span className="text-red-500">*</span></label>
+                <label className="block font-semibold mb-6">What would you like to explore with atem? <span className="text-red-500">*</span></label>
                 <div className="flex flex-wrap gap-3">
                   <button type="button" className={`px-4 py-2 rounded border ${formData.explore === 'build' ? 'bg-black text-white' : 'bg-white text-black'}`} onClick={() => handleExplore('build')}>Build something new</button>
                   <button type="button" className={`px-4 py-2 rounded border ${formData.explore === 'improve' ? 'bg-black text-white' : 'bg-white text-black'}`} onClick={() => handleExplore('improve')}>Improve existing systems</button>
@@ -95,7 +95,7 @@ const HomeContactForm: React.FC = () => {
                 <input id="updates" name="updates" type="checkbox" checked={formData.updates} onChange={handleChange} className="mr-2" />
                 <label htmlFor="updates" className="text-sm">Get updates about upcoming events, webinars, product announcements, and helpful resources.</label>
               </div>
-              <button type="submit" className="w-full bg-black text-white py-3 rounded font-semibold flex items-center justify-center gap-2" disabled={loading}>{loading ? t('Submitting...') : <>Submit <span aria-hidden>→</span></>}</button>
+              <button type="submit" className="w-full bg-black text-white py-3 rounded font-semibold flex items-center justify-center gap-2 rounded-full" disabled={loading}>{loading ? t('Submitting...') : <>Submit <span aria-hidden>→</span></>}</button>
               {formStatus && (
                 <div className={`mb-4 pt-4 text-center ${formStatus.isError ? 'text-red-700' : 'text-slate-600'}`}>
                   {formStatus.message}

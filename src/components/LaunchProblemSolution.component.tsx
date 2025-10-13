@@ -97,7 +97,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
 
        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
       <a
-            href="/pricing"
+            href="/contact"
             className="group inline-flex items-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-black"
             style={{ minWidth: "280px" }}
           >

@@ -41,7 +41,9 @@ const LaunchLandingPage: React.FC = () => {
 
       <LaunchPricingTeaser />
 
-      <Faq />
+      <section id="faq">
+        <Faq />
+      </section>
 
       <Cta />
 

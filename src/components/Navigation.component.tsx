@@ -39,15 +39,15 @@ const Navigation: React.FC = () => {
             </NavLink>
           </div>
           <div className="hidden md:flex space-x-4">
-            <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/maestro">
-              Maestro
+            <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/">
+              <b>Launch</b> with atem
             </NavLink>
-            <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/design">
+            {/* <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/design">
               {t("Design and Development")}
-            </NavLink>
-            <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/vibe-with-atem">
+            </NavLink> */}
+            {/* <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/vibe-with-atem">
               VIBE with Atem
-            </NavLink>
+            </NavLink> */}
             <NavLink className={`text-xs ${isDarkBackground ? 'nav-link-dark' : 'nav-link'}`} to="/satchel">
               Satchel AR
             </NavLink>

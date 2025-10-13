@@ -137,13 +137,13 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
 
          <div className="mt-20">
           <a
-            href=""
-            aria-label=""
+            href="/#faq"
+            aria-label="Go to FAQ section"
             className="group inline-flex items-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-black"
-            style={{ minWidth: "196px" }}
+            style={{ minWidth: "196px" } }
           >
-            <span>Learn more about how we can help</span>
-            <span className="flex items-center">
+            <span>Learn more about how we can help below</span>
+            <span className="flex items-center rotate-90">
               <svg
                 width="24"
                 height="24"
