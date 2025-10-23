@@ -34,10 +34,24 @@ const Faq: React.FC<FaqProps> = ({
 }) => {
   const [activeCategory, setActiveCategory] = useState('trending');
   const [openItems, setOpenItems] = useState<Set<string>>(new Set(['trending-1']));
+  const [carouselIndex, setCarouselIndex] = useState(0);
 
   const handleCategoryChange = (categoryId: string) => {
     setActiveCategory(categoryId);
     setOpenItems(new Set());
+  };
+
+  const handleCarouselPrev = () => {
+    setCarouselIndex((prev) => (prev === 0 ? categories.length - 1 : prev - 1));
+  };
+
+  const handleCarouselNext = () => {
+    setCarouselIndex((prev) => (prev === categories.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleCategoryClick = (categoryId: string, index: number) => {
+    handleCategoryChange(categoryId);
+    setCarouselIndex(index);
   };
 
   const toggleItem = (itemId: string) => {
@@ -65,24 +79,83 @@ const Faq: React.FC<FaqProps> = ({
         </p>
       </div>
 
-      {/* Category Tabs */}
-      <div className="flex flex-wrap gap-3 mb-12 justify-center">
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => handleCategoryChange(category.id)}
-            className={`px-6 py-3 rounded-full text-sm font-roboto tracking-wide transition-all duration-300 border ${
-              activeCategory === category.id
-                ? category.isTrending
-                  ? 'bg-gradient-to-r from-[#ff395c] to-[#ff395c] text-white border-transparent'
-                  : 'bg-black text-white border-black'
-                : 'bg-white text-black border-[#e0e0e0] hover:border-black hover:text-black'
-            }`}
-          >
-            {category.isTrending && ''}
-            {category.name}
-          </button>
-        ))}
+      {/* Category Tabs - Carousel on mobile, normal layout on desktop */}
+      <div className="relative mb-12">
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <div className="flex items-center justify-center gap-4">
+            <button
+              onClick={handleCarouselPrev}
+              className="p-2 rounded-full border border-[#e0e0e0] bg-white hover:border-black transition-colors"
+              aria-label="Previous category"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M12 4L4 12L12 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            <div className="flex-1 max-w-[200px]">
+              <button
+                onClick={() => handleCategoryClick(categories[carouselIndex].id, carouselIndex)}
+                className={`w-full px-6 py-3 rounded-full text-sm font-roboto tracking-wide transition-all duration-300 border ${
+                  activeCategory === categories[carouselIndex].id
+                    ? categories[carouselIndex].isTrending
+                      ? 'bg-gradient-to-r from-[#ff395c] to-[#ff395c] text-white border-transparent'
+                      : 'bg-black text-white border-black'
+                    : 'bg-white text-black border-[#e0e0e0] hover:border-black hover:text-black'
+                }`}
+              >
+                {categories[carouselIndex].name}
+              </button>
+            </div>
+            
+            <button
+              onClick={handleCarouselNext}
+              className="p-2 rounded-full border border-[#e0e0e0] bg-white hover:border-black transition-colors"
+              aria-label="Next category"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M12 4L20 12L12 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M20 12H4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          {/* Carousel dots */}
+          <div className="flex justify-center gap-2 mt-4">
+            {categories.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleCategoryClick(categories[index].id, index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === carouselIndex ? 'bg-black' : 'bg-[#e0e0e0]'
+                }`}
+                aria-label={`Go to category ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:flex flex-wrap gap-3 justify-center">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => handleCategoryClick(category.id, categories.indexOf(category))}
+              className={`px-6 py-3 rounded-full text-sm font-roboto tracking-wide transition-all duration-300 border ${
+                activeCategory === category.id
+                  ? category.isTrending
+                    ? 'bg-gradient-to-r from-[#ff395c] to-[#ff395c] text-white border-transparent'
+                    : 'bg-black text-white border-black'
+                  : 'bg-white text-black border-[#e0e0e0] hover:border-black hover:text-black'
+              }`}
+            >
+              {category.isTrending && ''}
+              {category.name}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* FAQ Items */}

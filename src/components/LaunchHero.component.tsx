@@ -26,7 +26,7 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
       id="overview"
       className={`w-full min-h-[calc(50vh-5rem)] pt-12 pb-16 md:pt-24 ${className}`}
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-10 md:pt-24 text-center">
+      <div className="py-8">
         <header className="space-y-8 text-center mx-auto">
           <p className="tracking-[0.3em] text-xs text-slate-500">
             {heroData.subtitle}
@@ -43,7 +43,7 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
         </header>
 
         {/* Our Projects fade in carousel */}
-        <div className="my-12">
+        <div className="my-12 mx-6 md:mx-10">
           <p className="text-sm text-slate-500 mx-auto max-w-sm text-left border border-slate-600 p-4 py-6 rounded-md border-dashed bg-gray-50/80">
             <b>{heroData.projectExample.label}</b> {heroData.projectExample.description}
           </p>

@@ -38,16 +38,15 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
   
   return (
     <section
-      className={`w-full max-w-5xl mx-auto p-0 text-center font-aeonik my-36 rounded-2xl ${className}`}
-    >
+      className={`w-full max-w-5xl mx-auto text-center mt-16 mb-36 rounded-2xl ${className}`}>
       <div className="mb-24 text-center mx-auto max-w-4xl">
-        <p className="text-2xl  text-black font-bold font-roboto  pb-6 tracking-[0.04em]">
+        <p className="text-2xl  text-black font-bold font-roboto pb-6 tracking-[0.04em]">
           Our approach
         </p>
         <h1 className="text-3xl md:text-7xl text-gray-900 font-bold mx-auto font-roboto pb-8 tracking-tight">
           Made to move with you.
         </h1>
-        <div className="text-black text-2xl font-medium mx-auto">
+        <div className="text-black text-sm sm:text-xl md:text-2xl px-5 font-medium mx-auto">
           <p className="font-roboto text-[#86868b] tracking-[0.011em] leading-[1.5]">
             <h2 className="text-black inline">Our process defines the experience.</h2>{" "}
             <span>At Atem, every build is guided by three rhythms: close collaboration, disciplined scope, and code that's designed to grow. It's what makes your product move — fluidly, and with purpose.</span>
@@ -84,11 +83,11 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
           </div>
         ))}
 
-         <div className="mt-20">
+         <div className="md:mt-20 mt-10">
           <a
             href="/#faq"
             aria-label="Go to FAQ section"
-            className="group inline-flex items-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-black"
+            className="group inline-flex items-center text-left md:text-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-sm md:text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-black"
             style={{ minWidth: "196px" } }
           >
             <span>Learn more about how we can help below</span>

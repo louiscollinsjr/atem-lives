@@ -92,7 +92,7 @@ const AnimatedFeatureGrid: React.FC<AnimatedFeatureGridProps> = ({ items, interv
   }
 
   return (
-    <div className="relative mx-auto max-w-5xl">
+    <div className="relative mx-auto">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(249,249,249,0.9)_0%,_rgba(249,249,249,0.9)_35%,_rgba(249,249,249,0.1)_90%)]" />
       {/* 3×3 grid with the center square reserved for the animated feature card. */}
       <div className="relative z-10 grid grid-cols-3 gap-5 md:gap-5 overflow-visible">
@@ -101,15 +101,15 @@ const AnimatedFeatureGrid: React.FC<AnimatedFeatureGridProps> = ({ items, interv
           return (
             <div
               key={index}
-              className={`relative aspect-square rounded-[2.5rem] transition duration-700 ease-out ${
+              className={`relative aspect-square rounded-2xl md:rounded-[2.50rem] transition duration-700 ease-out ${
                 isCenter
-                  ? 'z-20 bg-red-500/0 shadow-[0_28px_50px_-26px_rgba(15,23,42,0.88),_0_-10px_24px_-18px_rgba(15,23,42,0.28),_-18px_12px_28px_-18px_rgba(15,23,42,0.35)]'
+                  ? 'z-20 bg-red-500/0 shadow-[0_28px_50px_-26px_rgba(15,23,42,0.88),_0_-10px_24px_-18px_rgba(15,23,42,0.28),_-18px_12px_28px_-18px_rgba(15,23,42,0.35)] scale-150 md:scale-100'
                   : 'z-10 bg-[#eaeaea]/30 border border-red-500/0 overflow-hidden'
               }`}
             >
               {isCenter && (
-                <div className="relative flex h-full w-full flex-col overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-white via-white to-[#e1e3e3] p-[0.3rem] md:p-[0.4rem]">
-                  <div className="relative flex h-full w-full flex-col overflow-hidden rounded-[2.50rem]">
+                <div className="relative flex h-full w-full flex-col overflow-hidden rounded-2xl md:rounded-[2.5rem] bg-gradient-to-r from-white via-white to-[#e1e3e3] p-[0.2rem] md:p-[0.4rem]">
+                  <div className="relative flex h-full w-full flex-col overflow-hidden rounded-2xl md:rounded-[2.50rem]">
                   {displayItem?.backgroundImage && (
                     <div
                       className="absolute inset-0 bg-cover bg-center opacity-95"
@@ -123,7 +123,7 @@ const AnimatedFeatureGrid: React.FC<AnimatedFeatureGridProps> = ({ items, interv
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-0'
                     }`}
                   >
-                    <div className="space-y-1 text-center">
+                    <div className="space-y-1 text-center hidden md:block">
                       {displayItem?.accent && (
                         <span className="inline-flex items-center justify-center gap-2 rounded-full border border-white/35 bg-white/10 px-3 py-0 text-[0.65rem] uppercase tracking-[0.32em] text-white/80">
                           {displayItem.accent}
@@ -161,7 +161,7 @@ const AnimatedFeatureGrid: React.FC<AnimatedFeatureGridProps> = ({ items, interv
                 </div>
               )}
               {!isCenter && (
-                <div className="absolute inset-0 flex h-full w-full items-center justify-center">
+                <div className="absolute inset-0 flex h-full w-full rounded-2xl items-center justify-center">
                   <div className="h-[55%] w-[55%] rounded-2xl bg-[#eaeaea]/00" />
                 </div>
               )}
@@ -170,7 +170,7 @@ const AnimatedFeatureGrid: React.FC<AnimatedFeatureGridProps> = ({ items, interv
         })}
       </div>
 
-      <div className="pointer-events-none absolute inset-[-1%] z-30 rounded-[4rem] bg-[radial-gradient(circle,_rgba(255,255,255,0)_42%,_rgba(255,255,255,0.85)_78%,_rgba(255,255,255,1)_95%)]" />
+      <div className="pointer-events-none absolute inset-[-1%] z-30 md:rounded-[4rem] bg-[radial-gradient(circle,_rgba(255,255,255,0)_42%,_rgba(255,255,255,0.85)_78%,_rgba(255,255,255,1)_95%)]" />
     </div>
   );
 };

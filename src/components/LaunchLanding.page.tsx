@@ -10,19 +10,19 @@ import Faq from "./Faq.component";
 const LaunchLandingPage: React.FC = () => {
 
   return (
-    <div className="relative bg-white text-black ">
+    <div className="relative text-black p-4">
       
-       <section id="problem-solution" className="max-w-5xl mx-auto px-6 md:px-10 py-12 text-center my-16">
+       <section id="problem-solution" className="w-full md:max-w-5xl mx-auto px-0 md:px-10 py-6 text-center md:my-16">
         <LaunchHero />
       </section>
 
-      <section id="problem-solution" className="max-w-5xl mx-auto px-6 md:px-10 py-12 text-center my-32 mb-64">
+      <section id="problem-solution" className="w-full md:max-w-5xl mx-auto my-16 mb-0 px-0 md:px-10 py-6 pb-0 text-center md:my-16">
         <LaunchProblemSolution />
       </section>
 
       <LaunchHowWeWork />
 
-      <section className="max-w-5xl mx-auto px-6 md:px-10 py-12 text-center my-32">
+      <section className="hidden md:block max-w-5xl mx-auto px-6 md:px-10 py-12 text-center my-32">
         <DesignDisplayShowcase />
       </section>
 
@@ -33,8 +33,6 @@ const LaunchLandingPage: React.FC = () => {
           description="A quick look at how founders partner with Atem to ship confidently."
         />
       </section> */}
-
-     
 
       <LaunchPricingTeaser />
 
