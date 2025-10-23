@@ -6,6 +6,7 @@ import LaunchHowWeWork from "./LaunchHowWeWork.component";
 import LaunchPricingTeaser from "./LaunchPricingTeaser.component";
 import Cta from "./cta.component";
 import Faq from "./Faq.component";
+import LearnMoreNightSky from "./LearnMoreNightSky.component";
 
 const LaunchLandingPage: React.FC = () => {
 
@@ -16,6 +17,10 @@ const LaunchLandingPage: React.FC = () => {
         <LaunchHero />
       </section>
 
+      <section id="learn-more" className="w-full md:max-w-7xl mx-auto my-16 mb-0 px-0 md:px-10 py-6 pb-0 text-center md:my-16">
+            <LearnMoreNightSky />
+      </section>
+      
       <section id="problem-solution" className="w-full md:max-w-5xl mx-auto my-16 mb-0 px-0 md:px-10 py-6 pb-0 text-center md:my-16">
         <LaunchProblemSolution />
       </section>
