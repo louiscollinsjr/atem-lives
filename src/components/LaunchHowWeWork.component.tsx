@@ -11,7 +11,7 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
   const sections = [
     {
       title: "Direct Collaboration",
-      text: "Work one-on-one with a senior developer who understands both code and business. No layers. No lag. Just clarity and momentum.",
+      text: "Work one-on-one with a SE who understands both code and business impact. No layers. No lag. Just flow.",
       image: how01,
       alt: "Direct Collaboration",
       icon: "pen",
@@ -47,10 +47,10 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
           Made to move with you.
         </h1>
         <div className="text-black text-sm sm:text-xl md:text-2xl px-5 font-medium mx-auto">
-          <p className="font-roboto text-[#86868b] tracking-[0.011em] leading-[1.5]">
-            <h2 className="text-black inline">Our process defines the experience.</h2>{" "}
-            <span>At Atem, every build is guided by three rhythms: close collaboration, disciplined scope, and code that's designed to grow. It's what makes your product move — fluidly, and with purpose.</span>
-          </p>
+          <div className="font-roboto text-[#86868b] tracking-[0.011em] leading-[1.5]">
+            <h2 className="text-black inline">Made to move with you.</h2>{" "}
+            <span>At Atem, every build follows three rhythms — close collaboration, disciplined scope, and code that grows with you. The result: MVPs that move fast, stay lean, and are built to evolve.</span>
+          </div>
         </div>
       </div>
 
@@ -76,7 +76,7 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
               <h3 className="text-2xl max-w-[350px] text-gray-900 my-5 pl-4 font-medium">
                 {section.title}
               </h3>
-              <p className="text-gray-500 text-xs leading-relaxed flex-grow pl-4">
+              <p className="text-gray-500 text-xs leading-relaxed flex-grow pl-4 max-w-[260px] mx-auto">
                 {section.text}
               </p>
             </div>
@@ -87,7 +87,7 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
           <a
             href="/#faq"
             aria-label="Go to FAQ section"
-            className="group inline-flex items-center text-left md:text-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-sm md:text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-black"
+            className="group inline-flex items-center text-left md:text-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-sm md:text-md font- tracking-wide text-white transition-colors duration-300 hover:bg-gray-800 hover:text-white"
             style={{ minWidth: "196px" } }
           >
             <span>Learn more about how we can help below</span>

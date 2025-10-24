@@ -123,7 +123,7 @@ const AnimatedFeatureGrid: React.FC<AnimatedFeatureGridProps> = ({ items, interv
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-0'
                     }`}
                   >
-                    <div className="space-y-1 text-center hidden md:block">
+                    {/* <div className="space-y-1 text-center hidden md:block">
                       {displayItem?.accent && (
                         <span className="inline-flex items-center justify-center gap-2 rounded-full border border-white/35 bg-white/10 px-3 py-0 text-[0.65rem] uppercase tracking-[0.32em] text-white/80">
                           {displayItem.accent}
@@ -144,7 +144,7 @@ const AnimatedFeatureGrid: React.FC<AnimatedFeatureGridProps> = ({ items, interv
                           {displayItem.description}
                         </p>
                       )}
-                    </div>
+                    </div> */}
 
                     {/* {displayItem?.ctaLabel && (
                       <div className="mt-4 flex w-full justify-center">

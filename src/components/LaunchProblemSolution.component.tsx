@@ -80,17 +80,17 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
       {/* Foreground content */}
       <div className="order-1 relative z-10">
          <div className="mb-0 sm:mb-20 md:mb-24 text-center mx-auto max-w-4xl px-4">
-        <p className="text-lg sm:text-xl md:text-2xl text-black font-bold font-roboto pb-4 sm:pb-6 tracking-[0.02em] sm:tracking-[0.04em]">
+        <p className="text-sm sm:text-lg md:text-lg text-black font- font-roboto pb-4 sm:pb-6 tracking-[0.02em] sm:tracking-[0.04em]">
           Our mission
         </p>
         <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-7xl text-gray-900 font-bold mx-auto font-roboto pb-6 sm:pb-8 tracking-tight">
           We close the gap.
         </h1>
         <div className="text-black text-sm sm:text-xl md:text-2xl font-medium mx-auto px-4">
-          <p className="font-roboto text-[#86868b] tracking-[0.008em] sm:tracking-[0.011em] leading-[1.4] sm:leading-[1.5]">
+          <div className="font-roboto text-[#86868b] tracking-[0.008em] sm:tracking-[0.011em] leading-[1.4] sm:leading-[1.5]">
             <h2 className="text-black inline">Most great ideas stall between concept and product.</h2>{" "}
             <span className="inline">We turn vision into momentum — building focused MVPs that ship fast, with clarity, transparency, and a process that feels effortless.</span>
-          </p>
+          </div>
         </div>
       </div>
 
@@ -100,7 +100,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
        <div className="order-3 relative mt-10 sm:mt-0 sm:absolute sm:bottom-8 sm:left-0 sm:right-0 flex justify-center px-4">
       <a
             href="/contact"
-            className="group inline-flex items-center justify-between gap-4 sm:gap-6 rounded-full border border-black bg-black px-6 sm:px-8 py-3 text-base sm:text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-black"
+            className="group inline-flex items-center justify-between gap-4 sm:gap-6 rounded-full border border-black bg-black px-6 sm:px-8 py-3 text-base sm:text-md font- tracking-wide text-white transition-colors duration-300 hover:bg-gray-800 hover:text-white"
             style={{ minWidth: "240px", maxWidth: "320px" }}
           >
             <span>Let's get started</span>

@@ -25,7 +25,7 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
   title = "Launch, today.",
   description = "Every product starts as an idea. Let's make yours real.",
   ctaLabel = "Read Our Stories",
-  destination = "/blog",
+  destination = "/stories",
   heightClass = "min-h-[420px]",
   backgroundImage = "",
   backgroundVideo = nightSkyVideoSrc,
@@ -40,12 +40,29 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isWobbling, setIsWobbling] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+
+  // Check if component should be hidden on mount
+  useEffect(() => {
+    const hiddenUntil = localStorage.getItem('learnMoreNightSkyHiddenUntil');
+    if (hiddenUntil) {
+      const hiddenTime = parseInt(hiddenUntil, 10);
+      if (Date.now() < hiddenTime) {
+        setIsHidden(true);
+      } else {
+        localStorage.removeItem('learnMoreNightSkyHiddenUntil');
+      }
+    }
+  }, []);
 
   // Random wobble effect
   useEffect(() => {
+    let timeoutId;
+    let wobbleTimeoutId;
+
     const triggerWobble = () => {
       setIsWobbling(true);
-      setTimeout(() => setIsWobbling(false), 600);
+      wobbleTimeoutId = setTimeout(() => setIsWobbling(false), 600);
     };
 
     // Trigger wobble at random intervals (3-8 seconds)
@@ -54,7 +71,7 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
       return setTimeout(triggerWobble, randomDelay);
     };
 
-    let timeoutId = scheduleNextWobble();
+    timeoutId = scheduleNextWobble();
 
     // Reschedule after each wobble
     const interval = setInterval(() => {
@@ -64,6 +81,7 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
 
     return () => {
       clearTimeout(timeoutId);
+      clearTimeout(wobbleTimeoutId);
       clearInterval(interval);
     };
   }, []);
@@ -73,6 +91,11 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
     if (!video) return;
     video.playbackRate = backgroundPlaybackRate;
   }, [backgroundPlaybackRate, backgroundVideo]);
+
+  // Don't render if hidden
+  if (isHidden) {
+    return null;
+  }
 
   return (
     <div className={`relative overflow-hidden rounded-lg ${heightClass} flex items-center justify-center`}>
@@ -105,7 +128,13 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
         className="absolute right-8 top-8 inline-flex items-center justify-center rounded-2xl py-2 px-4 bg-white/20 text-white/50 transition hover:scale-105 hover:bg-white/40 text-sm"
         type="button"
         aria-label="Close"
-        onClick={onClose}
+        onClick={() => {
+          // Hide for 30 minutes (30 * 60 * 1000 milliseconds)
+          const hideUntil = Date.now() + (30 * 60 * 1000);
+          localStorage.setItem('learnMoreNightSkyHiddenUntil', hideUntil.toString());
+          setIsHidden(true);
+          if (onClose) onClose();
+        }}
       >
         Close
       </button>

@@ -10,6 +10,7 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
     title: "Launch Your MVP in 8 Weeks",
     titleSuffix: "— Without Breaking the Bank 🚀",
     description: "Fast, focused development at half the cost of US agencies. Fixed scope. No surprises.",
+    
     projectExample: {
       label: "Cool things we have helped build:",
       description: "An intelligent audit platform that scores, optimizes, and exports job postings for modern hiring teams."
@@ -24,7 +25,7 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
   return (
     <section
       id="overview"
-      className={`w-full min-h-[calc(50vh-5rem)] pt-12 pb-16 md:pt-24 ${className}`}
+      className={`w-full min-h-[calc(80vh-5rem)] pt-12 pb-16 md:pt-24 bg-gray-50 rounded-lg ${className}`}
     >
       <div className="py-8">
         <header className="space-y-8 text-center mx-auto">
@@ -43,17 +44,17 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
         </header>
 
         {/* Our Projects fade in carousel */}
-        <div className="my-12 mx-6 md:mx-10">
+        {/* <div className="my-12 mx-6 md:mx-10">
           <p className="text-sm text-slate-500 mx-auto max-w-sm text-left border border-slate-600 p-4 py-6 rounded-md border-dashed bg-gray-50/80">
             <b>{heroData.projectExample.label}</b> {heroData.projectExample.description}
           </p>
-        </div>
+        </div> */}
 
         <div className="mt-20">
           <a
             href={heroData.cta.href}
             aria-label={heroData.cta.ariaLabel}
-            className="group inline-flex items-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-black"
+            className="group inline-flex items-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-md font- tracking-wide text-white transition-colors duration-300 hover:bg-gray-800 hover:text-white"
             style={{ minWidth: "196px" }}
           >
             <span>{heroData.cta.text}</span>
@@ -82,6 +83,15 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
               </svg>
             </span>
           </a>
+        </div>
+
+        {/* Insert image here */}
+        <div className="mt-32 items-center justify-center mx-auto text-center">
+          <img
+            src="/src/assets/launch/images/louiscollinsjr_Two_ethcic_techies_are_seated_across_from_each_o_8a1f5f73-50cb-4e2a-a9bb-910a6c8acc21.png"
+            alt="Two ethical techies collaborating"
+            className="max-w-6xl h-auto rounded-lg shadow-lg mx-auto"
+          />
         </div>
       </div>
     </section>

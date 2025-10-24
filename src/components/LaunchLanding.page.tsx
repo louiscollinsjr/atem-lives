@@ -13,15 +13,17 @@ const LaunchLandingPage: React.FC = () => {
   return (
     <div className="relative text-black p-4">
       
-       <section id="problem-solution" className="w-full md:max-w-5xl mx-auto px-0 md:px-10 py-6 text-center md:my-16">
+        <section id="learn-more" className="w-full md:max-w-7xl mx-auto my-16 mb-0 px-0 md:px-10 py-28 pb-0 text-center md:my-32">
+            <LearnMoreNightSky heightClass="md:min-h-[720px]" />
+      </section>
+
+       <section id="launch-hero" className="w-full md:max-w-7xl mx-auto px-0 md:px-10 py-6 text-center md:my-16">
         <LaunchHero />
       </section>
 
-      <section id="learn-more" className="w-full md:max-w-7xl mx-auto my-16 mb-0 px-0 md:px-10 py-6 pb-0 text-center md:my-16">
-            <LearnMoreNightSky />
-      </section>
+    
       
-      <section id="problem-solution" className="w-full md:max-w-5xl mx-auto my-16 mb-0 px-0 md:px-10 py-6 pb-0 text-center md:my-16">
+      <section id="problem-solution" className="w-full md:max-w-5xl mx-auto my-16 mb-0 px-0 md:px-10 py-6 pb-0 text-center md:my-28 md:mb-48">
         <LaunchProblemSolution />
       </section>
 

@@ -55,7 +55,7 @@ const LaunchPricingTeaser: React.FC<PricingTeaserProps> = ({ className = "" }) =
           Pricing That Makes Sense
         </h1>
         <p className="text-2xl font-medium text-[#000000] font-roboto max-w-3xl mx-auto">
-          Fixed scope. Clear timelines. No surprises. Building at half the cost of traditional US agencies.
+          Fixed scope. Clear timelines. No surprises. Building at more than half the cost of traditional agencies.
         </p>
       </div>
 
@@ -72,11 +72,11 @@ const LaunchPricingTeaser: React.FC<PricingTeaserProps> = ({ className = "" }) =
             <p className="text-[#000000] text-lg leading-relaxed font-roboto max-w-sm text-center mx-auto py-2">
               {item.description}
             </p>
-            <p className="text-[#000000] text-sm leading-relaxed font-roboto max-w-sm text-center mx-auto pt-4">From <span className="font-semibold">{item.price}</span> {item.discountedPrice && <span className="text-gray-600 text-sm leading-relaxed font-roboto max-w-sm text-center mx-auto line-through">{item.discountedPrice}</span>}. 30% off for limited time.</p>
+            <p className="text-[#000000] text-lg leading-relaxed font-roboto max-w-sm text-center mx-auto pt-4">From <span className="font-semibold">{item.discountedPrice}</span> {item.price && <span className="text-gray-600 text-sm leading-relaxed font-roboto max-w-sm text-center mx-auto line-through">{item.price}</span>}. 30% off for limited time.</p>
             {/* <div className="text-[10px] font-semibold text-white bg-blue-500 rounded-full text-center px-3 py-1 mb-4 font-roboto inline-block">Get Started</div> */}
             {/* <div className="text-[10px] font-semibold text-white bg-blue-500 rounded-full text-center px-3 py-1 mb-4 font-roboto inline-block"> 30% Off</div>
             <div className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4 font-roboto">
-              {item.price} <span className="text-gray-400 text-sm leading-relaxed font-roboto max-w-sm text-center mx-auto line-through">{item.discountedPrice}</span>
+              {item.price} <span className="text-gray-400 text-sm leading-relaxed font-roboto max-w-sm text-center mx-auto line-through">{item.price}</span>
             </div>
             <p className="text-[#666] text-lg leading-relaxed font-roboto max-w-sm text-center mx-auto">
               {item.description}
