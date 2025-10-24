@@ -114,23 +114,28 @@ const StoryDetailPage: React.FC = () => {
           <img
             src={story.metadata.heroImage}
             alt={story.metadata.title}
-            className="w-full h-full object-fill rounded-lg"
+            className="w-full h-full object-cover rounded-lg"
           />
         </div>
       )}
 
       {/* Content */}
-      <article className="max-w-4xl mx-auto px-6 py-16">
+      <article className="max-w-3xl mx-auto px-6 py-8">
         <div className="prose prose-lg prose-gray max-w-none">
           <ReactMarkdown
             components={{
+              h1: ({ children }) => (
+                <h1 className="text-4xl font-semibold text-gray-900 mt-14 mb-24">
+                  {children}
+                </h1>
+              ),
               h2: ({ children }) => (
-                <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">
+                <h2 className="text-3xl font-normal text-gray-900 mt-20 mb-12">
                   {children}
                 </h2>
               ),
               h3: ({ children }) => (
-                <h3 className="text-2xl font-semibold text-gray-900 mt-10 mb-4">
+                <h3 className="text-2xl font-normal text-gray-900 mt-10 mb-4">
                   {children}
                 </h3>
               ),

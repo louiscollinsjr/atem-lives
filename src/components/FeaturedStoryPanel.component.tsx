@@ -74,8 +74,8 @@ const FeaturedStoryPanel: React.FC<FeaturedStoryPanelProps> = ({ story }) => {
             </div> */}
 
             {/* CTA */}
-            <div className="flex items-center text-black font-medium group-hover:gap-3 gap-2 transition-all">
-              <span>Read the story</span>
+            <div className="flex items-center text-black font-normal font-roboto group-hover:gap-3 gap-2 transition-all">
+              <span>atem team</span>
               {/* <svg className="w-5 h-5 transition-transform group-hover:translate-x-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg> */}

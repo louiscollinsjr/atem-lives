@@ -42,11 +42,11 @@ const StoriesPage: React.FC = () => {
   return (
     <div className="min-h-screen max-w-full mx-auto mb-48">
       {/* Header */}
-      <header className="pt-64 mx-auto text-center items-center justify-center">
+      <header className="pt-64">
         <div className="max-w-[1380px] mx-auto px-6 py-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">Stories</h1>
-          <p className="text-xl text-gray-600 max-w-2xl text-center mx-auto mb-12">
-            Discover how teams are building the future with innovative technology and creative solutions.
+          <h1 className="text-6xl font-normal text-gray-900 mb-4">Stories</h1>
+          <p className="text-xl text-gray-600 max-w-2xl mb-12">
+            Great things are built by amazing people.
           </p>
         </div>
       </header>
