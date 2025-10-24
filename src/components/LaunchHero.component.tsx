@@ -54,7 +54,7 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
           <a
             href={heroData.cta.href}
             aria-label={heroData.cta.ariaLabel}
-            className="group inline-flex items-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-md font- tracking-wide text-white transition-colors duration-300 hover:bg-gray-800 hover:text-white"
+            className="group inline-flex items-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-md font-normal tracking-wide text-white transition-colors duration-300 hover:bg-gray-800 hover:text-white"
             style={{ minWidth: "196px" }}
           >
             <span>{heroData.cta.text}</span>

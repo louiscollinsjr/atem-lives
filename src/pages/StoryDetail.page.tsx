@@ -17,7 +17,11 @@ const StoryDetailPage: React.FC = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      if (!slug) return;
+      if (!slug) {
+        setLoading(false);
+        navigate("/stories");
+        return;
+      }
 
       try {
         const storyData = await getStoryBySlug(slug);

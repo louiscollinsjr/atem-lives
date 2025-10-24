@@ -87,7 +87,7 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
           <a
             href="/#faq"
             aria-label="Go to FAQ section"
-            className="group inline-flex items-center text-left md:text-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-sm md:text-md font- tracking-wide text-white transition-colors duration-300 hover:bg-gray-800 hover:text-white"
+            className="group inline-flex items-center text-left md:text-center justify-between gap-6 rounded-full border border-black bg-black px-8 py-3 text-sm md:text-md font-normal tracking-wide text-white transition-colors duration-300 hover:bg-gray-800 hover:text-white"
             style={{ minWidth: "196px" } }
           >
             <span>Learn more about how we can help below</span>
