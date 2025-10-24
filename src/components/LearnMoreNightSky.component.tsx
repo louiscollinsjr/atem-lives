@@ -57,8 +57,9 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
 
   // Random wobble effect
   useEffect(() => {
-    let timeoutId;
-    let wobbleTimeoutId;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    let wobbleTimeoutId: ReturnType<typeof setTimeout> | undefined;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
 
     const triggerWobble = () => {
       setIsWobbling(true);
@@ -74,15 +75,23 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
     timeoutId = scheduleNextWobble();
 
     // Reschedule after each wobble
-    const interval = setInterval(() => {
-      clearTimeout(timeoutId);
+    intervalId = setInterval(() => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
       timeoutId = scheduleNextWobble();
     }, 8000);
 
     return () => {
-      clearTimeout(timeoutId);
-      clearTimeout(wobbleTimeoutId);
-      clearInterval(interval);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      if (wobbleTimeoutId) {
+        clearTimeout(wobbleTimeoutId);
+      }
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
     };
   }, []);
 
