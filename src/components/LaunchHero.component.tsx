@@ -1,4 +1,5 @@
 import React from 'react';
+import clientMeetingImage from "../assets/launch/images/client_meeting.png";
 
 export interface HeroProps {
   className?: string;
@@ -13,13 +14,13 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
     
     projectExample: {
       label: "Cool things we have helped build:",
-      description: "An intelligent audit platform that scores, optimizes, and exports job postings for modern hiring teams."
+      description: "An intelligent audit platform that scores, optimizes, and exports job postings for modern hiring teams.",
     },
     cta: {
       text: "Let's get started",
       href: "/contact/",
-      ariaLabel: "Let's talk"
-    }
+      ariaLabel: "Let's talk",
+    },
   };
 
   return (
@@ -88,7 +89,7 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
         {/* Insert image here */}
         <div className="mt-32 items-center justify-center mx-auto text-center">
           <img
-            src="/src/assets/launch/images/louiscollinsjr_Two_ethcic_techies_are_seated_across_from_each_o_8a1f5f73-50cb-4e2a-a9bb-910a6c8acc21.png"
+            src={clientMeetingImage}
             alt="Two ethical techies collaborating"
             className="max-w-6xl h-auto rounded-lg shadow-lg mx-auto"
           />
