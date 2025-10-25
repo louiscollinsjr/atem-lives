@@ -3,8 +3,8 @@ title: "Navigating the AI Tooling Landscape: Essential MLOps and Dev Tools for 2
 slug: "ai-tooling-landscape-mlops"
 excerpt: "Guidance on essential MLOps and development tools for building, deploying, and monitoring AI systems in 2024 and 2025."
 publishedAt: "2024-12-21"
-heroImage: "/src/assets/story_media/bg4.webp"
-thumbnail: "/src/assets/story_media/bg4.webp"
+heroImage: "/story_media/bg4.webp"
+thumbnail: "/story_media/bg4.webp"
 author: "Atem Team"
 readingTime: "8 min read"
 tags: ["AI", "MLOps", "Tools"]

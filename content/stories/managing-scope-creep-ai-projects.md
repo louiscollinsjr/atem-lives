@@ -3,8 +3,8 @@ title: "The 8-Week MVP That Took 26 Weeks: Managing Scope Creep Without Derailin
 slug: "managing-scope-creep-ai-projects"
 excerpt: "What happens when your MVP takes 3x longer than planned? Lessons learned from building an AI-powered audit platform in the real world."
 publishedAt: "2025-01-15"
-heroImage: "/src/assets/story_media/louiscollinsjr_httpss.mj.run0Vf032h8aEc_Chromatic_scale_of_co_06f92d4d-a114-4693-ba68-a0d1f4058ac8_1.png"
-thumbnail: "/src/assets/story_media/louiscollinsjr_httpss.mj.run0Vf032h8aEc_Chromatic_scale_of_co_06f92d4d-a114-4693-ba68-a0d1f4058ac8_1.png"
+heroImage: "/story_media/louiscollinsjr_httpss.mj.run0Vf032h8aEc_Chromatic_scale_of_co_06f92d4d-a114-4693-ba68-a0d1f4058ac8_1.png"
+thumbnail: "/story_media/louiscollinsjr_httpss.mj.run0Vf032h8aEc_Chromatic_scale_of_co_06f92d4d-a114-4693-ba68-a0d1f4058ac8_1.png"
 author: "Atem Team"
 readingTime: "12 min read"
 tags: ["AI", "Project Management", "Scope Creep", "Client Communication"]

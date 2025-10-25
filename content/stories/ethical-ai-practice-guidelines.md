@@ -3,8 +3,8 @@ title: "Ethical AI in Practice: Implementing Responsible AI Guidelines in Produc
 slug: "ethical-ai-practice-guidelines"
 excerpt: "Practical guidelines for implementing ethical AI in product development, ensuring fairness, transparency, and security."
 publishedAt: "2024-12-17"
-heroImage: "/src/assets/story_media/bg11.png"
-thumbnail: "/src/assets/story_media/bg11.png"
+heroImage: "/story_media/bg11.png"
+thumbnail: "/story_media/bg11.png"
 author: "Atem Team"
 readingTime: "8 min read"
 tags: ["AI", "Ethics", "Development"]

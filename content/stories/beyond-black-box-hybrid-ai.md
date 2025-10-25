@@ -3,8 +3,8 @@ title: "Beyond the Black Box: How Hybrid AI Architectures Deliver Predictable Re
 slug: "beyond-black-box-hybrid-ai"
 excerpt: "Examining strategic approaches to combining deterministic logic with AI for robust, reliable, and predictable outcomes in production environments."
 publishedAt: "2024-12-02"
-heroImage: "/src/assets/story_media/bg7.png"
-thumbnail: "/src/assets/story_media/bg7.png"
+heroImage: "/story_media/bg7.png"
+thumbnail: "/story_media/bg7.png"
 author: "Atem Team"
 readingTime: "6 min read"
 tags: ["AI", "Architecture", "Reliability"]

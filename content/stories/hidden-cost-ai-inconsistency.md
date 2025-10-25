@@ -3,8 +3,8 @@ title: "The Hidden Cost of AI Inconsistency: Why 15% Variance Kills Production V
 slug: "hidden-cost-ai-inconsistency"
 excerpt: "Exploring the business impact of model variance and its effects on user trust, decision-making, and operational efficiency in AI-powered products."
 publishedAt: "2024-12-01"
-heroImage: "/src/assets/story_media/bg12.png"
-thumbnail: "/src/assets/story_media/bg12.png"
+heroImage: "/story_media/bg12.png"
+thumbnail: "/story_media/bg12.png"
 author: "Atem Team"
 readingTime: "5 min read"
 tags: ["AI", "Production", "Reliability"]

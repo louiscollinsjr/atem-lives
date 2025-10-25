@@ -3,8 +3,8 @@ title: "Solving the \"Cold Start\" Problem in AI: Data Strategies for Initial De
 slug: "cold-start-problem-ai-data-strategies"
 excerpt: "Data strategies for overcoming initial deployment challenges, including planning for new AI projects with limited data."
 publishedAt: "2024-12-09"
-heroImage: "/src/assets/story_media/bg10.png"
-thumbnail: "/src/assets/story_media/bg10.png"
+heroImage: "/story_media/bg10.png"
+thumbnail: "/story_media/bg10.png"
 author: "Atem Team"
 readingTime: "8 min read"
 tags: ["AI", "Data", "Deployment"]
