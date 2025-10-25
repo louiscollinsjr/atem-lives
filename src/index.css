@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #ffffff;
+}
+
 /* Add animation for the rotating text in the hero section */
 @keyframes textFadeInOut {
   0% { opacity: 0; }
