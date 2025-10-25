@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import nightSkyVideoSrc from "../assets/videos/night_sky.mp4";
+import nightSkyPoster from "../assets/launch/images/night_sky.png";
 
 export interface LearnMoreNightSkyProps {
   eyebrow?: string;
@@ -27,7 +28,7 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
   ctaLabel = "Read Our Stories",
   destination = "/stories",
   heightClass = "min-h-[420px]",
-  backgroundImage = "",
+  backgroundImage = nightSkyPoster,
   backgroundVideo = nightSkyVideoSrc,
   backgroundClass = "bg-slate-900",
   overlayClass = "bg-black/55",
@@ -108,25 +109,35 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
 
   return (
     <div className={`relative overflow-hidden rounded-lg ${heightClass} flex items-center justify-center`}>
-      {backgroundImage ? (
+      {backgroundVideo ? (
+        <>
+          {backgroundImage && (
+            <img
+              src={backgroundImage}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+          )}
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={backgroundImage || undefined}
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+          </video>
+        </>
+      ) : backgroundImage ? (
         <img
           src={backgroundImage}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
-      ) : backgroundVideo ? (
-        <video
-          ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={backgroundImage || undefined}
-        >
-          <source src={backgroundVideo} type="video/mp4" />
-        </video>
       ) : (
         <div className={`absolute inset-0 ${backgroundClass}`} />
       )}
