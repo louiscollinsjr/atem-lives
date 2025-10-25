@@ -1,3 +1,14 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
-  }
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://client.crisp.chat; connect-src 'self' https://client.crisp.chat wss://client.relay.crisp.chat https://crisp.chat https://storage.crisp.chat https://image.crisp.chat; img-src 'self' data: https://client.crisp.chat https://image.crisp.chat https://storage.crisp.chat; style-src 'self' 'unsafe-inline' https://client.crisp.chat; font-src 'self' https://client.crisp.chat data:; frame-src 'self' https://client.crisp.chat https://app.crisp.chat https://crisp.chat; media-src 'self' https://client.crisp.chat https://storage.crisp.chat"
+        }
+      ]
+    }
+  ]
+}
