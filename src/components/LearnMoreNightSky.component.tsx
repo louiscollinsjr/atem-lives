@@ -27,7 +27,7 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
   description = "Every product starts as an idea. Let's make yours real.",
   ctaLabel = "Read Our Stories",
   destination = "/stories",
-  heightClass = "min-h-[420px]",
+  heightClass = "h-[570px]",
   backgroundImage = nightSkyPoster,
   backgroundVideo = nightSkyVideoSrc,
   backgroundClass = "bg-slate-900",
@@ -108,7 +108,7 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
   }
 
   return (
-    <div className={`relative overflow-hidden rounded-lg ${heightClass} flex items-center justify-center`}>
+    <div className={`relative mx-auto overflow-hidden rounded-2xl w-full max-w-[1008px] ${heightClass} flex items-center justify-center`}>
       {backgroundVideo ? (
         <>
           {backgroundImage && (
@@ -159,7 +159,7 @@ const LearnMoreNightSky: React.FC<LearnMoreNightSkyProps> = ({
         Close
       </button>
 
-      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center justify-center gap-10 px-6 py-12 text-center text-white sm:px-10 h-[600px]">
+      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center justify-center gap-10 px-6 py-12 text-center text-white sm:px-10 h-full rounded-lg">
         <div className="space-y-4 lg:max-w-3xl bottom-2">
           {header ?? (
             <>

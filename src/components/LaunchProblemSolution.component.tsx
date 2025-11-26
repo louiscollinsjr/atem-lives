@@ -84,7 +84,7 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
           Our mission
         </p>
         <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-7xl text-gray-900 font-bold mx-auto font-roboto pb-6 sm:pb-8 tracking-tight">
-          We close the gap.
+          We're closing the gap.
         </h1>
         <div className="text-black text-sm sm:text-xl md:text-2xl font-medium mx-auto px-4">
           <div className="font-roboto text-[#86868b] tracking-[0.008em] sm:tracking-[0.011em] leading-[1.4] sm:leading-[1.5]">
