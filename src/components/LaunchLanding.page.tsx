@@ -11,19 +11,23 @@ import LearnMoreNightSky from "./LearnMoreNightSky.component";
 const LaunchLandingPage: React.FC = () => {
 
   return (
-    <div className="relative text-black p-4">
+    <div className="relative text-black">
       
-        <section id="learn-more" className="w-full md:max-w-7xl mx-auto my-16 mb-0 px-0 md:px-10 py-28 pb-0 text-center md:my-32">
-            <LearnMoreNightSky heightClass="md:min-h-[720px]" />
-      </section>
+      {/* Top section with gradient fade from #5ccaff to transparent */}
+      <div className="relative">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#5ccaff_0%,#5ccaff_calc(100%-300px),transparent_100%)] pointer-events-none" />
+        
+        <section id="learn-more" className="w-full md:max-w-9xl mx-auto mt-0 mb-16 px-4 md:px-10 pb-0 text-center md:mt-0 md:mb-32">
+          <LearnMoreNightSky heightClass="md:min-h-[570px]" />
+        </section>
 
-       <section id="launch-hero" className="w-full md:max-w-7xl mx-auto px-0 md:px-10 py-6 text-center md:my-16">
-        <LaunchHero />
-      </section>
-
-    
-      
-      <section id="problem-solution" className="w-full md:max-w-5xl mx-auto my-16 mb-0 px-0 md:px-10 py-6 pb-0 text-center md:my-28 md:mb-48">
+        
+      </div>
+      <section id="launch-hero" className="w-full md:max-w-7xl mx-auto px-4 md:px-10 py-6 text-center md:my-16">
+          <LaunchHero />
+        </section>
+      {/* Middle sections with white background */}
+      <section id="problem-solution" className="w-full md:max-w-5xl mx-auto my-16 mb-0 px-4 md:px-10 py-6 pb-0 text-center md:my-28 md:mb-48">
         <LaunchProblemSolution />
       </section>
 
@@ -43,11 +47,18 @@ const LaunchLandingPage: React.FC = () => {
 
       <LaunchPricingTeaser />
 
-      <section id="faq">
-        <Faq />
-      </section>
+      {/* Bottom sections with gradient fade from transparent to #5ccaff */}
+      <div className="relative">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,transparent_0%,#5ccaff_300px,#5ccaff_100%)] pointer-events-none" />
+        
+        <section id="faq" className="px-4">
+          <Faq />
+        </section>
 
-      <Cta />
+        <div className="px-4">
+          <Cta />
+        </div>
+      </div>
 
     </div>
   );
