@@ -26,7 +26,8 @@ export interface Story {
  */
 export async function loadStories(): Promise<Story[]> {
   const storyModules = import.meta.glob('/content/stories/*.md', { 
-    as: 'raw',
+    query: '?raw',
+    import: 'default',
     eager: true 
   });
 

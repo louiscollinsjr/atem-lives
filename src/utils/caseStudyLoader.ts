@@ -72,7 +72,8 @@ const parseTheme = (input: unknown): CaseStudyTheme | undefined => {
 };
 
 const caseStudyModules = import.meta.glob('../../content/case-studies/**/*.md', {
-  as: 'raw',
+  query: '?raw',
+  import: 'default',
   eager: true,
 });
 
