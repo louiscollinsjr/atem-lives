@@ -26,9 +26,9 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
   return (
     <section
       id="overview"
-      className={`w-full min-h-[calc(80vh-5rem)] pt-12 pb-16 md:pt-24 bg-gray-50 rounded-lg ${className}`}
+      className={`w-full min-h-[calc(80vh-5rem)] pt-10 pb-14 md:pt-24 bg-gray-50 rounded-lg ${className}`}
     >
-      <div className="py-8">
+      <div className="px-4 sm:px-6 md:px-10 py-8">
         <header className="space-y-8 text-center mx-auto">
           <p className="tracking-[0.3em] text-xs text-slate-500">
             {heroData.subtitle}
@@ -86,13 +86,18 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
           </a>
         </div>
 
-        {/* Insert image here */}
-        <div className="hidden lg:block mt-32 items-center justify-center mx-auto text-center">
-          <img
-            src={clientMeetingImage}
-            alt="Two ethical techies collaborating"
-            className="w-full max-w-6xl h-auto rounded-lg shadow-lg mx-auto"
-          />
+        {/* Hero image: responsive, padded, and visible on all breakpoints */}
+        <div
+          className="mt-20 sm:mt-24 lg:mt-28 flex justify-center px-4 sm:px-6 lg:px-10"
+          style={{ minWidth: "min(100%, 320px)" }}
+        >
+          <div className="w-full max-w-6xl">
+            <img
+              src={clientMeetingImage}
+              alt="Two ethical techies collaborating"
+              className="w-full h-auto rounded-2xl shadow-xl object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

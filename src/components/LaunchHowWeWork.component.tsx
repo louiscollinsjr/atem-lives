@@ -38,15 +38,15 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
   
   return (
     <section
-      className={`w-full max-w-5xl mx-auto text-center mt-16 mb-36 rounded-2xl ${className}`}>
-      <div className="mb-24 text-center mx-auto max-w-4xl">
+      className={`w-full max-w-5xl mx-auto text-center mt-16 mb-36 rounded-2xl px-4 sm:px-6 ${className}`}>
+      <div className="mb-16 sm:mb-20 md:mb-24 text-center mx-auto max-w-4xl">
         <p className="text-2xl  text-black font-bold font-roboto pb-6 tracking-[0.04em]">
           Our approach
         </p>
-        <h1 className="text-3xl md:text-7xl text-gray-900 font-bold mx-auto font-roboto pb-8 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 font-bold mx-auto font-roboto pb-8 tracking-tight">
           Made to move with you.
         </h1>
-        <div className="text-black text-sm sm:text-xl md:text-2xl px-5 font-medium mx-auto">
+        <div className="text-black text-sm sm:text-lg md:text-xl px-2 sm:px-5 font-medium mx-auto">
           <div className="font-roboto text-[#86868b] tracking-[0.011em] leading-[1.5]">
             <h2 className="text-black inline">Made to move with you.</h2>{" "}
             <span>At Atem, every build follows three rhythms — close collaboration, disciplined scope, and code that grows with you. The result: MVPs that move fast, stay lean, and are built to evolve.</span>
@@ -54,11 +54,11 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
         </div>
       </div>
 
-      <div className="flex flex-wrap  justify-center md:gap-8 gap-8">
+      <div className="flex flex-wrap justify-center md:gap-8 gap-6 sm:gap-8">
         {sections.map((section) => (
           <div
             key={section.title}
-            className="flex-1 min-w-80 max-w-lg flex flex-col text-center rounded-2xl"
+            className="flex-1 min-w-[260px] sm:min-w-[280px] max-w-md flex flex-col text-center rounded-2xl"
           >
             <div className="p-0 flex flex-col flex-grow">
               <div className="flex items-center gap-2 mb-4">
@@ -73,17 +73,17 @@ const LaunchHowWeWork: React.FC<HowWeWorkProps> = ({ className = "" }) => {
                   </div> */}
                 </div>
               </div>
-              <h3 className="text-2xl max-w-[350px] text-gray-900 my-5 pl-4 font-medium">
+              <h3 className="text-xl sm:text-2xl max-w-[350px] text-gray-900 my-4 sm:my-5 pl-4 font-medium">
                 {section.title}
               </h3>
-              <p className="text-gray-500 text-xs leading-relaxed flex-grow pl-4 max-w-[260px] mx-auto">
+              <p className="text-gray-500 text-sm leading-relaxed flex-grow pl-4 max-w-[260px] mx-auto">
                 {section.text}
               </p>
             </div>
           </div>
         ))}
 
-         <div className="md:mt-20 mt-10">
+         <div className="md:mt-20 mt-12">
           <a
             href="/#faq"
             aria-label="Go to FAQ section"

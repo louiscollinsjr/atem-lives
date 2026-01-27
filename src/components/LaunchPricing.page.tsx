@@ -127,14 +127,14 @@ const LaunchPricingPage: React.FC = () => {
   );
 
   return (
-    <div className="relative bg-white text-black min-h-screen pt-32">
+    <div className="relative bg-white text-black min-h-screen pt-28 sm:pt-32">
       {/* Page Header */}
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 pt-32 md:pt-40 pb-20">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pt-24 sm:pt-28 md:pt-40 pb-16 sm:pb-20">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 font-roboto">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-roboto">
             Transparent Pricing. Real Timelines.
           </h1>
-          <p className="text-2xl font-medium text-slate-600 max-w-3xl mx-auto mb-12 font-roboto">
+          <p className="text-xl sm:text-2xl font-medium text-slate-600 max-w-3xl mx-auto mb-12 font-roboto">
             Every package includes fixed scope, clear milestones, and direct collaboration with a senior developer. Typical agencies charge around $25,000 for an 8-week MVP; Launch starts at $6,500.
           </p>
           <div className="flex justify-center">
@@ -158,7 +158,7 @@ const LaunchPricingPage: React.FC = () => {
                   <div
                     key={index}
                     onClick={() => setSelectedPlan(plan.title.toLowerCase().split(' ')[1])}
-                    className={`p-6 rounded-2xl border-2 cursor-pointer transition-all ${
+                    className={`p-4 sm:p-6 rounded-2xl border-2 cursor-pointer transition-all ${
                       selectedPlan === plan.title.toLowerCase().split(' ')[1]
                         ? 'border-black bg-gray-50'
                         : 'border-gray-200'
@@ -187,7 +187,7 @@ const LaunchPricingPage: React.FC = () => {
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {plan.features?.map((feature, idx) => (
                         <div key={idx} className="flex items-center text-sm">
                           <CheckIcon />

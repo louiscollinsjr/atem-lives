@@ -42,27 +42,27 @@ const LaunchPricingTeaser: React.FC<PricingTeaserProps> = ({ className = "" }) =
   ];
 
   return (
-    <section className={`max-w-7xl mx-auto px-2 md:px-2 py-20 mb-28 ${className}`}>
+    <section className={`max-w-7xl mx-auto px-4 sm:px-6 md:px-2 py-16 sm:py-20 mb-24 sm:mb-28 ${className}`}>
       {/* Section Header */}
-      <div className="text-center mb-28">
-        <p className="text-2xl text-black font-bold font-roboto pb-6 tracking-[0.04em]">
+      <div className="text-center mb-16 sm:mb-24">
+        <p className="text-xl sm:text-2xl text-black font-bold font-roboto pb-4 sm:pb-6 tracking-[0.04em]">
           From idea to launch
         </p>
-        <h1 className="text-3xl md:text-7xl text-gray-900 font-bold font-roboto pb-8 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl text-gray-900 font-bold font-roboto pb-6 sm:pb-8 tracking-tight">
           Pricing That Makes Sense
         </h1>
-        <p className="text-2xl font-medium text-[#000000] font-roboto max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl font-medium text-[#000000] font-roboto max-w-3xl mx-auto px-2">
           Three clear tiers: validate your idea, launch your MVP, or go to market with integrations — all with fixed scope and timelines.
         </p>
       </div>
 
       {/* Pricing Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 mb-12 bg-[#ebebeb]/15 rounded-2xl p-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 mb-10 sm:mb-12 bg-[#ebebeb]/15 rounded-2xl p-3 sm:p-4">
         {pricingItems.map((item, index) => (
           <a 
             key={index} 
             href="/pricing"
-            className="text-center bg-[#f7f7f7] border border-[#ffffff] rounded-2xl p-8 block cursor-pointer"
+            className="text-center bg-[#f7f7f7] border border-[#ffffff] rounded-2xl p-6 sm:p-8 block cursor-pointer"
           >
             {/* <div className="text-sm text-[#999] tracking-[0.1em] mb-3 font-roboto">
               {item.label}
@@ -70,7 +70,7 @@ const LaunchPricingTeaser: React.FC<PricingTeaserProps> = ({ className = "" }) =
             <h3 className="text-3xl md:text-3xl font-semibold text-gray-900 mb-2 font-roboto tracking-tight">
               {item.title}
             </h3>
-            <p className="text-[#000000] text-lg leading-relaxed font-roboto max-w-sm text-center mx-auto py-2 min-h-[80px] flex items-center justify-center">
+            <p className="text-[#000000] text-base sm:text-lg leading-relaxed font-roboto max-w-sm text-center mx-auto py-2 min-h-[72px] sm:min-h-[80px] flex items-center justify-center">
               {item.description}
             </p>
             <div className="pt-4 min-h-[80px] flex flex-col justify-center">

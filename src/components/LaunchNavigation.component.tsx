@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import navLogo from '../assets/atem-logo-with-wings-black.svg';
 import Footer from './Footer.component';
@@ -8,6 +8,18 @@ import './navigation.styles.css';
 
 const LaunchNavigation: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileNavOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileNavOpen]);
 
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);

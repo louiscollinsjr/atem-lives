@@ -71,23 +71,23 @@ const LaunchProblemSolution: React.FC<ProblemSolutionProps> = ({ className = "" 
   ];
 
   return (
-    <section className={`relative flex flex-col items-center gap-12 max-w-5xl mx-auto py-6 sm:py-8 text-center min-h-[600px] sm:min-h-[700px] md:min-h-[800px] pb-32 sm:pb-[500px] md:pb-[750px] sm:block ${className}`}>
+    <section className={`relative flex flex-col items-center gap-12 max-w-5xl mx-auto py-6 sm:py-8 text-center min-h-[540px] sm:min-h-[620px] md:min-h-[720px] pb-24 sm:pb-[360px] md:pb-[520px] sm:block ${className}`}>
       {/* Background grid */}
-      <div className="order-2 w-full relative mt-12 sm:mt-0 sm:absolute sm:inset-x-0 sm:top-32 md:top-40 z-0 max-w-[22rem] sm:max-w-4xl mx-auto px-2 sm:px-0">
+      <div className="order-2 w-full relative mt-10 sm:mt-0 sm:absolute sm:inset-x-0 sm:top-24 md:top-32 z-0 max-w-[22rem] sm:max-w-4xl mx-auto px-3 sm:px-4 md:px-0">
         <AnimatedFeatureGrid items={featureGridItems} />
       </div>
 
       {/* Foreground content */}
       <div className="order-1 relative z-10">
-         <div className="mb-0 sm:mb-20 md:mb-24 text-center mx-auto max-w-4xl px-4">
-        <p className="text-sm sm:text-lg md:text-lg text-black font-regular font-roboto pb-4 sm:pb-6 tracking-[0.02em] sm:tracking-[0.04em]">
+         <div className="mb-0 sm:mb-16 md:mb-20 text-center mx-auto max-w-4xl px-4">
+        <p className="text-sm sm:text-base md:text-lg text-black font-regular font-roboto pb-3 sm:pb-5 tracking-[0.02em] sm:tracking-[0.04em]">
           Our mission
         </p>
-        <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-7xl text-gray-900 font-bold mx-auto font-roboto pb-6 sm:pb-8 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 font-bold mx-auto font-roboto pb-5 sm:pb-7 tracking-tight">
           We're closing the gap.
         </h1>
-        <div className="text-black text-sm sm:text-xl md:text-2xl font-medium mx-auto px-4">
-          <div className="font-roboto text-[#86868b] tracking-[0.008em] sm:tracking-[0.011em] leading-[1.4] sm:leading-[1.5]">
+        <div className="text-black text-sm sm:text-lg md:text-xl font-medium mx-auto px-4">
+          <div className="font-roboto text-[#86868b] tracking-[0.008em] sm:tracking-[0.011em] leading-[1.45] sm:leading-[1.5]">
             <h2 className="text-black inline">Most great ideas stall between concept and product.</h2>{" "}
             <span className="inline">We turn vision into momentum — building focused MVPs that ship fast, with clarity, transparency, and a process that feels effortless.</span>
           </div>
