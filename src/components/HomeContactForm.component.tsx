@@ -1,4 +1,5 @@
 import React from "react";  
+import { useLocation } from "react-router-dom";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../config/firebase/config";
 import { useTranslation } from "react-i18next";
@@ -8,6 +9,8 @@ import { useTranslation } from "react-i18next";
 
 const HomeContactForm: React.FC = () => {
   const { t } = useTranslation();
+  const location = useLocation();
+  const { plan, total, addOns } = (location.state as { plan?: string; total?: number; addOns?: string[] }) || {};
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -15,6 +18,9 @@ const HomeContactForm: React.FC = () => {
     explore: '',
     details: '',
     updates: false,
+    selectedPlan: plan || '',
+    selectedTotal: total || undefined,
+    selectedAddOns: addOns || [],
   });
   const [formStatus, setFormStatus] = React.useState<{ message: string; isError: boolean } | null>(null);
   const [loading, setLoading] = React.useState(false);
@@ -44,7 +50,7 @@ const HomeContactForm: React.FC = () => {
         createdAt: serverTimestamp(),
       });
       setFormStatus({ message: t('Thank you! We’ll be in touch soon.'), isError: false });
-      setFormData({ name: '', email: '', phone: '', explore: '', details: '', updates: false });
+      setFormData({ name: '', email: '', phone: '', explore: '', details: '', updates: false, selectedPlan: '', selectedTotal: undefined, selectedAddOns: [] });
     } catch (error: any) {
       setFormStatus({ message: t('Something went wrong. Please try again.'), isError: true });
     }
@@ -67,6 +73,35 @@ const HomeContactForm: React.FC = () => {
           </div>
           <div className="p-2 md:p-1 rounded-lg bg-gradient-to-br from-pink-500 via-yellow-400 to-blue-500">
             <form className="space-y-6 bg-white p-8 rounded-lg shadow" onSubmit={handleSubmit}>
+              {(plan || addOns?.length) && (
+                <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                    <div>
+                      <div className="text-xs uppercase tracking-wide text-gray-500">Selected package</div>
+                      <div className="text-lg font-semibold text-black">{plan ?? 'Package selected'}</div>
+                      {typeof total === 'number' && (
+                        <div className="text-sm text-gray-700">Starting at: ${total.toLocaleString()}</div>
+                      )}
+                    </div>
+                    {addOns && addOns.length > 0 && (
+                      <div className="md:text-right">
+                        <div className="flex flex-wrap gap-2 mt-1">
+                          {addOns.map((addon) => (
+                            <span key={addon} className="px-3 py-1 bg-green-600 text-white rounded-full text-xs">
+                              + {addon}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Hidden fields to persist selection */}
+              <input type="hidden" name="selectedPlan" value={formData.selectedPlan} />
+              <input type="hidden" name="selectedTotal" value={formData.selectedTotal ?? ''} />
+              <input type="hidden" name="selectedAddOns" value={(formData.selectedAddOns || []).join(',')} />
               <div>
                 <label htmlFor="name" className="block font-semibold mb-1">Name <span className="text-red-500">*</span></label>
                 <input id="name" name="name" type="text" required placeholder="John Doe" className="w-full border rounded px-3 py-2 focus:outline-none focus:ring" value={formData.name} onChange={handleChange} />

@@ -87,11 +87,11 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
         </div>
 
         {/* Insert image here */}
-        <div className="mt-32 items-center justify-center mx-auto text-center">
+        <div className="hidden lg:block mt-32 items-center justify-center mx-auto text-center">
           <img
             src={clientMeetingImage}
             alt="Two ethical techies collaborating"
-            className="max-w-6xl h-auto rounded-lg shadow-lg mx-auto"
+            className="w-full max-w-6xl h-auto rounded-lg shadow-lg mx-auto"
           />
         </div>
       </div>

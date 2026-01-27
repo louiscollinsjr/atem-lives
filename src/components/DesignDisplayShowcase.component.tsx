@@ -15,33 +15,33 @@ const features: FeatureItem[] = [
   {
     eyebrow: 'Up to',
     headline: '4 times faster',
-    description: 'for founders who want to move from idea to MVP in weeks, not months.',
+    description: 'so you can test with real users this quarter, not next year.',
     variant: 'dominant',
   },
   {
-    headline: 'Custom AI + Dev integrations',
-    description: "combine generative design, coding automation, and live feedback — built right into your workflow.",
+    headline: 'AI-accelerated builds',
+    description: "so your product ships faster and improves with every iteration.",
     variant: 'compact',
   },
   {
     eyebrow: 'Up to',
     headline: '70% less overhead',
-    description: 'when using our hybrid AI + human development model.',
+    description: 'so more of your budget goes into growth, not agency markup.',
     variant: 'dominant',
   },
   {
     headline: 'Complete creative control',
-    description: 'with transparent build stages and collaborative iteration through your personal project channel.',
+    description: 'so you can iterate based on feedback, not guesswork.',
     variant: 'compact',
   },
   {
     headline: 'Incredible product fidelity',
-    description: 'your vision, pixel-perfect — across web, mobile, and backend systems.',
+    description: 'so investors and early users see a real product, not a prototype.',
     variant: 'dominant',
   },
   {
     headline: 'Striking performance and clarity',
-    description: 'from load times to code quality—optimized, measurable, ready to scale',
+    description: 'so you can scale when traction hits, not scramble to rebuild.',
     variant: 'compact',
   },
 ];

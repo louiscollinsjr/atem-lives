@@ -146,7 +146,7 @@ const Faq: React.FC<FaqProps> = ({
               className={`px-6 py-3 rounded-full text-sm font-roboto tracking-wide transition-all duration-300 border ${
                 activeCategory === category.id
                   ? category.isTrending
-                    ? 'bg-gradient-to-r from-[#ff395c] to-[#ff395c] text-white border-transparent'
+                    ? 'bg-black text-white border-transparent'
                     : 'bg-black text-white border-black'
                   : 'bg-white text-black border-[#e0e0e0] hover:border-black hover:text-black'
               }`}

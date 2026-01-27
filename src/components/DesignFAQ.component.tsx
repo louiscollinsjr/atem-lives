@@ -12,7 +12,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "What is the typical timeline for a website project?",
-    answer: "On average, a website project takes 6-12 weeks from start to finish. This includes planning, design, development, and testing phases. The exact timeline depends on the project's scope and complexity."
+    answer: "On average, a website project takes 8 weeks from start to finish. This includes planning, design, development, and testing phases. The exact timeline depends on the project's scope and complexity."
   },
   {
     question: "Do you offer ongoing maintenance and support?",

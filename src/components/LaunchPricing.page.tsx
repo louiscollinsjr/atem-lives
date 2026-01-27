@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Faq from './Faq.component';
 import Cta from './cta.component';
 
@@ -6,19 +7,24 @@ export interface PricingItem {
   label: string;
   title: string;
   price: string;
-  discountedPrice: string;
+  discountedPrice?: string;
+  discountLabel?: string;
+  hasDiscount?: boolean;
   description: string;
   features?: string[];
 }
 
 const LaunchPricingPage: React.FC = () => {
+  const navigate = useNavigate();
   const pricingItems: PricingItem[] = [
     {
       label: "Starting at",
       title: "Launch Micro",
-      price: "$3,500",
-      discountedPrice: "$2,500",
-      description: "Test your idea in 3 weeks. Single core feature, basic design, perfect for early validation.",
+      price: "$4,500",
+      discountedPrice: "$3,150",
+      discountLabel: "Limited time 30% off",
+      hasDiscount: true,
+      description: "For testing one core feature focused on a single user journey, so you can validate one big assumption fast, simple design, 3-week delivery.",
       features: [
         "Single core feature",
         "Basic design system", 
@@ -31,13 +37,13 @@ const LaunchPricingPage: React.FC = () => {
       label: "Starting at",
       title: "Launch Starter", 
       price: "$8,500",
-      discountedPrice: "$6,500",
-      description: "Ship your MVP in 8 weeks. 2-3 features, full support, ready for real users.",
+      hasDiscount: false,
+      description: "For your first real users: 2–3 core features that cover your main user journey end to end (onboarding, core action, and basic admin), custom design, 8-week MVP.",
       features: [
         "2-3 core features",
         "Custom design system",
         "8-week delivery",
-        "Source code & documentation",
+        "Source code & full documentation",
         "User authentication",
         "Basic admin panel",
         "3 months support"
@@ -46,41 +52,21 @@ const LaunchPricingPage: React.FC = () => {
     {
       label: "Starting at",
       title: "Launch Professional",
-      price: "$12,000", 
-      discountedPrice: "$9,500",
-      description: "Market-ready with integrations. 3-4 features, payment processing, admin dashboard.",
+      price: "$12,000",
+      hasDiscount: false,
+      description: "For going to market: 3–4 core features including payments, advanced admin, and integrations, so you can launch to paying users.",
       features: [
         "3-4 core features",
         "Advanced design system",
         "12-week delivery",
-        "Full source code & docs",
-        "Payment integration",
+        "Full source code & documentation",
+        "Payment integration (e.g., Stripe)",
         "Advanced admin dashboard",
-        "API integrations",
+        "Up to 3 custom integrations (CRM, email, analytics)",
         "6 months support",
         "Performance optimization"
       ]
     },
-    {
-      label: "Starting at",
-      title: "Launch Premium",
-      price: "$18,000",
-      discountedPrice: "$15,000",
-      description: "Complex MVP built to scale. 4-5 features, advanced tech, priority support.",
-      features: [
-        "4-5 core features",
-        "Enterprise-grade design",
-        "16-week delivery",
-        "Complete source code",
-        "Advanced payment systems",
-        "Custom admin dashboard",
-        "Third-party API integrations",
-        "Advanced analytics",
-        "12 months priority support",
-        "Scalable infrastructure",
-        "Security audit"
-      ]
-    }
   ];
 
   const [selectedPlan, setSelectedPlan] = React.useState<string>('starter');
@@ -95,7 +81,9 @@ const LaunchPricingPage: React.FC = () => {
     const plan = pricingItems.find(p => p.title.toLowerCase().includes(planTitle.toLowerCase()));
     if (!plan) return 0;
     
-    let basePrice = parseInt(plan.discountedPrice.replace('$', '').replace(',', ''));
+    let basePrice = plan.hasDiscount && plan.discountedPrice
+      ? parseInt(plan.discountedPrice.replace('$', '').replace(',', ''))
+      : parseInt(plan.price.replace('$', '').replace(',', ''));
     
     if (additionalFeatures.customDesign) basePrice += 2000;
     if (additionalFeatures.advancedAnalytics) basePrice += 1500;
@@ -109,6 +97,29 @@ const LaunchPricingPage: React.FC = () => {
     return pricingItems.find(p => p.title.toLowerCase().includes(selectedPlan.toLowerCase())) || pricingItems[0];
   };
 
+  const getPlanDisplayPrice = () => {
+    const plan = getSelectedPlanData();
+    return plan.hasDiscount && plan.discountedPrice ? plan.discountedPrice : plan.price;
+  };
+
+  const selectedAddOns = React.useMemo(() =>
+    Object.entries(additionalFeatures)
+      .filter(([_, enabled]) => enabled)
+      .map(([key]) => key),
+    [additionalFeatures]
+  );
+
+  const handleContinue = () => {
+    const planData = getSelectedPlanData();
+    navigate('/contact', {
+      state: {
+        plan: planData.title,
+        total: calculateTotal(selectedPlan),
+        addOns: selectedAddOns,
+      },
+    });
+  };
+
   const CheckIcon = () => (
     <svg className="inline-block mr-2 h-4 w-4 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
@@ -118,29 +129,17 @@ const LaunchPricingPage: React.FC = () => {
   return (
     <div className="relative bg-white text-black min-h-screen pt-32">
       {/* Page Header */}
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 pt-20 pb-20">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-10 pt-32 md:pt-40 pb-20">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 font-roboto">
             Transparent Pricing. Real Timelines.
           </h1>
           <p className="text-2xl font-medium text-slate-600 max-w-3xl mx-auto mb-12 font-roboto">
-            Every package includes fixed scope, clear milestones, and direct collaboration  
-with a senior developer. Half the cost of other agencies—$6,500 vs. $25,000 for  
-the same 8-week MVP.
+            Every package includes fixed scope, clear milestones, and direct collaboration with a senior developer. Typical agencies charge around $25,000 for an 8-week MVP; Launch starts at $6,500.
           </p>
-          {/* <div className="flex justify-center mb-8">
-            <div className="bg-gray-200 p-1 rounded-full flex items-center gap-1">
-              <button className="rounded-full px-6 py-2 bg-black text-white font-medium">
-                One-time Payment
-              </button>
-              <button className="rounded-full px-6 py-2 text-gray-600 font-medium hover:text-black transition-colors">
-                Payment Plans Available
-              </button>
-            </div>
-          </div> */}
           <div className="flex justify-center">
             <div className="bg-gray-200 border border-gray-200 rounded-full px-4 py-2 inline-flex items-center">
-              <span className="text-gray-800 font-medium">Limited Time: 30% Off All Launch Packages</span>
+              <span className="text-gray-800 font-medium">Limited Time: 30% Off Launch Micro</span>
             </div>
           </div>
         </div>
@@ -150,7 +149,10 @@ the same 8-week MVP.
           {/* Left Column: Plan Selection */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-xl font-semibold mb-6 font-roboto">1. Choose your developement plan</h2>
+              <p className="text-base text-slate-600 mb-6 font-roboto">
+                Three clear tiers: validate one core idea, ship your MVP, or go to market with payments and integrations—all with fixed scope and timelines.
+              </p>
+              <h2 className="text-xl font-semibold mb-6 font-roboto">1. Choose your development plan</h2>
               <div className="space-y-4">
                 {pricingItems.filter(plan => plan.title !== 'Launch Premium').map((plan, index) => (
                   <div
@@ -158,37 +160,41 @@ the same 8-week MVP.
                     onClick={() => setSelectedPlan(plan.title.toLowerCase().split(' ')[1])}
                     className={`p-6 rounded-2xl border-2 cursor-pointer transition-all ${
                       selectedPlan === plan.title.toLowerCase().split(' ')[1]
-                        ? 'border-black bg-gray-50 shadow-lg'
-                        : 'border-gray-200 hover:border-gray-400 hover:shadow-md'
+                        ? 'border-black bg-gray-50'
+                        : 'border-gray-200'
                     }`}
                   >
                     <div className="flex justify-between items-start mb-4">
-                      <div>
+                      <div className="flex-1">
                         <h3 className="text-xl font-bold mb-2 font-roboto">{plan.title}</h3>
-                        <div className="flex items-baseline gap-2 mb-2">
-                          <span className="text-2xl font-bold">{plan.discountedPrice}</span>
-                          <span className="text-gray-400 line-through text-sm">{plan.price}</span>
+                        <div className="mb-2">
+                          {plan.hasDiscount && (
+                            <div className="text-sm text-gray-500 mb-1">From {plan.price}</div>
+                          )}
+                          <div className="flex items-baseline gap-2">
+                            {!plan.hasDiscount && (
+                              <span className="text-sm text-gray-500 mr-1">From</span>
+                            )}
+                            <span className="text-2xl font-bold">
+                              {plan.hasDiscount && plan.discountedPrice ? plan.discountedPrice : plan.price}
+                            </span>
+                            {plan.hasDiscount && plan.discountLabel && (
+                              <span className="text-xs text-green-600 font-medium">{plan.discountLabel}</span>
+                            )}
+                          </div>
                         </div>
                         <p className="text-sm text-slate-600 mb-4">{plan.description}</p>
-                      </div>
-                      <div className="bg-black text-white text-[10px] font-semibold px-4 py-1 rounded-2xl whitespace-nowrap">
-                        30% Off
                       </div>
                     </div>
                     
                     <div className="grid grid-cols-2 gap-2">
-                      {plan.features?.slice(0, 6).map((feature, idx) => (
+                      {plan.features?.map((feature, idx) => (
                         <div key={idx} className="flex items-center text-sm">
                           <CheckIcon />
                           <span>{feature}</span>
                         </div>
                       ))}
                     </div>
-                    {plan.features && plan.features.length > 6 && (
-                      <div className="text-xs text-slate-500 ml-6 mt-2">
-                        +{plan.features.length - 6} more features
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
@@ -206,8 +212,8 @@ the same 8-week MVP.
                     className="mt-1 w-4 h-4 text-black rounded focus:ring-black"
                   />
                   <div>
-                    <div className="font-medium">Custom Brand Design - $2,000</div>
-                    <div className="text-sm text-slate-600">Complete brand identity, logo, and design system</div>
+                    <div className="font-medium">Custom Brand Design – from $2,000</div>
+                    <div className="text-sm text-slate-600">Logo, palette, 1–2 type choices, simple component styles; scales with scope.</div>
                   </div>
                 </label>
                 
@@ -219,8 +225,8 @@ the same 8-week MVP.
                     className="mt-1 w-4 h-4 text-black rounded focus:ring-black"
                   />
                   <div>
-                    <div className="font-medium">Advanced Analytics - $1,500</div>
-                    <div className="text-sm text-slate-600">Custom analytics dashboard and tracking setup</div>
+                    <div className="font-medium">Advanced Analytics – from $1,500</div>
+                    <div className="text-sm text-slate-600">GA4 + event design plus 1 in-app dashboard; launch with activation/retention/revenue cohorts tracked.</div>
                   </div>
                 </label>
                 
@@ -232,8 +238,8 @@ the same 8-week MVP.
                     className="mt-1 w-4 h-4 text-black rounded focus:ring-black"
                   />
                   <div>
-                    <div className="font-medium">Extended Support - $1,000</div>
-                    <div className="text-sm text-slate-600">12 months of priority support and maintenance</div>
+                    <div className="font-medium">Extended Support – $1,000</div>
+                    <div className="text-sm text-slate-600">Up to 25 hours of priority support after launch — a significant discount vs. our standard $150/hour rate.</div>
                   </div>
                 </label>
                 
@@ -245,8 +251,8 @@ the same 8-week MVP.
                     className="mt-1 w-4 h-4 text-black rounded focus:ring-black"
                   />
                   <div>
-                    <div className="font-medium">Custom Integrations - $2,500</div>
-                    <div className="text-sm text-slate-600">Integration with up to 3 third-party services</div>
+                    <div className="font-medium">Custom Integrations – from $2,500</div>
+                    <div className="text-sm text-slate-600">Up to 3 services typical; light vs heavy integrations priced accordingly.</div>
                   </div>
                 </label>
               </div>
@@ -261,7 +267,7 @@ the same 8-week MVP.
                 <div className="mb-6">
                   <div className="flex justify-between items-center mb-4">
                     <div className="font-semibold text-lg">{getSelectedPlanData().title}</div>
-                    <div className="font-bold text-2xl">${calculateTotal(selectedPlan).toLocaleString()}</div>
+                    <div className="font-bold text-2xl">{getPlanDisplayPrice()}</div>
                   </div>
                   <p className="text-sm text-slate-600">{getSelectedPlanData().description}</p>
                 </div>
@@ -269,14 +275,14 @@ the same 8-week MVP.
                 <div className="space-y-3 mb-6">
                   {additionalFeatures.customDesign && (
                     <div className="flex justify-between text-sm">
-                      <span>Custom Brand Design</span>
-                      <span>+$2,000</span>
+                      <span>Custom Brand Design – from $2,000</span>
+                      <span>from $2,000</span>
                     </div>
                   )}
                   {additionalFeatures.advancedAnalytics && (
                     <div className="flex justify-between text-sm">
                       <span>Advanced Analytics</span>
-                      <span>+$1,500</span>
+                      <span>from $1,500</span>
                     </div>
                   )}
                   {additionalFeatures.prioritySupport && (
@@ -287,8 +293,8 @@ the same 8-week MVP.
                   )}
                   {additionalFeatures.customIntegrations && (
                     <div className="flex justify-between text-sm">
-                      <span>Custom Integrations</span>
-                      <span>+$2,500</span>
+                      <span>Custom Integrations – from $2,500</span>
+                      <span>from $2,500</span>
                     </div>
                   )}
                 </div>
@@ -298,21 +304,25 @@ the same 8-week MVP.
                     <div className="font-semibold text-lg">Total Investment</div>
                     <div className="font-bold text-3xl">${calculateTotal(selectedPlan).toLocaleString()}</div>
                   </div>
-                  <div className="text-xs text-green-600 mt-2">
-                    You're saving ${(parseInt(getSelectedPlanData().price.replace('$', '').replace(',', '')) - calculateTotal(selectedPlan)).toLocaleString()}
-                  </div>
+                  {(() => {
+                    const savings = parseInt(getSelectedPlanData().price.replace('$', '').replace(',', '')) - calculateTotal(selectedPlan);
+                    return savings > 0 ? (
+                      <div className="text-xs text-green-600 mt-2">
+                        You're saving ${savings.toLocaleString()}
+                      </div>
+                    ) : null;
+                  })()}
                 </div>
 
                 <div className="space-y-3">
-                  <a
-                    href="https://calendly.com/louiscollinsjr/atem-intro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-black text-white rounded-full py-4 px-6 text-center font-medium hover:bg-gray-800 transition-colors inline-block"
+                  <button
+                    type="button"
+                    onClick={handleContinue}
+                    className="w-full bg-black text-white rounded-full py-4 px-6 text-center font-medium hover:bg-gray-800 transition-colors"
                   >
-                    Schedule a meeting
-                  </a>
-                  
+                    Continue
+                  </button>
+                  <p className="text-xs text-slate-600 text-center">We’ll carry your selected package into the contact form.</p>
                 </div>
 
                 <div className="mt-12 text-xs text-slate-600">
