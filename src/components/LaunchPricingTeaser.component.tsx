@@ -19,8 +19,8 @@ const LaunchPricingTeaser: React.FC<PricingTeaserProps> = ({ className = "" }) =
     {
       label: "Starting at",
       title: "Launch Micro",
-      price: "$3,500",
-      discountedPrice: "$2,500",
+      price: "$4,500",
+      discountedPrice: "$3,150",
       discountLabel: "Limited time 30% off",
       hasDiscount: true,
       description: "1 core feature focused on a single user journey, so you can validate one big assumption fast."
