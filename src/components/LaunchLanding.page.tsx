@@ -1,13 +1,13 @@
 import React from "react";
-import DesignDisplayShowcase from "./DesignDisplayShowcase.component";
+// import DesignDisplayShowcase from "./DesignDisplayShowcase.component";
 import LaunchProblemSolution from "./LaunchProblemSolution.component";
 import LaunchHero from "./LaunchHero.component";
 import LaunchHowWeWork from "./LaunchHowWeWork.component";
 import LaunchPricingTeaser from "./LaunchPricingTeaser.component";
 import Cta from "./cta.component";
 import Faq from "./Faq.component";
-import LearnMoreNightSky from "./LearnMoreNightSky.component";
-import skyImage from "../assets/AdobeStock_289616456_Preview.jpeg";
+// import LearnMoreNightSky from "./LearnMoreNightSky.component";
+// import skyImage from "../assets/AdobeStock_289616456_Preview.jpeg";
 
 const LaunchLandingPage: React.FC = () => {
 
@@ -18,7 +18,7 @@ const LaunchLandingPage: React.FC = () => {
         {/* Sky image background layer */}
         <div 
           className="absolute inset-0 -z-10 bg-cover bg-top bg-no-repeat opacity-40 pointer-events-none"
-          style={{ backgroundImage: `url(${skyImage})` }}
+          // style={{ backgroundImage: `url(${skyImage})` }}
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#5ccaff_0%,#5ccaff_calc(100%-700px),transparent_100%)] pointer-events-none mix-blend-multiply" />

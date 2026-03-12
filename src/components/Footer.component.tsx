@@ -67,17 +67,44 @@ const Footer: React.FC = () => {
                       {t("Satchel AR")}
                     </NavLink>
                   </div>
-                  {/* Removed unused links until live */}
+                  {/* <div>
+                    <NavLink className="text-xs nav-link" to="/">
+                      {t("Developers")}
+                    </NavLink>
+                  </div>
+                  <div>
+                    <NavLink className="text-xs nav-link" to="/">
+                      {t("Made for Satchel partner program")}
+                    </NavLink>
+                  </div>
+                  <div>
+                    <NavLink className="text-xs nav-link" to="/">
+                      {t("Blog")}
+                    </NavLink>
+                  </div> */}
                 </div>
 
                 <div className=" ">
                   <div className="font-bold ">{t("Devolop and Design")}</div>
-                  {/* Removed until live */}
+                  {/* <div>
+                    <NavLink className="text-xs nav-link" to="/">
+                      {t("Get Started")}
+                    </NavLink>
+                  </div>
+                  <div>
+                    <NavLink className="text-xs nav-link" to="/">
+                      {t("Pricing")}
+                    </NavLink>
+                  </div> */}
                 </div>
 
                 <div className="">
                   <div className="font-bold">{t("About us")}</div>
-                  {/* Removed until live */}
+                  {/* <div>
+                    <NavLink className="text-xs nav-link" to="/">
+                      {t("About atem")}
+                    </NavLink>
+                  </div> */}
                 </div>
               </div>
             </div>
