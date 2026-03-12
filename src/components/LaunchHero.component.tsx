@@ -10,7 +10,7 @@ const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
     subtitle: "Launch by Atem",
     title: "Simple Pricing for Serious Builds",
     titleSuffix: "",
-    description: "Fixed-scope MVP development led by a senior engineer. Built fast, built clean, ready to grow.",
+    description: "Fixed-scope MVP development. Built fast, built clean, ready to grow.",
     
     projectExample: {
       label: "Cool things we have helped build:",
