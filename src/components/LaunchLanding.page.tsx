@@ -56,20 +56,22 @@ const LaunchLandingPage: React.FC = () => {
           {/* </section> */}
         {/* </div> */}
       </div>
-        <section id="launch-hero" className="w-full md:max-w-7xl mx-auto px-4 md:px-10 py-6 sm:py-64 text-center">
+        <section id="launch-hero" className="w-full md:max-w-7xl mx-auto px-4 md:px-10 py-6 sm:py-48 text-center">
           <LaunchHero />
         </section>
-        <LearnMoreNightSky heightClass="md:min-h-[570px]" /> 
+        {/* <LearnMoreNightSky heightClass="md:min-h-[570px]" />  */}
       {/* Middle sections with white background */}
-      <section id="problem-solution" className="w-full md:max-w-5xl mx-auto my-16 mb-0 px-4 md:px-10 py-6 pb-0 text-center md:my-28 md:mb-48">
+      
+      <section id="problem-solution" className="w-full md:max-w-5xl mx-auto my-16 px-4 md:px-10 py-6 pb-0 text-center md:my-8 md:mb-48">
         <LaunchProblemSolution />
       </section>
-
+<section className="pt-32">
       <LaunchHowWeWork />
+</section>
 
-      <section className="hidden md:block max-w-5xl mx-auto px-6 md:px-10 py-12 text-center my-32">
+      {/* <section className="hidden md:block max-w-5xl mx-auto px-6 md:px-10 py-12 text-center my-32">
         <DesignDisplayShowcase />
-      </section>
+      </section> */}
 
       {/* <section className="py-24">
         <CaseStudyRail

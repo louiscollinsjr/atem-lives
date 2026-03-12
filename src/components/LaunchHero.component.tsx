@@ -8,9 +8,9 @@ export interface HeroProps {
 const LaunchHero: React.FC<HeroProps> = ({ className = "" }) => {
   const heroData = {
     subtitle: "Launch by Atem",
-    title: "Launch Your MVP in 8 Weeks",
-    titleSuffix: "— Without Breaking the Bank 🚀",
-    description: "Fast, focused development at half the cost of US agencies. Fixed scope. No surprises.",
+    title: "Simple Pricing for Serious Builds",
+    titleSuffix: "",
+    description: "Fixed-scope MVP development led by a senior engineer. Built fast, built clean, ready to grow.",
     
     projectExample: {
       label: "Cool things we have helped build:",

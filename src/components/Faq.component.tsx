@@ -30,7 +30,7 @@ const Faq: React.FC<FaqProps> = ({
   className = "",
   categories = defaultCategories,
   title = "Questions?",
-  description = "Everything you need to know about working with Launch by Atem"
+  description = "Everything you need to know about working with Atem"
 }) => {
   const [activeCategory, setActiveCategory] = useState('trending');
   const [openItems, setOpenItems] = useState<Set<string>>(new Set(['trending-1']));
@@ -232,8 +232,8 @@ const defaultCategories: FaqCategory[] = [
       },
       {
         id: 't2',
-        question: 'Why are your prices lower than other agencies?',
-        answer: 'I\'m based in Romania with lower operating costs, but I work directly with US founders. You get senior-level quality without the agency markup—no account managers, no layers of bureaucracy, no inflated overhead.'
+        question: 'What drives the price of a build?',
+        answer: 'Each project involves senior-level architecture decisions, custom UI systems, integrations, and production-ready code—not templates. The price reflects weeks of focused, skilled effort. We keep costs lean by running a tight scope with no agency overhead.'
       },
       {
         id: 't3',
@@ -253,7 +253,7 @@ const defaultCategories: FaqCategory[] = [
       {
         id: 't6',
         question: 'What happens after launch?',
-        answer: 'Every package includes 1-2 weeks of post-launch support for bugs. After that, you can book hourly support ($150/hour) or sign up for a monthly retainer ($500/month) for ongoing development.'
+        answer: 'Every package includes 1-2 weeks of post-launch support for bugs. After that, you can book hourly support ($150/hour) or a priority support retainer ($2,500–$3,000) for ongoing development.'
       }
     ]
   },
@@ -336,8 +336,8 @@ const defaultCategories: FaqCategory[] = [
       },
       {
         id: 'p2',
-        question: 'Is the introductory pricing real or a gimmick?',
-        answer: 'It\'s real. We\'re building our portfolio and case studies for 2025-2026. After December 2025, prices return to standard rates (30% higher).'
+        question: 'Do you ever discount?',
+        answer: 'No. We scope precisely and price the focused work it takes to ship. If budget is the primary concern, we\'re likely not the right fit and we\'ll tell you that on the call.'
       },
       {
         id: 'p3',
@@ -364,6 +364,11 @@ const defaultCategories: FaqCategory[] = [
         id: 'tr3',
         question: 'How do I know you won\'t disappear mid-project?',
         answer: 'You only pay 50% upfront, and we stay in regular contact throughout. Plus, you can check our LinkedIn, GitHub, and past client testimonials.'
+      },
+      {
+        id: 'tr4',
+        question: 'Are we a fit if budget is my main concern?',
+        answer: 'Atem works with founders who value speed and certainty over the cheapest option. If budget is the primary concern, we\'re likely not the right fit—and we\'ll tell you that on the call.'
       }
     ]
   },
@@ -384,7 +389,7 @@ const defaultCategories: FaqCategory[] = [
       {
         id: 'st3',
         question: 'What if I need help after the support period ends?',
-        answer: 'You can book additional support hours ($150/hour) or sign up for a monthly retainer ($500/month for ongoing help).'
+        answer: 'You can book additional support hours ($150/hour) or set up a priority support retainer ($2,500–$3,000) for ongoing help.'
       }
     ]
   }

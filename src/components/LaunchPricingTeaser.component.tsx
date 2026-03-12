@@ -17,27 +17,28 @@ export interface PricingTeaserProps {
 const LaunchPricingTeaser: React.FC<PricingTeaserProps> = ({ className = "" }) => {
   const pricingItems: PricingItem[] = [
     {
-      label: "Starting at",
-      title: "Launch Micro",
-      price: "$4,500",
-      discountedPrice: "$3,150",
-      discountLabel: "Limited time 30% off",
-      hasDiscount: true,
-      description: "1 core feature focused on a single user journey, so you can validate one big assumption fast."
+      label: "Range",
+      title: "Proof",
+      price: "$9,500",
+      discountedPrice: "$9,500–$15,000",
+      hasDiscount: false,
+      description: "Single-feature validation or a narrow MVP to answer one critical question fast."
     },
     {
-      label: "Starting at",
-      title: "Launch Starter", 
-      price: "$8,500",
+      label: "Range",
+      title: "Foundation", 
+      price: "$18,000",
+      discountedPrice: "$18,000–$35,000",
       hasDiscount: false,
-      description: "2–3 core features that cover your main user journey end to end (onboarding, core action, and basic admin)."
+      description: "Full MVP with auth, core flows, and one integration—built clean and ready to extend."
     },
     {
-      label: "Starting at",
-      title: "Launch Professional",
-      price: "$12,000",
+      label: "Range",
+      title: "Launch",
+      price: "$35,000",
+      discountedPrice: "$35,000–$65,000",
       hasDiscount: false,
-      description: "3–4 core features including payments, advanced admin, and integrations, so you can launch to paying users."
+      description: "Production-ready product with payments, advanced admin, and multiple integrations."
     }
   ];
 

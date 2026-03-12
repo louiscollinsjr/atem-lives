@@ -13,8 +13,7 @@ interface FeatureItem {
 
 const features: FeatureItem[] = [
   {
-    eyebrow: 'Up to',
-    headline: '4 times faster',
+    headline: 'Ship in 8–12 weeks',
     description: 'so you can test with real users this quarter, not next year.',
     variant: 'dominant',
   },
@@ -24,9 +23,8 @@ const features: FeatureItem[] = [
     variant: 'compact',
   },
   {
-    eyebrow: 'Up to',
-    headline: '70% less overhead',
-    description: 'so more of your budget goes into growth, not agency markup.',
+    headline: 'More budget ships product',
+    description: 'less wasted on handoffs, overhead, and slow decision cycles.',
     variant: 'dominant',
   },
   {

@@ -73,7 +73,7 @@ const LaunchNavigation: React.FC = () => {
 
         <div className="hidden md:flex justify-between max-w-screen-2xl mx-auto md:px-4 py-3 ">
           <div className="text-black text-xl font-semibold tracking-[0.011em] leading-5">
-            Launch by Atem
+            Atem
           </div>
           <div className="space-x-4">
             <a
